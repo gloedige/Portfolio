@@ -18,6 +18,7 @@ main{
 h1{
     font-size: 88px;
     font-family: 'Anta', Arial, sans-serif;
+    font-weight: 400;
     margin: 36px 0;
 }
 
@@ -46,7 +47,7 @@ h1{
 
 .user_img{
     position: absolute;
-    top: 0;
+    top: -24px;
     left: 0;
     width: 100%;
     /* height: 100%; */
@@ -110,6 +111,46 @@ h1{
 .title{
     width: 500px;
 }
+
+.title p{
+    letter-spacing: 2px;
+}
+
+.hero_arrow_down{
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+}
+
+.hero_arrow_down a{
+    cursor: pointer;
+}
+
+.arrow_swap{
+    position: relative;
+}
+
+.arrow_default,
+.arrow_hover{
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.3s;
+}
+
+.arrow_hover{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.arrow_swap:hover .arrow_default{
+    opacity: 0;
+}
+
+.arrow_swap:hover .arrow_hover{
+    opacity: 1;
+}
+
 @font-face {
     font-family: 'Josefin';
     src: url('./assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
