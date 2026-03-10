@@ -64,7 +64,6 @@ h1{
     flex-direction: row;
     justify-content: center;
     gap: 16px;
-    /* margin-bottom: 36px; */
 }
 
 .logo_hero{
@@ -73,6 +72,7 @@ h1{
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    gap: 1px;
 }
 
 .logo_hero img{
@@ -152,7 +152,6 @@ h1{
     width: 90%;
 }
 
-
 .image_background_default,
 .image_background_hover{
     transition: opacity 0.5s;
@@ -174,7 +173,65 @@ h1{
     opacity: 1;
 }
 
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #89BCD9;
+}
 
+.nav_logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 110px;
+}
+
+.nav_logo p{
+    color: #262E34;
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.nav_menu a{
+    color: #262E34;
+    text-decoration: none;
+    font-size: 26px;
+    padding: 39px 0 34px 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav_menu a:hover{
+    color: #F8F5EC;
+}
+
+.nav_language{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 36px 110px;
+}
+
+.nav_language a{
+    color: #262E34;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav_language a:hover{
+    color: #F8F5EC;
+}
 
 
 
