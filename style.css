@@ -8,9 +8,9 @@ body{
 .hero_wrapper{
     width: 100%;
     z-index: 1;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .nav_wrapper{
@@ -19,6 +19,7 @@ body{
     display: flex;
     justify-content: center;
     background-color: #89BCD9;
+    position: relative;
 }
 
 h1{
@@ -26,6 +27,14 @@ h1{
     font-family: 'Anta', Arial, sans-serif;
     font-weight: 400;
     margin: 36px 0 10px 0;
+}
+
+h2{
+    font-size: 60px;
+    font-family: 'Anta', Arial, sans-serif;
+    font-weight: 400;
+    margin: 0 0 32px 0;
+    color: #89BCD9;
 }
 
 .hero{
@@ -36,7 +45,6 @@ h1{
     box-sizing: border-box;
     padding: 40px 112px 0 112px;
     margin-top: 63px;
-    flex-grow: 1;
     margin: 0 auto;
     max-width: 1440px;
     width: 100%;
@@ -196,7 +204,6 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     padding: 0 110px;
 }
 
@@ -243,7 +250,75 @@ nav{
     color: #F8F5EC;
 }
 
+.why_me_wrapper{
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 
+.button_left{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+.why_me{
+    padding: 104px 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+}
+
+.why_me_container{
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+}
+
+.why_me_container .about_me_text{
+    width: 380px;
+}
+
+.why_me_container span{
+    font-size: 18px;
+    color: #F8F5EC;
+}
+
+.location_icon{
+    position: relative;
+    width: 75px;
+}
+
+.location_icon img{
+    position: absolute;
+}
+
+.location_icon_ellipse{
+    top: 40px;
+    left: 25px;
+}
+
+.location_info{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.location_info p{
+    font-size: 30px;
+    margin: 0;
+}
+
+.location_info .text_blue{
+    font-weight: 700;
+    font-size: 30px;
+    color: #89BCD9;
+}
 
 @font-face {
     font-family: 'Josefin';
