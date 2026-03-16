@@ -7,7 +7,6 @@ body{
 
 .hero_wrapper{
     width: 100%;
-    height: calc(100vh - 100px);
     z-index: 1;
     flex-grow: 1;
     display: flex;
@@ -26,7 +25,7 @@ h1{
     font-size: 88px;
     font-family: 'Anta', Arial, sans-serif;
     font-weight: 400;
-    margin: 36px 0;
+    margin: 36px 0 10px 0;
 }
 
 .hero{
@@ -35,16 +34,17 @@ h1{
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    padding: 0 112px;
+    padding: 40px 112px 0 112px;
     margin-top: 63px;
     flex-grow: 1;
     margin: 0 auto;
     max-width: 1440px;
     width: 100%;
+    height: 745px;
 }
 
 .hero_text_area{
-    margin: 110px 0 0 auto;
+    margin: 68px 0 0 auto;
 }
 
 .hero_text_area p{
@@ -145,16 +145,16 @@ h1{
 }
 
 .portfolio_img{
+    width: 535px;
     position: relative;
-    box-sizing: border-box;
-    margin: 80px 35px;
+    margin: 22px 0px 0 25px;
 } 
 
 .user_img{
     position: relative;
     top: -24px;
     left: 0;
-    width: 110%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -167,9 +167,9 @@ h1{
     transition: opacity 0.5s;
     transform: rotate(-45deg);
     position: absolute;
-    top: 100px;
-    left: 20px;
-    width: 100%;
+    top: 30px;
+    left: -40px;
+    width: 594px;
 }
 
 .image_background_hover{
@@ -188,6 +188,7 @@ nav{
     align-items: center;
     max-width: 1440px;
     width: 100%;
+    padding: 2px 0px;
 }
 
 .nav_logo{
