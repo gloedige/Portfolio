@@ -273,7 +273,7 @@ nav{
 }
 
 .why_me{
-    padding: 104px 290px;
+    padding: 104px 290px 0 290px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -286,10 +286,13 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 52px;
+    justify-content: space-between;
+    min-width: 860px;
 }
 
 .why_me_container .about_me_text{
     width: 380px;
+    min-width: 380px;
 }
 
 .why_me_container span{
@@ -299,11 +302,13 @@ nav{
 
 .location_icon{
     position: relative;
-    width: 75px;
+    min-width: 75px;
 }
 
 .location_icon img{
     position: absolute;
+    width: 100%;
+    object-fit: cover;
 }
 
 .location_icon_ellipse{
@@ -319,7 +324,7 @@ nav{
 
 .location_info p{
     font-size: 30px;
-    margin: 0;
+    margin: 20px 0 0 0;
 }
 
 .location_info .text_blue{
@@ -329,7 +334,7 @@ nav{
 }
 
 .skills{
-    padding: 104px 285px;
+    padding: 104px 285px 0 285px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -364,6 +369,31 @@ nav{
 .skills_learning_container{
     position: relative;
 }
+
+.skills_learning_container p{
+    margin-top: 81px;
+    font-size: 18px;
+}
+
+.skills_background_hover,
+.skills_background_default{
+    position: absolute;
+    transition: opacity 1s;
+}
+
+.skills_background_hover{
+    opacity: 0;
+}
+
+.skills_learning_container:hover .skills_background_default{
+    opacity: 0;
+}
+.skills_learning_container:hover .skills_background_hover{
+    opacity: 1;
+}
+
+
+
 
 .skill_item{
     height: 100px;
