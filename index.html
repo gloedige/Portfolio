@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="hero_wrapper">
-        <section class="hero">
+        <section id="hero_section" class="hero">
             <div class="portfolio_img">
                 <img src="./assets/img/bubble_blue.png" class="image_background_hover" alt="Background Image">
                 <img src="./assets/img/bubble_light_blue.png" class="image_background_default" alt="Background Image">
@@ -20,9 +20,12 @@
             <div class="hero_text_area">
                 <div class="social_media_container">
                     <div class="logo_hero">
-                        <img src="./assets/icons/logo_icon.svg" alt="Logo Icon">
-                        <p class="name">G. Lödige</p>
-                        <p>developer</p>
+                        <div class="logo_hero_icon">
+                            <img src="./assets/icons/logo_icon.svg" class="logo_hover" alt="Logo Icon">
+                            <img src="./assets/icons/Logo_small.png" class="logo_default" alt="Logo Icon">
+                        </div>
+                            <p class="name">G. Lödige</p>
+                            <p>developer</p>
                     </div>
                     <div class="social_media">
                         <a href="#contact_section" target="_blank">
@@ -53,11 +56,11 @@
     <div class="nav_wrapper">
         <nav>
             <div class="nav_logo">
-                <div class="logo_hero">
+                <a href="#hero_section" class="logo_hero">
                     <img src="./assets/icons/logo_icon_dark.svg" alt="Logo Icon">
                     <p class="name">G. Lödige</p>
                     <p>developer</p>
-                </div>
+                </a>
             </div>
             <div class="nav_menu">
                 <a href="#why_me_section">Why Me</a>

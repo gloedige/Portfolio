@@ -12,6 +12,13 @@ let isDeleting = false;
 let currentText = '';
 let currentSpanText = '';
 
+
+/**
+ * This function creates a typing effect for the location information. 
+ * It types out the text character by character, and then deletes it before moving 
+ * on to the next piece of information. The location icon is also updated based on 
+ * the current information being displayed.
+ */
 function typeEffect() {
     const fullText = ' ' + data[index].text_2;
     const fullSpanText = data[index].text_1;
@@ -50,6 +57,11 @@ function typeEffect() {
     setTimeout(typeEffect, speed);
 }
 
+
+/**
+ * This function uses the Intersection Observer API to observe when sections of the page come into view.
+ * When a section is in view, it updates the navigation links to highlight the active section.
+ */
 function intersectionObserver() {
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav a');
@@ -63,7 +75,7 @@ const navLinks = document.querySelectorAll('nav a');
             if (activeLink) activeLink.classList.add('active');
         }
     });
-    }, { threshold: 0.9 }); // 90% der Sektion muss sichtbar sein
+    }, { threshold: 0.9 });
 
     sections.forEach(section => observer.observe(section));
 };

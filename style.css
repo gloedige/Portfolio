@@ -99,8 +99,12 @@ h2{
     margin-left: 30px;
 }
 
-.logo_hero img{
+.logo_hero_icon{
+    position: relative;
     height: 38px;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
 }
 
 .logo_hero .name{
@@ -113,6 +117,29 @@ h2{
     font-size: 16px;
     margin: 0;
     color: #89BCD9;
+}
+
+.logo_default,
+.logo_hover{
+    position: absolute;
+    transition: opacity 1s;
+}
+
+.logo_default{
+    opacity: 1;
+}
+
+.logo_hover{
+    position: absolute;
+    opacity: 0;
+}
+
+.logo_hero_icon:hover .logo_default{
+    opacity: 0;
+}
+
+.logo_hero_icon:hover .logo_hover{
+    opacity: 1;
 }
 
 .title{
@@ -228,9 +255,13 @@ nav{
     flex: 1;
 }
 
+.nav_logo a,
+.nav_menu a{
+    text-decoration: none;
+}
+
 .nav_menu a{
     color: #262E34;
-    text-decoration: none;
     font-size: 26px;
     padding: 39px 0 34px 0;
     transition: background-color 0.3s, color 0.3s;
