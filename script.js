@@ -1,12 +1,10 @@
 const data = [
-    {icon: './assets/icons/location_icon.png', text_1: 'I am', text_2: 'located in Brunswick'},
-    {icon: './assets/icons/remote_icon.svg', text_1: 'I am', text_2: 'open to work remotely or on-site'},
-    {icon: './assets/icons/relocate_icon.svg', text_1: 'I am', text_2: 'open to relocate'}
+    {icon: './assets/icons/location_icon.png', text_1: 'I am', text_2: 'located in Brunswick...'},
+    {icon: './assets/icons/remote_icon.svg', text_1: 'I am', text_2: 'open to work remotely or on-site...'},
+    {icon: './assets/icons/relocate_icon.svg', text_1: 'I am', text_2: 'open to relocate...'}
 ]
 
-
-const textElement1 = document.getElementById('typing_text_part_1');
-const textElement2 = document.getElementById('typing_text_part_2');
+const textElement = document.getElementById('typing_text');
 const locationIcon = document.getElementById('location_icon');
 
 let index = 0;
@@ -33,8 +31,9 @@ function typeEffect() {
         }
     }
     
-    let spanElement = `<span class="text_blue" id="typing_text_part_1">${currentSpanText}</span>`;
-    textElement2.innerHTML = spanElement + currentText;
+    let spanElement = `<span class="text_blue">${currentSpanText}</span>`;
+    let cursorElement = `<span class="cursor">|</span>`;
+    textElement.innerHTML = spanElement + currentText + cursorElement;
 
     let speed = isDeleting ? 50 : 100;
 

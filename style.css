@@ -322,7 +322,8 @@ nav{
     gap: 8px;
 }
 
-.location_info p{
+.location_info p,
+.location_info .cursor{
     font-size: 30px;
     margin: 20px 0 0 0;
 }
@@ -331,6 +332,22 @@ nav{
     font-weight: 700;
     font-size: 30px;
     color: #89BCD9;
+}
+
+.cursor{
+    font-weight: 400;
+    color: #89BCD9;
+    margin-left: 2px;
+    animation: blink 0.8s step-end infinite;
+}
+    
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .skills{
