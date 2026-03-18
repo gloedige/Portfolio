@@ -264,7 +264,7 @@ nav{
     color: #262E34;
     font-size: 26px;
     padding: 39px 0 34px 0;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -277,7 +277,8 @@ nav{
     background-position: center;
 }
 
-.nav_menu a:hover{
+.nav_menu a:hover,
+.project_menu p:hover{
     color: #F8F5EC;
 }
 
@@ -327,6 +328,7 @@ nav{
     width: 100%;
     max-width: 1440px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .why_me_container{
@@ -405,6 +407,7 @@ nav{
     width: 100%;
     max-width: 1440px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .skills_container{
@@ -501,6 +504,10 @@ nav{
     font-size: 30px;
     font-weight: 500;
     line-height: 120%;
+    color: #89BCD9;
+    transition: background-color 0.5s, color 0.5s;
+    cursor: pointer;
+    margin: 33px 0;
 }
 
 .project_wrapper{
@@ -519,6 +526,7 @@ nav{
     width: 100%;
     max-width: 1440px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .projects menu{
@@ -528,6 +536,8 @@ nav{
     gap: 80px;
     width: 100%;
     margin: 0;
+    box-sizing: border-box;
+    padding: 0 0 0 104px;
 }
 
 @font-face {
