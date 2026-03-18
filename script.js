@@ -51,17 +51,21 @@ function typeEffect() {
 }
 
 function intersectionObserver() {
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+
     const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
-        document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add('active');
         }
     });
-    }, { threshold: 0.6 }); // 60% der Sektion muss sichtbar sein
+    }, { threshold: 0.9 }); // 90% der Sektion muss sichtbar sein
 
-document.querySelectorAll('section').forEach(section => observer.observe(section));
+    sections.forEach(section => observer.observe(section));
 };
 
 

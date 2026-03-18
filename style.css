@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     background-color: #262E34;
     font-family: 'Josefin', Arial, sans-serif;
@@ -19,7 +23,9 @@ body{
     display: flex;
     justify-content: center;
     background-color: #89BCD9;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 h1{
@@ -228,6 +234,16 @@ nav{
     font-size: 26px;
     padding: 39px 0 34px 0;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav_menu a.active{
+    color: #F8F5EC;
+    background-image: url('./assets/icons/nav_menu_hover.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .nav_menu a:hover{
