@@ -559,11 +559,40 @@ nav{
     background-color: #2D383F;
 }
 
+.project_overview{
+    margin: 31px 118px 0 123px;
+}
+
+.project_overview article{
+    width: 690px;
+}
+
 .single_project_headline{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
+.single_project_headline h3{
+    margin: 0 0 0 21px;
+    font-size: 28px;
+    font-weight: 400;
+    color: #F8F5EC;
+}
+
+.single_project_section{
+    margin: 9px 0 23px 0px;
+}
+
+.single_project_section span{
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    color: #F8F5EC;
+    margin: 0 0 0 50px;
+    line-height: 120%;
+}
 @font-face {
     font-family: 'Josefin';
     src: url('./assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
