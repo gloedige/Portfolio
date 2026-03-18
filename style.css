@@ -508,6 +508,7 @@ nav{
     transition: background-color 0.5s, color 0.5s;
     cursor: pointer;
     margin: 33px 0;
+    height: 31px;
 }
 
 .project_wrapper{
@@ -538,6 +539,29 @@ nav{
     margin: 0;
     box-sizing: border-box;
     padding: 0 0 0 104px;
+}
+
+.project_menu .active{
+    color: #F8F5EC;
+    background-color: #2D383F;
+    padding: 33px 33px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    margin: 0;
+}
+
+.project_overview_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100vw;
+    background-color: #2D383F;
+}
+
+.single_project_headline{
+    display: flex;
+    flex-direction: row;
 }
 
 @font-face {
