@@ -560,11 +560,18 @@ nav{
 }
 
 .project_overview{
-    margin: 31px 118px 0 123px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 31px auto 0;
+    padding: 0 118px 0 123px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
 }
 
 .project_overview article{
-    width: 690px;
+    flex: 1;
 }
 
 .single_project_headline{
@@ -581,11 +588,11 @@ nav{
     color: #F8F5EC;
 }
 
-.single_project_section{
+.single_project_info{
     margin: 9px 0 23px 0px;
 }
 
-.single_project_section span{
+.single_project_info span{
     display: block;
     font-size: 18px;
     font-weight: 400;
@@ -593,6 +600,76 @@ nav{
     margin: 0 0 0 50px;
     line-height: 120%;
 }
+
+.single_project_details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single_project_details p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #F8F5EC;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.techstack_container{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin-bottom: 16px;
+}
+
+.single_project_details .preview{
+    height: 312px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin-bottom: 34px;
+}
+
+.link_blue{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 13px 30px;
+    background-color: #89BCD9;
+    color: #2D383F;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link_blue:hover{
+    background-color: #F8F5EC;
+    color: #2D383F;
+}
+
+.link_transparent{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 13px 30px;
+    background-color: transparent;
+    color: #89BCD9;
+    border-radius: 30px;
+    border: 2px solid #89BCD9;;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link_transparent:hover{
+    background-color: rgb(255 255 255 / 12%);
+    color: #89BCD9;
+}
+
+.project_links{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 28px;
+}
+
+
 @font-face {
     font-family: 'Josefin';
     src: url('./assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
