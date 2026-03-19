@@ -278,7 +278,7 @@ nav{
 }
 
 .nav_menu a:hover,
-.project_menu p:hover{
+.project_menu button:hover{
     color: #F8F5EC;
 }
 
@@ -500,15 +500,16 @@ nav{
     text-align: center;
 }
 
-.project_menu p{
+.project_menu button{
     font-size: 30px;
     font-weight: 500;
     line-height: 120%;
     color: #89BCD9;
     transition: background-color 0.5s, color 0.5s;
     cursor: pointer;
-    margin: 33px 0;
-    height: 31px;
+    padding: 33px;
+    border-style: none;
+    background-color: transparent;
 }
 
 .project_wrapper{
@@ -534,7 +535,6 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 80px;
     width: 100%;
     margin: 0;
     box-sizing: border-box;
@@ -544,10 +544,9 @@ nav{
 .project_menu .active{
     color: #F8F5EC;
     background-color: #2D383F;
-    padding: 33px 33px;
+    padding: 33px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
-    margin: 0;
 }
 
 .project_overview_wrapper{
@@ -557,6 +556,7 @@ nav{
     gap: 40px;
     width: 100vw;
     background-color: #2D383F;
+    height: 550px;
 }
 
 .project_overview{
@@ -685,6 +685,10 @@ nav{
     font-size: 30px;
     font-weight: 500;
     color: #89BCD9;
+}
+
+.d-none{
+    display: none;
 }
 
 

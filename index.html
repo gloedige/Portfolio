@@ -155,21 +155,21 @@
         <section id="projects_section" class="projects">
             <h2>My Projects</h2>
             <menu>
-                <div id="pokemon" class="project_menu">
-                    <p class="active">1. Pokedex</p>
+                <div class="project_menu">
+                    <button data-project="pokedex" id="pokemon">1. Pokedex</button>
                 </div>
                 <div id="pollo_loco" class="project_menu">
-                    <p>2. El Pollo Loco</p>
+                    <button data-project="pollo_loco">2. El Pollo Loco</button>
                 </div>
                 <div id="join" class="project_menu">
-                    <p>3. Join</p>
+                    <button data-project="join">3. Join</button>
                 </div>
                 <div id="ongoing" class="project_menu">
-                    <p>4. Ongoing Project</p>
+                    <button data-project="coming_soon">4. Ongoing Project</button>
                 </div>
             </menu>
             <div class="project_overview_wrapper">
-                <div class="project_overview">
+                <div class="project_overview" id="project_pokedex">
                     <article>
                         <div class="single_project_info">
                             <div class="single_project_headline">
@@ -208,7 +208,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project_overview">
+                <div class="project_overview" id="project_pollo_loco">
                     <article>
                         <div class="single_project_info">
                             <div class="single_project_headline">
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project_overview">
+                <div class="project_overview" id="project_join">
                     <article>
                         <div class="single_project_info">
                             <div class="single_project_headline">
@@ -286,7 +286,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project_overview">
+                <div class="project_overview" id="project_coming_soon">
                     <article>
                         <div class="single_project_info">
                             <div class="single_project_headline">
