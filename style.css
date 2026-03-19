@@ -652,7 +652,7 @@ nav{
     background-color: transparent;
     color: #89BCD9;
     border-radius: 30px;
-    border: 2px solid #89BCD9;;
+    border: 2px solid #89BCD9;
     text-decoration: none;
     display: inline-block;
 }
@@ -667,6 +667,24 @@ nav{
     flex-direction: row;
     gap: 40px;
     margin-bottom: 28px;
+}
+
+.further_project{
+    width: 450px;
+    height: 312px;
+    background-color: #F8F5EC;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.further_project span{
+    font-size: 30px;
+    font-weight: 500;
+    color: #89BCD9;
 }
 
 
