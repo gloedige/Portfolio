@@ -177,26 +177,14 @@ function initProjectOverviews() {
 function toggleProject() {
     const projectButtons = document.querySelectorAll('.project_menu button');
     findCurrentProjectOverview();
-
     projectButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const project = button.getAttribute('data-project');
-            const nextProjectOverview = document.getElementById(`project_${project}`);
-
+            const nextProjectOverview = getNextProjectOverview(button);
             if (!nextProjectOverview || nextProjectOverview === currentProjectOverview || isProjectTransitionRunning) return;
-            toggleMenu();
-            button.classList.add('active');
+            deactivateActiveMenuButton();
+            activateMenuButton(button);
             isProjectTransitionRunning = true;
-            const previousProjectOverview = currentProjectOverview;
-            showNextOverview(nextProjectOverview);
-
-            if (!previousProjectOverview) {
-                showNextOverview(nextProjectOverview);
-                return;
-            }
-            previousProjectOverview.classList.remove('fade-in');
-            previousProjectOverview.classList.add('fade-out');
-            handleAnimationEnd(previousProjectOverview, nextProjectOverview);
+            handlePreviosProjectOverview(currentProjectOverview, nextProjectOverview);
         });
     });
 }
@@ -214,22 +202,15 @@ function findCurrentProjectOverview() {
 
 
 /**
- * This function is responsible for showing the next project overview with a fade-in effect.
- * @param {HTMLElement} nextProjectOverview - The next project overview element that should be displayed. 
+ * This function retrieves the next project overview element based on the data attribute of the clicked button. It uses 
+ * the 'data-project' attribute of the button to find the corresponding project overview element by its ID.
+ * @param {HTMLElement} button 
+ * @returns {HTMLElement} The next project overview element corresponding to the clicked button.
  */
-function showNextOverview(nextProjectOverview) {
-    nextProjectOverview.classList.remove('d-none', 'fade-out');
-    nextProjectOverview.classList.add('fade-in');
-
-    nextProjectOverview.addEventListener('animationend', function handleFadeIn(event) {
-        if (event.animationName !== 'fadeIn') {
-            return;
-        }
-        nextProjectOverview.classList.remove('fade-in');
-        nextProjectOverview.removeEventListener('animationend', handleFadeIn);
-        currentProjectOverview = nextProjectOverview;
-        isProjectTransitionRunning = false;
-    });
+function getNextProjectOverview(button) {
+    const project = button.getAttribute('data-project');
+    const nextProjectOverview = document.getElementById(`project_${project}`);
+    return nextProjectOverview;
 }
 
 
@@ -237,11 +218,39 @@ function showNextOverview(nextProjectOverview) {
  * This function is called when a project menu button is clicked. It toggles the active state 
  * of the buttons in the project menu, ensuring only one button is active at a time.
  */
-function toggleMenu() {
+function deactivateActiveMenuButton() {
     const activeButton = document.querySelector('.project_menu button.active');
     if (activeButton) {
         activeButton.classList.remove('active');
     }
+}
+
+
+/**
+ * This function is called to activate a project menu button by adding the 'active' class to it. This visually 
+ * indicates which project is currently selected in the menu.
+ * @param {HTMLElement} button 
+ */
+function activateMenuButton(button) {
+    button.classList.add('active');
+}
+
+
+/**
+ * 
+ * @param {HTMLElement} currentProjectOverview 
+ * @param {HTMLElement} nextProjectOverview 
+ * @returns 
+ */
+function handlePreviosProjectOverview(currentProjectOverview, nextProjectOverview) {
+    const previousProjectOverview = currentProjectOverview;
+        if (!previousProjectOverview) {
+            showNextOverview(nextProjectOverview);
+            return;
+        }
+        previousProjectOverview.classList.remove('fade-in');
+        previousProjectOverview.classList.add('fade-out');
+        handleAnimationEnd(previousProjectOverview, nextProjectOverview);
 }
 
 
@@ -261,5 +270,25 @@ function handleAnimationEnd(previousProjectOverview, nextProjectOverview) {
         previousProjectOverview.classList.add('d-none');
         previousProjectOverview.removeEventListener('animationend', handleFadeOut);
         showNextOverview(nextProjectOverview);
+    });
+}
+
+
+/**
+ * This function is responsible for showing the next project overview with a fade-in effect.
+ * @param {HTMLElement} nextProjectOverview - The next project overview element that should be displayed. 
+ */
+function showNextOverview(nextProjectOverview) {
+    nextProjectOverview.classList.remove('d-none', 'fade-out');
+    nextProjectOverview.classList.add('fade-in');
+
+    nextProjectOverview.addEventListener('animationend', function handleFadeIn(event) {
+        if (event.animationName !== 'fadeIn') {
+            return;
+        }
+        nextProjectOverview.classList.remove('fade-in');
+        nextProjectOverview.removeEventListener('animationend', handleFadeIn);
+        currentProjectOverview = nextProjectOverview;
+        isProjectTransitionRunning = false;
     });
 }
