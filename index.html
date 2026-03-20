@@ -358,6 +358,45 @@
                 </div>
             </div>
         </section>
+        <section class="contact">
+            <h2 id="contact_section">Contact Me</h2>
+            <div class="contact_container">
+                <div class="contact_info">
+                    <p>Email:</p>
+                    <a href="mailto:gerd@example.com">gerd@example.com</a>
+                </div>
+            </div>
+            <div class="form_container">
+                <form action="submit_form.php" method="POST">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="accept_policy_container">
+                        <div class="checkbox_container">
+                            <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon">
+                            <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon">
+                            <img src="./assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon">
+                            <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon">
+                            <input type="checkbox" id="accept_policy" name="accept_policy" required>
+                        </div>
+                        <label for="accept_policy">I've read the <a href="#">privacy policy</a> and accept to the processing of my data as outlined.</label>
+                        <span class="error_policy">Please accept the privacy policy.</span>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="contact_arrow_up">
+                <a href="#why_me_section" class="arrow_swap">
+                    <img src="./assets/icons/arrow_up_hover.svg" class="button_hover" alt="Arrow Up Hover Icon">
+                    <img src="./assets/icons/arrow_up_default.svg" class="button_default" alt="Arrow Up Icon">
+                </a>
+            </div>
+        </section>
 
     </div>
 
