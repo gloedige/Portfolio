@@ -16,7 +16,7 @@ function toggleProject() {
             deactivateActiveMenuButton();
             activateMenuButton(button);
             isProjectTransitionRunning = true;
-            handlePreviosProjectOverview(currentProjectOverview, nextProjectOverview);
+            handlePreviousProjectOverview(currentProjectOverview, nextProjectOverview);
         });
     });
 }
@@ -74,7 +74,7 @@ function activateMenuButton(button) {
  * @param {HTMLElement} nextProjectOverview 
  * @returns 
  */
-function handlePreviosProjectOverview(currentProjectOverview, nextProjectOverview) {
+function handlePreviousProjectOverview(currentProjectOverview, nextProjectOverview) {
     const previousProjectOverview = currentProjectOverview;
         if (!previousProjectOverview) {
             showNextOverview(nextProjectOverview);
