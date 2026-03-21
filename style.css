@@ -780,6 +780,48 @@ nav{
     top: 101px;
 }
 
+.contact_info a{
+    color: #F8F5EC;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.contact_info a:hover{
+    color: #89BCD9;
+}
+
+.email_img_default,
+.email_img_hover,.email_img_clicked{
+    left: -44px;
+    transition: opacity 0.3s;
+    position: absolute;
+}
+
+.email_img_hover,.email_img_clicked{
+    opacity: 0;
+}
+
+.contact_info a:hover .email_img_default{
+    opacity: 0;
+}
+
+.contact_info a:hover .email_img_hover{
+    opacity: 1;
+}
+
+.contact_info a:active .email_img_hover{
+    opacity: 0;
+}
+
+.contact_info a:active .email_img_clicked{
+    opacity: 1;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
