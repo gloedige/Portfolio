@@ -780,15 +780,37 @@ nav{
     top: 101px;
 }
 
+.contact_text{
+    text-align: justify;
+    line-height: 120%;
+}
+
+.contact_text p{
+    text-align: justify;
+    font-size: 18px;
+    margin: 0;
+    line-height: 120%;
+}
+
+.contact_text,
+.contact_info{
+    width: 50%;
+}
+
 .contact_info a{
     color: #F8F5EC;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 8px;
     position: relative;
+    margin-bottom: 16px;
+}
+
+.contact_info a span{
+    padding-left: 44px;
 }
 
 .contact_info a:hover{
@@ -796,21 +818,24 @@ nav{
 }
 
 .email_img_default,
-.email_img_hover,.email_img_clicked{
-    left: -44px;
+.email_img_hover,.email_img_clicked,
+.phone_img_default,.phone_img_hover{
+    left: 0;
     transition: opacity 0.3s;
     position: absolute;
 }
 
-.email_img_hover,.email_img_clicked{
+.email_img_hover,.email_img_clicked, .phone_img_hover{
     opacity: 0;
 }
 
-.contact_info a:hover .email_img_default{
+.contact_info a:hover .email_img_default,
+.contact_info a:hover .phone_img_default{
     opacity: 0;
 }
 
-.contact_info a:hover .email_img_hover{
+.contact_info a:hover .email_img_hover,
+.contact_info a:hover .phone_img_hover{
     opacity: 1;
 }
 
@@ -820,6 +845,14 @@ nav{
 
 .contact_info a:active .email_img_clicked{
     opacity: 1;
+}
+
+.contact_container{
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    width: 100%;
+    justify-content: center;
 }
 
 @keyframes fadeIn {
