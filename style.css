@@ -920,8 +920,7 @@ nav{
     transition: opacity 0.2s ease;
 }
 
-.input_field input:valid + .input_valid_icon,
-.input_field textarea:valid + .input_valid_icon{
+.input_field .is_valid + .input_valid_icon{
     opacity: 1;
 }
 

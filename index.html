@@ -382,20 +382,20 @@
                 </div>
             </div>
             <div class="form_container">
-                <!-- <form action="submit_form.php" method="POST" novalidate> -->
-                <form novalidate>
+                <form action="submit_form.php" method="POST">
+                <!-- <form novalidate> -->
                     <div class="contact_field_name_email">
                         <div class="input_container">
                             <label for="contact_name" id="contact_name_label">Your name <span>is required</span></label>
                             <div class="input_field">
-                                <input type="text" id="contact_name" name="name" required>
+                                <input type="text" id="contact_name" name="name" onclick="removeIndicatorOnInput('name')">
                                 <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                             </div>
                         </div>
                         <div class="input_container">
                             <label for="contact_mail" id="contact_mail_label">Your email <span>is required</span></label>
                             <div class="input_field">
-                                <input type="email" id="contact_mail" name="mail" required>
+                                <input type="email" id="contact_mail" name="mail" onclick="removeIndicatorOnInput('mail')">
                                 <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                             </div>
                         </div>
@@ -403,7 +403,7 @@
                     <div class="input_container full_width">
                         <label for="contact_message" id="contact_message_label">Your message <span>is required</span></label>
                         <div class="input_field">
-                            <textarea id="contact_message" name="message" rows="8" required></textarea>
+                            <textarea id="contact_message" name="message" rows="8" onclick="removeIndicatorOnInput('message')"></textarea>
                             <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                         </div>
                     </div>
