@@ -853,6 +853,93 @@ nav{
     gap: 36px;
     width: 100%;
     justify-content: center;
+    margin-bottom: 51px;
+}
+
+.contact_field_name_email{
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+}
+
+.form_container{
+    width: 100%;
+}
+
+.form_container .input_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form_container .input_field{
+    position: relative;
+    width: 100%;
+}
+
+.form_container .input_container label{
+    font-size: 18px;
+    color: #89BCD9;
+    padding-left: 27px;
+}
+
+.form_container .input_container input,
+.form_container .input_container textarea{
+    background-color: transparent;
+    border: 2px solid #89BCD9;
+    border-radius: 30px;
+    padding: 13px 27px;
+    color:  #F8F5EC;
+    font-size: 18px;
+    font-family: 'Josefin';
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form_container .input_container input:focus-visible,
+.form_container .input_container textarea:focus-visible {
+    background-color: rgb(255 255 255 / 12%);
+    outline: none;
+}
+
+.form_container .input_field input,
+.form_container .input_field textarea{
+    padding-right: 58px;
+}
+
+.input_valid_icon{
+    position: absolute;
+    top: 25px;
+    right: 14px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.input_field input:valid + .input_valid_icon,
+.input_field textarea:valid + .input_valid_icon{
+    opacity: 1;
+}
+
+.input_container span{
+    display: none;
+}
+
+.missing_inputs {
+    color: #E44C36 !important;
+    border-color: #E44C36 !important;
+}
+
+.missing_input_title {
+    color:#E44C36 !important;
+}
+
+.full_width{
+    width: 100%;
 }
 
 @keyframes fadeIn {
