@@ -7,7 +7,8 @@
     <link rel="icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-    <script src="./scripts/animate_project_overview.js"></script>
+    <script src="./scripts/animate_project_overview.js" defer></script>
+    <script src="./scripts/check_input.js" defer></script>
 </head>
 <body>
     <div class="hero_wrapper">
@@ -381,15 +382,31 @@
                 </div>
             </div>
             <div class="form_container">
-                <form action="submit_form.php" method="POST">
-                    <label for="name">Your name</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Your email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Your message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                <!-- <form action="submit_form.php" method="POST" novalidate> -->
+                <form novalidate>
+                    <div class="contact_field_name_email">
+                        <div class="input_container">
+                            <label for="contact_name" id="contact_name_label">Your name <span>is required</span></label>
+                            <div class="input_field">
+                                <input type="text" id="contact_name" name="name" required>
+                                <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                            </div>
+                        </div>
+                        <div class="input_container">
+                            <label for="contact_mail" id="contact_mail_label">Your email <span>is required</span></label>
+                            <div class="input_field">
+                                <input type="email" id="contact_mail" name="mail" required>
+                                <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_container full_width">
+                        <label for="contact_message" id="contact_message_label">Your message <span>is required</span></label>
+                        <div class="input_field">
+                            <textarea id="contact_message" name="message" rows="8" required></textarea>
+                            <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                        </div>
+                    </div>
                     <div class="accept_policy_container">
                         <div class="checkbox_container">
                             <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon">
@@ -398,10 +415,10 @@
                             <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon">
                             <input type="checkbox" id="accept_policy" name="accept_policy" required>
                         </div>
-                        <label for="accept_policy">I've read the <a href="#">privacy policy</a> and accept to the processing of my data as outlined.</label>
+                        <label for="accept_policy" id="accept_policy_label">I've read the <a href="#">privacy policy</a> and accept to the processing of my data as outlined.</label>
                         <span class="error_policy">Please accept the privacy policy.</span>
                     </div>
-                    <button type="submit">Send</button>
+                    <button type="submit" onclick="sendMail()">Send</button>
                 </form>
             </div>
             <div class="contact_arrow_up">
