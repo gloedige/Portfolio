@@ -159,7 +159,8 @@ function inputEventListener() {
  * whenever the user types in the name field.
  */
 function inputNameEventListener() {
-     input_name.addEventListener("input", () => {
+    input_name.addEventListener("focus", () => removeIndicatorOnInput("name"));
+    input_name.addEventListener("input", () => {
         if (input_name.value.trim() !== "") {
             req_name = true;
             contact_name_label.classList.remove("missing_input_title");
@@ -179,7 +180,8 @@ function inputNameEventListener() {
  * input whenever the user types in the email field.
  */
 function inputMailEventListener() {
-      input_mail.addEventListener("input", () => {
+    input_mail.addEventListener("focus", () => removeIndicatorOnInput("mail"));
+    input_mail.addEventListener("input", () => {
         if (input_mail.value.trim() !== "") {
             req_mail = true;
             contact_mail_label.classList.remove("missing_input_title");
@@ -199,7 +201,8 @@ function inputMailEventListener() {
  * whenever the user types in the message field.
  */
 function inputMessageEventListener() {
-      input_message.addEventListener("input", () => {
+    input_message.addEventListener("focus", () => removeIndicatorOnInput("message"));
+    input_message.addEventListener("input", () => {
         if (input_message.value.trim() !== "") {
             req_message = true;
             contact_message_label.classList.remove("missing_input_title");
