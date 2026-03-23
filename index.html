@@ -408,16 +408,18 @@
                     </div>
                     <div class="accept_policy_container">
                         <div class="checkbox_container">
-                            <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon">
-                            <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon">
-                            <img src="./assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon">
-                            <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon">
+                            <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon" class="checkbox_hover">
+                            <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon" class="checkbox_default">
+                            <img src="./assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon" class="checkbox_checked">
+                            <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon" class="checkbox_error">
                             <input type="checkbox" id="accept_policy" name="accept_policy" required>
                         </div>
                         <label for="accept_policy" id="accept_policy_label">I've read the <a href="#">privacy policy</a> and accept to the processing of my data as outlined.</label>
-                        <span class="error_policy">Please accept the privacy policy.</span>
                     </div>
-                    <button type="submit" onclick="sendMail()">Send</button>
+                    <span class="error_policy d-none">Please accept the privacy policy.</span>
+                    <div class="send_form_container">
+                        <button type="submit" onclick="sendMail()">Send</button>
+                    </div>
                 </form>
             </div>
             <div class="contact_arrow_up">
