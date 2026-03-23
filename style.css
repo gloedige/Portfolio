@@ -924,10 +924,6 @@ nav{
     opacity: 1;
 }
 
-.input_container span{
-    display: none;
-}
-
 .missing_inputs {
     color: #E44C36 !important;
     border-color: #E44C36 !important;

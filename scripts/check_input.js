@@ -95,16 +95,19 @@ function clearAllInputs() {
  */
 function missingInputs() {
     if (req_name == false) {
-        contact_name_label.classList.add("missing_input_title")
-        input_name.classList.add("missing_inputs")
+        contact_name_label.classList.add("missing_input_title");
+        contact_name_label.children[0].classList.remove("d-none");
+        input_name.classList.add("missing_inputs");
     }
     if (req_mail == false) {
-        contact_mail_label.classList.add("missing_input_title")
-        input_mail.classList.add("missing_inputs")
+        contact_mail_label.classList.add("missing_input_title");
+        contact_mail_label.children[0].classList.remove("d-none");
+        input_mail.classList.add("missing_inputs");
     }
     if (req_message == false) {
-        contact_message_label.classList.add("missing_input_title")
-        input_message.classList.add("missing_inputs")
+        contact_message_label.classList.add("missing_input_title");
+        contact_message_label.children[0].classList.remove("d-none");
+        input_message.classList.add("missing_inputs");
     }
 }
 
@@ -127,14 +130,17 @@ function removeIndicatorOnInput(field) {
     switch (field) {
         case "name":
             contact_name_label.classList.remove("missing_input_title");
+            contact_name_label.children[0].classList.add("d-none");
             input_name.classList.remove("missing_inputs");
             break;
         case "mail":
             contact_mail_label.classList.remove("missing_input_title");
+            contact_mail_label.children[0].classList.add("d-none");
             input_mail.classList.remove("missing_inputs");
             break;
         case "message":
             contact_message_label.classList.remove("missing_input_title");
+            contact_message_label.children[0].classList.add("d-none");
             input_message.classList.remove("missing_inputs");
             break;
     }
