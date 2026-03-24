@@ -760,7 +760,7 @@ nav{
 }
 
 .contact{
-    padding: 89px 265px 0 265px;
+    padding: 89px 265px 180px 265px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -971,8 +971,9 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 8px;
-    margin-bottom: 16px;
     font-size: 14px;
+    height: 80px;
+    position: relative;
 }
 
 .accept_policy_container a{
@@ -981,9 +982,25 @@ nav{
     font-size: 16px;
 }
 
-.send_form_container{
-    display: flex;
-    justify-content: flex-end;
+.accept_policy_container button{
+    background-color: transparent;
+    border: 2px solid #89BCD9;
+    border-radius: 30px;
+    padding: 13px 30px;
+    color:  #89BCD9;
+    font-size: 18px;
+    font-family: 'Josefin';
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.accept_policy_container button:disabled{
+    border-color: #8F9290 !important;
+    color: #8F9290 !important;
+    cursor: auto !important;
 }
 
 .error_policy{
@@ -998,6 +1015,8 @@ nav{
     gap: 4px;
     margin-top: 4px;
 }
+
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
