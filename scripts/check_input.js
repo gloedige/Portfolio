@@ -146,16 +146,16 @@ function handleMissingInput(labelElement, inputElement) {
 function enableCheckboxError() {
     for (const child of contact_checkbox.children) {
         if (child.classList.contains("checkbox_error")) {
-            child.style.opacity = "1";
+            child.classList.remove("inactive");
         }
         if (child.classList.contains("checkbox_checked")) {
-            child.style.opacity = "0";
+            child.classList.add("inactive");
         }
         if (child.classList.contains("checkbox_default")) {
-            child.style.opacity = "0";
+            child.classList.add("inactive");
         }
         if (child.classList.contains("checkbox_hover")) {
-            child.style.opacity = "0";
+            child.classList.add("inactive");
         }
     }
 }
@@ -238,10 +238,13 @@ function removeCheckboxError() {
     contact_checkbox.classList.remove("missing_input_title");
         for (const child of contact_checkbox.children) {
             if (child.classList.contains("checkbox_error")) {
-                child.style.opacity = "0";
+                child.classList.add("inactive");
             }
             if (child.classList.contains("checkbox_default")) {
-                child.style.opacity = "1";
+                child.classList.remove("inactive");
+            }
+            if (child.classList.contains("checkbox_hover")) {
+                child.classList.remove("inactive");
             }
         }
     toggleAcceptPolicy();
@@ -380,9 +383,11 @@ function validateEmail(emailInput) {
 function toggleAcceptPolicy() {
     const checkboxChecked = document.querySelector(".checkbox_checked");
         if (input_checkbox.checked) {
-            checkboxChecked.style.opacity = "1";
+            checkboxChecked.classList.remove("inactive");
+            checkboxChecked.classList.add("active");
         } else {
-            checkboxChecked.style.opacity = "0";
+            checkboxChecked.classList.remove("active");
+            checkboxChecked.classList.add("inactive");
         }
 }
 

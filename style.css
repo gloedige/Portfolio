@@ -828,7 +828,15 @@ nav{
 }
 
 .email_img_hover,.email_img_clicked, .phone_img_hover,
-.checkbox_hover,.checkbox_checked,.checkbox_error{
+.checkbox_hover,.checkbox_checked{
+    opacity: 0;
+}
+
+.active{
+    opacity: 1;
+}
+
+.inactive{
     opacity: 0;
 }
 
