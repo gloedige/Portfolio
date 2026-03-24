@@ -962,8 +962,7 @@ nav{
 .accept_policy_container{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 16px;
+    gap: 8px;
     margin-bottom: 16px;
     font-size: 14px;
 }
@@ -977,6 +976,19 @@ nav{
 .send_form_container{
     display: flex;
     justify-content: flex-end;
+}
+
+.error_policy{
+    color: #E44C36;
+    font-size: 14px;
+    margin: 0 0 16px 0;
+}
+
+.policy_text_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
 }
 
 @keyframes fadeIn {
