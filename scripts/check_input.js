@@ -249,3 +249,18 @@ function validateEmail(emailInput) {
         emailInput.classList.remove("is_valid");
     }
 }
+
+
+/**
+ * This function toggles the visibility of the checked state of the accept policy checkbox based on whether the checkbox is checked or not.
+ * It changes the opacity of the checked state image to show or hide it accordingly.
+ */
+function toggleAcceptPolicy() {
+    const checkbox = document.getElementById("accept_policy");
+    const checkboxChecked = document.querySelector(".checkbox_checked");
+        if (checkbox.checked) {
+            checkboxChecked.style.opacity = "1";
+        } else {
+            checkboxChecked.style.opacity = "0";
+        }
+}

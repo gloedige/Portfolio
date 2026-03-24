@@ -385,14 +385,14 @@
                 <form action="submit_form.php" method="POST">
                     <div class="contact_field_name_email">
                         <div class="input_container">
-                            <label for="contact_name" id="contact_name_label">Your name <span class="d-none">is required</span></label>
+                            <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
                             <div class="input_field">
                                 <input type="text" id="contact_name" name="name">
                                 <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                             </div>
                         </div>
                         <div class="input_container">
-                            <label for="contact_mail" id="contact_mail_label">Your email <span class="d-none">is required</span></label>
+                            <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
                             <div class="input_field">
                                 <input type="email" id="contact_mail" name="mail">
                                 <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
@@ -400,14 +400,14 @@
                         </div>
                     </div>
                     <div class="input_container full_width">
-                        <label for="contact_message" id="contact_message_label">Your message <span class="d-none">is required</span></label>
+                        <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
                         <div class="input_field">
                             <textarea id="contact_message" name="message" rows="8"></textarea>
                             <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                         </div>
                     </div>
                     <div class="accept_policy_container">
-                        <div class="checkbox_container">
+                        <div class="checkbox_container" onclick="toggleAcceptPolicy()">
                             <input type="checkbox" id="accept_policy" name="accept_policy" value="accepted">
                             <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon" class="checkbox_hover">
                             <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon" class="checkbox_default">
