@@ -824,6 +824,7 @@ nav{
     left: 0;
     transition: opacity 0.3s;
     position: absolute;
+    pointer-events: none;
 }
 
 .email_img_hover,.email_img_clicked, .phone_img_hover,
@@ -832,12 +833,14 @@ nav{
 }
 
 .contact_info a:hover .email_img_default,
-.contact_info a:hover .phone_img_default{
+.contact_info a:hover .phone_img_default,
+.checkbox_container:hover .checkbox_default{
     opacity: 0;
 }
 
 .contact_info a:hover .email_img_hover,
-.contact_info a:hover .phone_img_hover{
+.contact_info a:hover .phone_img_hover,
+.checkbox_container:hover .checkbox_hover{
     opacity: 1;
 }
 
@@ -943,6 +946,17 @@ nav{
     position: relative;
     width: 24px;
     height: 24px;
+    cursor: pointer;
+}
+
+.checkbox_container input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 .accept_policy_container{
@@ -951,6 +965,13 @@ nav{
     align-items: center;
     gap: 16px;
     margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.accept_policy_container a{
+    color: #89BCD9;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 .send_form_container{
