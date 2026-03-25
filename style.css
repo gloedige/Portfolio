@@ -84,9 +84,39 @@ h2{
     width: 30px;
 }
 
+.social_media a{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
 .social_media_container{
     display: flex;
     flex-direction: row;
+}
+
+.social_media_default,
+.social_media_hover{
+    position: absolute;
+    transition: opacity 0.3s;
+    right: 0;
+}
+
+.social_media_default{
+    opacity: 1;
+}
+
+.social_media_hover{
+    position: absolute;
+    opacity: 0;
+}
+
+.social_media a:hover .social_media_default{
+    opacity: 0;
+}
+
+.social_media a:hover .social_media_hover{
+    opacity: 1;
 }
 
 .logo_hero{
@@ -1021,7 +1051,44 @@ nav{
     margin-top: 4px;
 }
 
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 81px 112px 61px 112px;
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 
+.social_media.footer{
+    flex-direction: row;
+    width: auto;
+}
+
+.footer_container_left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer_container_left a,
+.footer_container_left span{
+    color: #262E34;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer_container_left a:hover{
+    color: #F8F5EC;
+}
+
+.logo_hero.footer{
+    margin: 0;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
