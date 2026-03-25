@@ -17,6 +17,9 @@ loadContactSection();
 inputEventListener();
 
 
+/** Opens mailto with form values and clears inputs. 
+ * @param {Event} event 
+ */
 function sendMail(event) {
     if (event) event.preventDefault();
     window.location.href = `mailto:${input_mail.value}?subject=Contact from ${input_name.value}&body=${input_message.value}`;
@@ -24,10 +27,7 @@ function sendMail(event) {
 }
 
 
-/**
- * This function checks if all required fields are filled and enables or disables the send button accordingly. 
- * If any required fields are missing, it calls the function to show indicators for missing inputs and resets the required field flags.
- */
+/** Enables or disables send button based on all required fields being filled. */
 function manageSendButtonStatus() {
     if (checkForRequired(['name', 'mail', 'message', 'checkbox'])) {
         send_button.disabled = false;
@@ -37,9 +37,7 @@ function manageSendButtonStatus() {
 }
 
 
-/**
- * This function loads the contact section input elements into variables for later use in validation and sending email.
-*/
+/** Caches all contact form DOM elements into module variables. */
 function loadContactSection() {
     input_name = document.getElementById("contact_name");
     input_mail = document.getElementById("contact_mail");
@@ -54,11 +52,8 @@ function loadContactSection() {
 }
 
 
-/**
- * Checks if the required fields are filled.
- * @param {Array<string>} requiredFields - Array of field names to check (e.g. ['name', 'mail', 'message', 'checkbox'])
- * @returns {boolean} true if all required fields are filled, false otherwise
-*/
+/** Checks if all required fields are filled. 
+ * @param {Array<string>} requiredFields @returns {boolean} true if all fields are filled */
 function checkForRequired(requiredFields) {
     let isValid = true;
     for (const field of requiredFields) {
@@ -81,9 +76,7 @@ function checkForRequired(requiredFields) {
 }
 
     
-/**
- * This function sets the required value flags based on current input values to be used in validation
- */
+/** Updates req_* flags based on current input values. */
 function setRequiredValues(element) {
     switch (element) {
         case "name":
@@ -120,9 +113,7 @@ function clearAllInputs() {
 }
 
 
-/**
- * Shows UI indicators for any required fields that are missing.
- */
+/** Shows error indicators for missing required fields. */
 function missingInputs(element) {
     switch (element) {
         case "name":
@@ -144,14 +135,8 @@ function missingInputs(element) {
 }
 
 
-/**
- * This function updates the label and input element to indicate a missing required field by adding specific classes and 
- * showing error indicators.
- * @param {*} labelElement - The label element associated with the input field. 
- * @param {*} inputElement - The input element that is missing required input. The function adds a class to this element 
- * to visually indicate the error state.
- */
-
+/** Adds error classes to label and input. 
+ * @param {HTMLElement} labelElement @param {HTMLElement} inputElement */
 function handleMissingInput(labelElement, inputElement) {
     labelElement.classList.add("missing_input_title");
     labelElement.children[0].classList.remove("d-none");
@@ -159,9 +144,7 @@ function handleMissingInput(labelElement, inputElement) {
 }
 
 
-/**
- * This function enables the error state for the checkbox by showing the error icon and hiding the default and checked icons.
- */
+/** Shows checkbox error icon, hides default/checked/hover icons. */
 function enableCheckboxError() {
     for (const child of contact_checkbox.children) {
         if (child.classList.contains("checkbox_error")) {
@@ -180,10 +163,8 @@ function enableCheckboxError() {
 }
 
 
-/**
- * Removes the missing-input indicator for a specific field.
- * @param {string} field - One of "name", "mail", "message", "checkbox".
- */
+/** Removes error indicator for the given field. 
+ * @param {string} field */
 function removeIndicatorOnInput(field) {
     switch (field) {
         case "name":
@@ -202,33 +183,21 @@ function removeIndicatorOnInput(field) {
 }
 
 
-/**
- * This function updates the current text and span text based on whether the text is being typed or deleted,
- * and how it compares to the full text. It handles the logic for both typing and deleting characters, ensuring
- * that the correct portion of the text is displayed at each step.
- */
+/** Clears error state from the name field. */
 function removeNameError() {
     contact_name_label.classList.remove("missing_input_title");
     contact_name_label.children[0].classList.add("d-none");
     input_name.classList.remove("missing_inputs");
 }
 
-/**
- * This function updates the current text and span text based on whether the text is being typed or deleted,
- * and how it compares to the full text. It handles the logic for both typing and deleting characters, ensuring
- * that the correct portion of the text is displayed at each step.
- */
+/** Clears error state from the mail field. */
 function removeMailError() {
     contact_mail_label.classList.remove("missing_input_title");
     contact_mail_label.children[0].classList.add("d-none");
     input_mail.classList.remove("missing_inputs");
 }
 
-/**
- * This function updates the current text and span text based on whether the text is being typed or deleted,
- * and how it compares to the full text. It handles the logic for both typing and deleting characters, ensuring
- * that the correct portion of the text is displayed at each step.
- */
+/** Clears error state from the message field. */
 function removeMessageError() {
     contact_message_label.classList.remove("missing_input_title");
     contact_message_label.children[0].classList.add("d-none");
@@ -236,12 +205,7 @@ function removeMessageError() {
 }
 
 
-/**
- * This function updates the current text and span text based on whether the text is being typed or deleted,
- * and how it compares to the full text. It handles the logic for both typing and deleting characters, ensuring
- * that the correct portion of the text is displayed at each step.
- * @param {string} currentText - The current text being displayed that is being typed or deleted.
- */
+/** Clears error state from the checkbox field. */
 function removeCheckboxError() {
     contact_checkbox.classList.remove("missing_input_title");
         for (const child of contact_checkbox.children) {
@@ -260,11 +224,7 @@ function removeCheckboxError() {
 }
 
 
-/**
- * This function updates the current text and span text based on whether the text is being typed or deleted, 
- * and how it compares to the full text. It handles the logic for both typing and deleting characters, ensuring 
- * that the correct portion of the text is displayed at each step.
- */
+/** Registers all contact form event listeners. */
 function inputEventListener() {
     inputNameEventListener();
     inputMailEventListener();
@@ -276,11 +236,7 @@ function inputEventListener() {
 }
 
 
-/**
- * This function adds an event listener to the name input field that checks for input changes. 
- * It updates the required name flag, removes any missing input indicators, and validates the input 
- * whenever the user types in the name field.
- */
+/** Adds focus/blur listeners to the name input. */
 function inputNameEventListener() {
     input_name.addEventListener("focus", () => removeIndicatorOnInput("name"));
     input_name.addEventListener("blur", () => {
@@ -292,11 +248,7 @@ function inputNameEventListener() {
 }
 
 
-/**
- * This function adds an event listener to the email input field that checks for input changes. 
- * It updates the required email flag, removes any missing input indicators, and validates the email 
- * input whenever the user types in the email field.
- */
+/** Adds focus/blur listeners to the mail input. */
 function inputMailEventListener() {
     input_mail.addEventListener("focus", () => removeIndicatorOnInput("mail"));
     input_mail.addEventListener("blur", () => {
@@ -308,11 +260,7 @@ function inputMailEventListener() {
 }
 
 
-/**
- * This function adds an event listener to the message input field that checks for input changes. 
- * It updates the required message flag, removes any missing input indicators, and validates the input 
- * whenever the user types in the message field.
- */
+/** Adds focus/blur listeners to the message input. */
 function inputMessageEventListener() {
     input_message.addEventListener("focus", () => removeIndicatorOnInput("message"));
     input_message.addEventListener("blur", () => {
@@ -324,15 +272,8 @@ function inputMessageEventListener() {
 }
 
 
-/**
- * This function adds an event listener to the specified input element that listens for input events. When the user types into 
- * the input field, it checks if the value is not empty and, if so, it updates the corresponding required field flag and 
- * removes any missing input indicators from the label and input element.
- * @param {HTMLInputElement | HTMLTextAreaElement} inputElement - The input element to which the event listener will be added. 
- * This can be either a text input or a textarea element.
- * @param {HTMLElement} labelElement - The label element associated with the input element.
- * @param {boolean} field - The flag indicating whether the input field is required.
- */
+/** Removes error CSS on input event when value is non-empty.
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputElement @param {HTMLElement} labelElement @param {boolean} field */
 function removeInputValidationListener(inputElement, labelElement, field) {
     inputElement.addEventListener("input", () => {
         if (inputElement.value.trim() !== "") {
@@ -344,11 +285,7 @@ function removeInputValidationListener(inputElement, labelElement, field) {
 }
 
 
-/**
- * This function adds an event listener to the accept policy checkbox that checks for changes in its state.
- * It updates the required checkbox flag, removes any missing input indicators, and toggles the visibility of the 
- * checked state accordingly whenever the user interacts with the checkbox.
- */
+/** Adds focus/blur listeners to the policy checkbox. */
 function inputCheckboxEventListener() {
     input_checkbox.addEventListener("focus", () => removeIndicatorOnInput("checkbox"));
     input_checkbox.addEventListener("blur", () => {
@@ -361,11 +298,8 @@ function inputCheckboxEventListener() {
 }
 
 
-/**
- * This function validates the input of a given input element and adds or removes the "is_valid" class based 
- * on whether the input is empty or not.
- * @param {HTMLInputElement | HTMLTextAreaElement} inputElement - The input element to validate.
- */
+/** Toggles "is_valid" class based on whether value length > 3. 
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputElement */
 function validateInput(inputElement) {
     const value = inputElement.value.trim();
     if (value === "") {
@@ -377,11 +311,8 @@ function validateInput(inputElement) {
 }
 
 
-/**
- * This function validates the email input of a given input element and adds or removes the "is_valid" class based 
- * on whether the email is valid or not.
- * @param {HTMLInputElement} emailInput - The email input element to validate.
- */
+/** Toggles "is_valid" class based on email regex test. 
+ * @param {HTMLInputElement} emailInput */
 function validateEmail(emailInput) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (re.test(String(emailInput.value).toLowerCase())) {
@@ -392,10 +323,7 @@ function validateEmail(emailInput) {
 }
 
 
-/**
- * This function toggles the visibility of the checked state of the accept policy checkbox based on whether the checkbox is checked or not.
- * It changes the opacity of the checked state image to show or hide it accordingly.
- */
+/** Toggles active/inactive on the checkbox_checked icon. */
 function toggleAcceptPolicy() {
     const checkboxChecked = document.querySelector(".checkbox_checked");
         if (input_checkbox.checked) {
@@ -408,10 +336,7 @@ function toggleAcceptPolicy() {
 }
 
 
-/**
- * This function clears the checkbox state and any associated validation indicators, resetting the checkbox to its 
- * default state and removing any error indicators.
- */
+/** Resets checkbox state and removes all is_valid classes. */
 function clearCheckboxAndValidation(){
     input_checkbox.checked = false;
     send_button.disabled = true;
