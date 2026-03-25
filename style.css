@@ -911,6 +911,10 @@ nav{
     width: 100%;
 }
 
+.form_container .input_container textarea{
+    resize: vertical;
+}
+
 .form_container .input_container input:focus-visible,
 .form_container .input_container textarea:focus-visible {
     background-color: rgb(255 255 255 / 12%);
