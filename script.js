@@ -1,7 +1,20 @@
-const data = [
-    {icon: './assets/icons/location_icon.png', text_1: 'I am', text_2: 'located in Brunswick...'},
-    {icon: './assets/icons/remote_icon.svg', text_1: 'I am', text_2: 'open to work remotely or on-site...'},
-    {icon: './assets/icons/relocate_icon.svg', text_1: 'I am', text_2: 'open to relocate...'}
+const assetsBaseUrl = new URL('./assets/', document.currentScript?.src || window.location.href).href;
+const browserLanguageSetting = navigator.language || navigator.userLanguage;
+const supportedLanguages = ['en', 'de'];
+const defaultLanguage = 'en';
+const currentLanguage = supportedLanguages.includes(browserLanguageSetting) ? browserLanguageSetting : defaultLanguage;
+let selectedLanguage = supportedLanguages[0];
+
+const data_en = [
+    {icon: `${assetsBaseUrl}icons/location_icon.png`, text_1: 'I am', text_2: 'located in Brunswick...'},
+    {icon: `${assetsBaseUrl}icons/remote_icon.svg`, text_1: 'I am', text_2: 'open to work remotely or on-site...'},
+    {icon: `${assetsBaseUrl}icons/relocate_icon.svg`, text_1: 'I am', text_2: 'open to relocate...'}
+]
+
+const data_de = [
+    {icon: `${assetsBaseUrl}icons/location_icon.png`, text_1: 'Ich bin', text_2: 'in Braunschweig...'},
+    {icon: `${assetsBaseUrl}icons/remote_icon.svg`, text_1: 'Ich bin', text_2: 'offen für Remote- oder Vor-Ort-Arbeit...'},
+    {icon: `${assetsBaseUrl}icons/relocate_icon.svg`, text_1: 'Ich bin', text_2: 'offen für einen Umzug...'}
 ]
 
 const textElement = document.getElementById('typing_text');
@@ -14,12 +27,51 @@ let currentSpanText = '';
 
 
 /**
+ * This function stores the user's preferred language in local storage and reloads the page to apply the language change.
+ * @param {string} lang - The language code.
+ */
+function storePreferredLanguage(lang) {
+    if (supportedLanguages.includes(lang)) {
+        localStorage.setItem('preferredLanguage', lang);
+        selectedLanguage = lang;
+        location.reload();
+    }
+}
+
+
+function loadPreferredLanguage() {
+    const storedLanguage = localStorage.getItem('preferredLanguage');
+    if (supportedLanguages.includes(storedLanguage)) {
+        return storedLanguage;
+    }
+    return defaultLanguage;
+}
+
+
+/**
+ * This function highlights the selected language in the navigation menu.
+ * @param {string} lang - The language code.
+ */
+function highlightSelectedLanguage(lang) {
+    const languageLinks = document.querySelectorAll('.nav_language a');
+    languageLinks.forEach(link => {
+        if (link.textContent.toLowerCase() === lang) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+
+/**
  * This function creates a typing effect for the location information. 
  * It types out the text character by character, and then deletes it before moving 
  * on to the next piece of information. The location icon is also updated based on 
  * the current information being displayed.
 */
 function typeEffect() {
+    const data = selectedLanguage.startsWith('de') ? data_de : data_en;
     const fullText = ' ' + data[index].text_2;
     const fullSpanText = data[index].text_1;
     const iconSrc = data[index].icon;
@@ -103,7 +155,7 @@ function setTiming(currentText, fullText, currentSpanText) {
     } else if (isDeleting && currentText === '' && currentSpanText === '') {
         isDeleting = false;
         locationIcon.style.opacity = 0;
-        index = (index + 1) % data.length;
+        index = (index + 1) % data_en.length;
         speed = 500;
     }
     return speed;
@@ -116,14 +168,14 @@ function setTiming(currentText, fullText, currentSpanText) {
  */
 function intersectionObserver() {
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('.nav_menu a');
 
     const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             navLinks.forEach(link => link.classList.remove('active'));
             const id = entry.target.getAttribute('id');
-            const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+            const activeLink = document.querySelector(`.nav_menu a[href="#${id}"]`);
             if (activeLink) activeLink.classList.add('active');
         }
     });
@@ -144,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectMenu();
     initProjectOverviews();
     toggleProject();
+    selectedLanguage = loadPreferredLanguage();
+    highlightSelectedLanguage(selectedLanguage);
 });
 
 
