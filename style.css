@@ -848,7 +848,8 @@ nav{
 
 .contact_info a:hover .email_img_hover,
 .contact_info a:hover .phone_img_hover,
-.checkbox_container:hover .checkbox_hover{
+.checkbox_container:hover .checkbox_hover,
+.checkbox_container:focus-within .checkbox_hover{
     opacity: 1;
 }
 

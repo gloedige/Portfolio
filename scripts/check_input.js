@@ -56,7 +56,7 @@ function loadContactSection() {
 
 /**
  * Checks if the required fields are filled.
- * @param {Array<string>} requiredFields - Array of field names to check (e.g. ['name', 'mail', 'message'])
+ * @param {Array<string>} requiredFields - Array of field names to check (e.g. ['name', 'mail', 'message', 'checkbox'])
  * @returns {boolean} true if all required fields are filled, false otherwise
 */
 function checkForRequired(requiredFields) {
@@ -87,24 +87,20 @@ function checkForRequired(requiredFields) {
 function setRequiredValues(element) {
     switch (element) {
         case "name":
-            if (input_name.value.trim() !== "") {
-                req_name = true;
-            }
+            if (input_name.value.trim() !== "") req_name = true 
+            else req_name = false;
             break;
         case "mail":
-            if (input_mail.value.trim() !== "") {
-                req_mail = true;
-            }
+            if (input_mail.value.trim() !== "") req_mail = true
+            else req_mail = false;
             break;
         case "message":
-            if (input_message.value.trim() !== "") {
-                req_message = true;
-            }
+            if (input_message.value.trim() !== "") req_message = true;
+            else req_message = false;
             break;
         case "checkbox":
-            if (policy_checkbox_checked) {
-                req_checkbox = true;
-            }
+            if (policy_checkbox_checked) req_checkbox = true;
+            else req_checkbox = false;
             break;
     }
 }
@@ -130,19 +126,13 @@ function clearAllInputs() {
 function missingInputs(element) {
     switch (element) {
         case "name":
-            if (req_name == false) {
-                handleMissingInput(contact_name_label, input_name);
-            }
+            if (req_name == false) handleMissingInput(contact_name_label, input_name);
             break;
         case "mail":
-            if (req_mail == false) {
-                handleMissingInput(contact_mail_label, input_mail);
-            }
+            if (req_mail == false) handleMissingInput(contact_mail_label, input_mail);
             break;
         case "message":
-            if (req_message == false) {
-                handleMissingInput(contact_message_label, input_message);
-            }
+            if (req_message == false) handleMissingInput(contact_message_label, input_message);
             break;
         case "checkbox":
             if (req_checkbox == false) {
@@ -361,17 +351,13 @@ function removeInputValidationListener(inputElement, labelElement, field) {
  */
 function inputCheckboxEventListener() {
     input_checkbox.addEventListener("focus", () => removeIndicatorOnInput("checkbox"));
-    input_checkbox.addEventListener("change", () => {
+    input_checkbox.addEventListener("blur", () => {
         policy_checkbox_checked = input_checkbox.checked;
-        if (input_checkbox.checked) {
-            removeIndicatorOnInput("checkbox");
-            manageSendButtonStatus();
             setRequiredValues("checkbox");
-        } else {
             missingInputs("checkbox");
-        }
+            manageSendButtonStatus();
+            toggleAcceptPolicy();
     });
-    toggleAcceptPolicy();
 }
 
 
