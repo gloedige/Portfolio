@@ -1090,6 +1090,10 @@ footer{
     margin: 0;
 }
 
+.logo_hero.footer p{
+    font-size: 14px;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
