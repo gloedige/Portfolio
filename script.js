@@ -78,8 +78,10 @@ function typeEffect() {
     if (isDeleting) {
         [currentText, currentSpanText] = deleteCharacters(currentText, fullText, currentSpanText, fullSpanText);
     } else {
-        locationIcon.innerHTML = `<img src="${iconSrc}" alt="Location Icon">`;
-        locationIcon.style.opacity = 1;
+        if (locationIcon) {
+            locationIcon.innerHTML = `<img src="${iconSrc}" alt="Location Icon">`;
+            locationIcon.style.opacity = 1;
+        }
         [currentText, currentSpanText] = writeCharacters(currentText, fullText, currentSpanText, fullSpanText);
     }    
     setTextToHTML(currentText, currentSpanText);
@@ -133,7 +135,9 @@ function writeCharacters(currentText, fullText, currentSpanText, fullSpanText) {
 function setTextToHTML(currentText, currentSpanText) {
     let spanElement = `<span class="text_blue">${currentSpanText}</span>`;
     let cursorElement = `<span class="cursor">|</span>`;
-    textElement.innerHTML = spanElement + currentText + cursorElement;
+    if (textElement) {
+        textElement.innerHTML = spanElement + currentText + cursorElement;
+    }
 }
 
 
@@ -154,7 +158,7 @@ function setTiming(currentText, fullText, currentSpanText) {
         isDeleting = true;
     } else if (isDeleting && currentText === '' && currentSpanText === '') {
         isDeleting = false;
-        locationIcon.style.opacity = 0;
+        if (locationIcon) locationIcon.style.opacity = 0;
         index = (index + 1) % data_en.length;
         speed = 500;
     }
@@ -192,10 +196,15 @@ const navLinks = document.querySelectorAll('.nav_menu a');
  */
 document.addEventListener('DOMContentLoaded', () => {
     intersectionObserver();
-    typeEffect();
-    initProjectMenu();
-    initProjectOverviews();
-    toggleProject();
+    if (textElement) typeEffect();
+    const hasProjectSection = document.querySelector('.project_overview, #pokemon, #project_pokedex');
+    if (hasProjectSection) {
+        initProjectMenu();
+        initProjectOverviews();
+        if (typeof toggleProject === 'function') {
+            toggleProject();
+        }
+    }
     selectedLanguage = loadPreferredLanguage();
     highlightSelectedLanguage(selectedLanguage);
 });
@@ -206,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initProjectMenu() {
     const projectButton = document.getElementById('pokemon');
-    projectButton.classList.add('active');
+    if (projectButton) projectButton.classList.add('active');
 }
 
 

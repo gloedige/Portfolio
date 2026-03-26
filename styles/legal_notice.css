@@ -1,0 +1,63 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 65px 208px 100px 200px;
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 54px;
+    font-weight: 400;
+    color: #89BCD9;
+    margin: 0 0 40px 0;
+}
+
+.first_column_impressum{
+    width: 100px;
+}
+
+.section_container .imprint_head{
+    font-size: 24px;
+    font-weight: 700;
+    color: #89BCD9;
+    margin: 0 0 16px 0;
+    line-height: 120%;
+}
+
+
+.section_container p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #F8F5EC;
+    line-height: 120%;
+    margin: 0;
+}
+
+.section_container .section_head{
+    font-size: 19px;
+    font-weight: 700;
+    color: #89BCD9;
+    line-height: 120%;
+    margin: 0;
+}
+
+.section_container span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #89BCD9;
+    line-height: 120%;
+}
+
+.section_container a{
+    font-size: 16px;
+    font-weight: 400;
+    color: #F8F5EC;
+    line-height: 120%;
+    text-decoration: none;
+    cursor: pointer;
+}
