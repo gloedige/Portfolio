@@ -173,7 +173,7 @@ h2{
 }
 
 .title{
-    width: 500px;
+    width: 100%;
 }
 
 .title p{
@@ -220,14 +220,15 @@ h2{
 }
 
 .portfolio_img{
-    width: 535px;
+    width: 100%;
+    max-width: 535px;
     position: relative;
-    margin: 22px 0px 0 25px;
+    margin: 22px 25px 0 25px;
 } 
 
 .user_img{
-    position: relative;
-    top: -24px;
+    position: absolute;
+    bottom: 0;
     left: 0;
     width: 100%;
     object-fit: cover;
@@ -242,9 +243,9 @@ h2{
     transition: opacity 0.5s;
     transform: rotate(-45deg);
     position: absolute;
-    top: 30px;
+    bottom: 20px;
     left: -40px;
-    width: 594px;
+    width: 110%;
 }
 
 .image_background_hover{
