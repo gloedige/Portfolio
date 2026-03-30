@@ -61,7 +61,7 @@ h2{
 
 .hero_text_area{
     margin: 68px 0 0 auto;
-    padding-left: 16px;
+    padding-left: 24px;
 }
 
 .hero_text_area p{
@@ -232,23 +232,23 @@ h2{
 
 .portfolio_img_container img{
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .user_img{
     height: 100%;
     object-fit: cover;
+    transform: translate(-50%, 0);
 }
 
 
 .image_background_default,
 .image_background_hover{
     transition: opacity 0.5s;
-    transform: rotate(-45deg);
-    width: 110%;
-    height: 100%;
+    transform: translate(-50%, -15%) rotate(-45deg);
+    /* width: 110%; */
+    height: 80%;
 }
 
 .image_background_hover{
