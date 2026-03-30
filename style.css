@@ -129,7 +129,6 @@ h2{
     justify-content: end;
     align-items: center;
     gap: 1px;
-    margin-left: 30px;
 }
 
 .logo_hero_icon{
@@ -287,6 +286,7 @@ nav{
     flex-direction: row;
     justify-content: space-evenly;
     flex: 1;
+    gap: 16px;
 }
 
 .nav_logo a,
@@ -302,6 +302,7 @@ nav{
     display: flex;
     justify-content: center;
     width: 100%;
+    white-space: nowrap;
 }
 
 .nav_menu a.active{
