@@ -1,9 +1,48 @@
 @media ( max-width: 1330px) {
     h1{
-        font-size: clamp(2.5rem, 1.21rem + 5.16vw, 5.5rem);
+        font-size: clamp(3rem, -2.23rem + 9.3vw, 5.5rem);
+    }
+
+    h2{
+        font-size: clamp(2rem, 0.86rem + 3.01vw, 3.75rem);
     }
 
     .title p{
-        font-size: clamp(1.25rem, 0.86rem + 1.72vw, 2.5rem);
+        font-size: clamp(1.5rem, 0.86rem + 1.72vw, 2.5rem);
+    }
+
+    .hero{
+        height: auto;
+        padding: 16px clamp(39px, -223.8px + 29.2vw, 112px) 0 clamp(39px, -223.8px + 29.2vw, 112px);
+    }
+
+    .image_background_default,
+    .image_background_hover{
+        width: 100%;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1150px){
+    .reference_headline{
+        font-family: 'Anta', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reference_headline span{
+        font-size: 18px;
+        margin-top: 8px;
+        color: #F8F5EC;
+        font-family: 'Josefin', Arial, sans-serif;
+    }
+
+    .hero_arrow_down{
+        margin-top: clamp(24px, -393.6px + 46.4vw, 140px);
+        margin-bottom: 24px;
+    }
+
+    .hero_text_area{
+        margin-top: clamp(16px, -171.2px + 20.8vw, 68px);
     }
 }

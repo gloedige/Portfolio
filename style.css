@@ -5,7 +5,7 @@ html {
 body{
     background-color: #262E34;
     font-family: 'Josefin', Arial, sans-serif;
-    color: white;
+    color: #F8F5EC;
     margin: 0;
 }
 
@@ -33,6 +33,7 @@ h1{
     font-family: 'Anta', Arial, sans-serif;
     font-weight: 400;
     margin: 36px 0 10px 0;
+    text-wrap-mode: nowrap;
 }
 
 h2{
@@ -41,6 +42,7 @@ h2{
     font-weight: 400;
     margin: 0 0 80px 0;
     color: #89BCD9;
+    text-wrap-mode: nowrap;
 }
 
 .hero{
@@ -59,6 +61,7 @@ h2{
 
 .hero_text_area{
     margin: 68px 0 0 auto;
+    padding-left: 16px;
 }
 
 .hero_text_area p{
@@ -178,6 +181,7 @@ h2{
 
 .title p{
     letter-spacing: 2px;
+    text-wrap-mode: nowrap;
 }
 
 .hero_arrow_down{
@@ -219,43 +223,42 @@ h2{
     opacity: 1;
 }
 
-.portfolio_img{
+.portfolio_img_container{
     width: 100%;
     max-width: 535px;
     position: relative;
     margin: 22px 25px 0 25px;
-} 
+}
+
+.portfolio_img_container img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .user_img{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.user_img img{
-    width: 90%;
-}
 
 .image_background_default,
 .image_background_hover{
     transition: opacity 0.5s;
     transform: rotate(-45deg);
-    position: absolute;
-    bottom: 20px;
-    left: -40px;
     width: 110%;
+    height: 100%;
 }
 
 .image_background_hover{
     opacity: 0;
 }
 
-.portfolio_img:hover .image_background_default{
+.portfolio_img_container:hover .image_background_default{
     opacity: 0;
 }
-.portfolio_img:hover .image_background_hover{
+.portfolio_img_container:hover .image_background_hover{
     opacity: 1;
 }
 
