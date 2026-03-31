@@ -74,6 +74,10 @@
 }
 
 @media (max-width: 700px){
+    h1 {
+        margin: 0 auto 16px auto;
+    }
+
     .nav_wrapper nav{
         display: none;
     }
@@ -88,18 +92,26 @@
     }
 
     .portfolio_img_container{
-        aspect-ratio: 3/4;
+        aspect-ratio: 1/1;
     }
 
     .social_media_container{
         display: none;
     }
 
-    .image_background_default, 
-    .image_background_hover,
     .user_img{
-        height: 80%;
-        transform: translate(-50%, 0%)
+        height: 100%;
+        transform: translate(-50%, 0%);
+    }
+
+    .image_background_default, 
+    .image_background_hover{
+        height: 95%;
+        transform: translate(-50%, 0%);
+    }
+
+    .header_mobile.d-none{
+        display: flex;
     }
     
 }
