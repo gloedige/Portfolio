@@ -134,9 +134,9 @@ function writeCharacters(currentText, fullText, currentSpanText, fullSpanText) {
 */
 function setTextToHTML(currentText, currentSpanText) {
     let spanElement = `<span class="text_blue">${currentSpanText}</span>`;
-    let cursorElement = `<span class="cursor">|</span>`;
     if (textElement) {
-        textElement.innerHTML = spanElement + currentText + cursorElement;
+        textElement.innerHTML = spanElement + currentText;
+        textElement.classList.add('typing-active');
     }
 }
 

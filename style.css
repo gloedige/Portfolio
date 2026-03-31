@@ -415,6 +415,15 @@ nav{
     align-items: flex-start;
 }
 
+#typing_text.typing-active::after {
+    content: '|';
+    color: #F8F5EC;
+    animation: blink 0.8s step-end infinite;
+    font-weight: 400;
+    display: inline-block;
+    vertical-align: bottom; 
+}
+
 .location_info p,
 .location_info .cursor{
     font-size: 30px;
