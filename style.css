@@ -412,18 +412,21 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 8px;
+    align-items: flex-start;
 }
 
 .location_info p,
 .location_info .cursor{
     font-size: 30px;
     margin: 20px 0 0 0;
+    line-height: 1.2;
 }
 
 .location_info .text_blue{
     font-weight: 700;
     font-size: 30px;
     color: #89BCD9;
+    line-height: 1.2;
 }
 
 .cursor{

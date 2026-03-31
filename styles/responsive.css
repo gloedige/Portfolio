@@ -152,4 +152,88 @@
         gap: 0px;
         padding: 0;
     }
+
+    .hero_arrow_down{
+        margin-bottom: 0;
+    }
+
+    .why_me{
+        padding: 0 22px 0 24px;
+    }
+
+    .why_me h2{
+        margin: 80px auto 32px auto;
+    }
+
+    .why_me_container{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 24px;
+        min-width: unset;
+    }
+
+    .why_me_container .about_me_text{
+        width: 100%;
+        font-size: 16px;
+        min-width: unset;
+        line-height: 1.2;
+    }
+
+    .button_left{
+        display: none;
+    }
+
+    .location_info{
+        align-items: flex-start;
+    }
+
+    #typing_text{
+        display: block;
+        line-height: 1.2;
+        /* min-height: calc(2 * 1.2em); */
+        height: 2.4em; 
+        overflow: hidden;
+    }
+
+    .location_info p{
+        font-size: 18px;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .location_info .text_blue{
+        /* font-weight: 700; */
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+     .skills_container{
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+    }
+
+     .skill{
+        width: 100%;
+    }
+
+     .projects_container{
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+    }
+
+     .project{
+        width: 100%;
+    }
+
+    .location_icon{
+        height: 40px;
+    }
+
+    .location_icon img{
+        height: 100%;
+        object-fit: contain;
+    }
+
 }
