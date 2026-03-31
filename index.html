@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerd Lödige</title>
     <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/burger.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/responsive.css">
     <script src="./script.js" defer></script>
@@ -23,9 +24,28 @@
                     <p class="name">G. Lödige</p>
                     <p>developer</p>
                 </div>
-                <div class="burger_menu"></div>
+                <button onclick="toggleBurgerMenu(this)" class="button">
+                    <span class="burger-2">
+                    <span class="bar bar--1"></span>
+                    <span class="bar bar--2"></span>
+                    <span class="bar bar--3"></span>
+                    </span>
+                </button>
             </div>
             <div class="portfolio_img_container">
+                <div class="burger_menu" id="burger_menu">
+                    <img src="./assets/img/burger_menu_bubble.svg" alt="Burger Menu Background Image">
+                    <div class="burger_menu_container">
+                        <a href="#why_me_section">Why Me</a>
+                        <a href="#skills_section">Skills</a>
+                        <a href="#projects_section">Projects</a>
+                        <a href="#contact_section">Contact</a>
+                        <div class="nav_language">
+                            <a href="./html/de/index.html" onclick="storePreferredLanguage('de')">DE</a>
+                            <a href="index.html" onclick="storePreferredLanguage('en')">EN</a>
+                        </div>
+                    </div>
+                </div>
                 <img src="./assets/img/bubble_blue.png" class="image_background_hover" alt="Background Image">
                 <img src="./assets/img/bubble_light_blue.png" class="image_background_default" alt="Background Image">
                 <img src="./assets/img/Portfolio-Gerd-010-cut-v4.png" class="user_img" alt="Portrait of Gerd Lödige">

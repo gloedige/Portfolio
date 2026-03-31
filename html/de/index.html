@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerd Lödige</title>
     <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/burger.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../styles/responsive.css">
     <script src="../../script.js" defer></script>
@@ -14,7 +15,37 @@
 <body>
     <div class="hero_wrapper">
         <section id="hero_section" class="hero">
+            <div class="header_mobile d-none">
+                <div class="logo_hero">
+                    <div class="logo_hero_icon">
+                        <img src="../../assets/icons/logo_icon.svg" class="logo_hover" alt="Logo Icon">
+                        <img src="../../assets/icons/logo_icon_small.svg" class="logo_default" alt="Logo Icon">
+                    </div>
+                    <p class="name">G. Lödige</p>
+                    <p>developer</p>
+                </div>
+                <button onclick="toggleBurgerMenu(this)" class="button">
+                    <span class="burger-2">
+                    <span class="bar bar--1"></span>
+                    <span class="bar bar--2"></span>
+                    <span class="bar bar--3"></span>
+                    </span>
+                </button>
+            </div>
             <div class="portfolio_img_container">
+                <div class="burger_menu" id="burger_menu">
+                    <img src="../../assets/img/burger_menu_bubble.svg" alt="Burger Menu Background Image">
+                    <div class="burger_menu_container">
+                        <a href="#why_me_section">Warum ich</a>
+                        <a href="#skills_section">Fähigkeiten</a>
+                        <a href="#projects_section">Projekte</a>
+                        <a href="#contact_section">Kontakt</a>
+                        <div class="nav_language">
+                            <a href="./index.html" onclick="storePreferredLanguage('de')">DE</a>
+                            <a href="../../index.html" onclick="storePreferredLanguage('en')">EN</a>
+                        </div>
+                    </div>
+                </div>
                 <img src="../../assets/img/bubble_blue.png" class="image_background_hover" alt="Background Image">
                 <img src="../../assets/img/bubble_light_blue.png" class="image_background_default" alt="Background Image">
                 <img src="../../assets/img/Portfolio-Gerd-010-cut-v4.png" class="user_img" alt="Portrait of Gerd Lödige">

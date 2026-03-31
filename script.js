@@ -234,3 +234,15 @@ function initProjectOverviews() {
         currentProjectOverview = firstProjectOverview;
     }
 }
+
+
+/**
+ * This function toggles the visibility of the burger menu when the burger button is clicked.
+ */
+function toggleBurgerMenu(buttonElement) {
+    buttonElement.querySelector('span').classList.toggle('is-closed');
+    const burgerMenu = document.querySelector('.burger_menu');
+    if (burgerMenu) {
+        burgerMenu.classList.toggle('is-active');
+    }
+}

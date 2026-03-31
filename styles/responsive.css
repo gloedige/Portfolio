@@ -84,6 +84,7 @@
 
     .hero {
         flex-direction: column;
+        padding: 27px 42px 0 27px;
     }
 
     .hero_text_area{
@@ -112,6 +113,43 @@
 
     .header_mobile.d-none{
         display: flex;
+        justify-content: space-between;
     }
     
+    .logo_hero{
+        flex: unset;
+    }
+
+    .burger_menu.is-active{
+        opacity: 1;
+    }
+    
+    .burger_menu img{
+        transform: translate(-50%, 0%);
+        height: 100%;
+    }
+
+    .burger_menu_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 36px;
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .burger_menu_container a{
+        font-size: 22px;
+        color: #262E34;
+        font-family: 'Josefin', Arial, sans-serif;
+        text-decoration: none;
+    }
+
+    .nav_language{
+        justify-content: center;
+        gap: 0px;
+        padding: 0;
+    }
 }
