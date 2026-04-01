@@ -465,14 +465,42 @@ nav{
 }
 
 .skills_item_container{
-    gap: 40px;
     display: grid;
+    gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     flex: 1;
     flex-wrap: wrap;
 }
 
-.text_bubble_container{
+.skills_info_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.skills_text_and_bubble_container{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.skills_text_and_bubble_container 
+.new_skill_text_mobile{
+    font-size: 16px;
+    text-align: left;
+    margin: 8px 0 0 0;
+    line-height: 1.2;
+    display: none;
+}
+
+.skills_info_headline_mobile{
+    font-size: 16px;
+    color: #89BCD9;
+    display: none;
+}
+
+.bubble_container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -480,17 +508,23 @@ nav{
     width: 380px;
     gap: 19px;
 }
-.text_bubble_container{
+.bubble_container{
     position: relative;
 }
 
-.text_bubble_container p{
+.bubble_container p{
     margin: 81px 0 0 0;
     font-size: 18px;
 }
 
+.skills_background_mobile{
+    display: none;
+    transform: rotate(-50deg);
+}
+
 .skills_background_hover,
-.skills_background_default{
+.skills_background_default, 
+.skills_background_mobile{
     position: absolute;
     transition: opacity 1s;
     pointer-events: none;
@@ -500,15 +534,20 @@ nav{
     opacity: 0;
 }
 
-.text_bubble_container:hover .skills_background_default{
+.bubble_container:hover .skills_background_default{
     opacity: 0;
 }
-.text_bubble_container:hover .skills_background_hover{
+.bubble_container:hover .skills_background_hover{
     opacity: 1;
 }
 
 .skill_item{
     height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.skills_item_mobile_container{
+    display: none;
 }
 
 .skills_learning_items{
@@ -517,6 +556,8 @@ nav{
     gap: 28px;
     width: 100%;
     justify-content: center;
+    position: absolute;
+    top: 30px;
 }
 
 .new_skill_item{
@@ -792,14 +833,14 @@ nav{
     color: #89BCD9;
 }
 
-.text_bubble_container a{
+.bubble_container a{
     color: #89BCD9;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
 }
 
-.text_bubble_container .reference_contact_details{
+.bubble_container .reference_contact_details{
     display: flex;
     flex-direction: column;
     align-items: center;

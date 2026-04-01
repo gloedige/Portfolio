@@ -19,6 +19,56 @@
     .hero_arrow_down{
         margin-bottom: 24px;
     }
+
+    .skills_item_mobile_container{
+    --skill-size: 45px;
+    --skill-gap: 40px;
+    display: none;
+    gap: var(--skill-gap);
+    grid-template-columns: repeat(auto-fit, var(--skill-size));
+    justify-content: center;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 480px;
+    width: 100%;
+
+    container-type:  inline-size;
+
+    @container (width <= calc(4 * 45px + 3 * 40px)) {
+        .skill_item:last-child {
+            grid-column-start: 2;
+        }
+    }
+    
+    @container (width > calc(4 * 45px + 3 * 40px)) and (width <= calc(5 * 45px + 4 * 40px)) {
+        .skill_item:last-child {
+            grid-column-start: 3;
+        }
+        .skill_item:nth-last-child(2) {
+            grid-column-start: 2;
+        }
+    }
+
+    @container (width >= calc(6 * 45px + 5 * 40px)) {
+        .skill_item:last-child {
+            grid-column-start: 5;
+        }
+        .skill_item:nth-last-child(4) {
+            grid-column-start: 2;
+        }
+        .skill_item:nth-last-child(3) {
+            grid-column-start: 3;
+        }
+        .skill_item:nth-last-child(2) {
+            grid-column-start: 4;
+        }
+    }
+    }
+
+    .learning_skills_container{
+        display: none;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 1150px){
@@ -157,7 +207,7 @@
         margin-bottom: 0;
     }
 
-    .why_me{
+    .why_me, .skills{
         padding: 0 22px 0 24px;
     }
 
@@ -202,7 +252,6 @@
     }
 
     .location_info .text_blue{
-        /* font-weight: 700; */
         font-size: 18px;
         line-height: 1.2;
     }
@@ -210,7 +259,8 @@
      .skills_container{
         flex-direction: column;
         justify-content: center;
-        gap: 24px;
+        align-items: center;
+        gap: 40px;
     }
 
      .skill{
@@ -235,6 +285,55 @@
     .location_icon img{
         height: 100%;
         object-fit: contain;
+    }
+
+    .skills h2{
+        margin: 80px auto 40px auto;
+    }
+
+    .skills_item_container{
+        display: none;
+    }
+
+    .skills_item_mobile_container{
+        display: grid;
+        padding: 0 22px;
+    }
+
+    .skill_item{
+        height: 45px;
+    }
+
+    .new_skill_text{
+        display: none;
+    }
+
+    .skills_background_mobile{
+        display: block;
+    }
+
+    .skills_background_default,
+    .skills_background_hover,
+    .skills_learning_text{
+        display: none;
+    }
+
+    .skills_text_and_bubble_container 
+    .new_skill_text_mobile{
+        display: block;
+    }
+
+    .skills_info_headline_mobile{
+        display: block;
+    }
+
+    .new_skill_item{
+        width: 32px;
+    }
+
+    .bubble_container{
+        height: 120px;
+        width: 120px;
     }
 
 }
