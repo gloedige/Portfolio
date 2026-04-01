@@ -385,6 +385,7 @@ nav{
 .why_me_container .about_me_text{
     width: 380px;
     min-width: 380px;
+    line-height: 1.2;
 }
 
 .why_me_container span{
@@ -424,8 +425,7 @@ nav{
     vertical-align: bottom; 
 }
 
-.location_info p,
-.location_info .cursor{
+.location_info p{
     font-size: 30px;
     margin: 20px 0 0 0;
     line-height: 1.2;
@@ -435,14 +435,6 @@ nav{
     font-weight: 700;
     font-size: 30px;
     color: #89BCD9;
-    line-height: 1.2;
-}
-
-.cursor{
-    font-weight: 400;
-    color: #89BCD9;
-    margin-left: 2px;
-    animation: blink 0.8s step-end infinite;
 }
     
 @keyframes blink {
