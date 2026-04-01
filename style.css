@@ -556,8 +556,6 @@ nav{
     gap: 28px;
     width: 100%;
     justify-content: center;
-    position: absolute;
-    top: 30px;
 }
 
 .new_skill_item{

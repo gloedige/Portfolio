@@ -336,4 +336,9 @@
         width: 120px;
     }
 
+    .skills_learning_items{
+        position: absolute;
+        top: 30px;
+    }
+
 }
