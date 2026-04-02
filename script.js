@@ -4,6 +4,7 @@ const supportedLanguages = ['en', 'de'];
 const defaultLanguage = 'en';
 const currentLanguage = supportedLanguages.includes(browserLanguageSetting) ? browserLanguageSetting : defaultLanguage;
 let selectedLanguage = supportedLanguages[0];
+const medieQueryProjectMenuMobile = window.matchMedia('(max-width: 1150px)');
 
 const data_en = [
     {icon: `${assetsBaseUrl}icons/location_icon.png`, text_1: 'I am', text_2: 'located in Brunswick...'},
@@ -39,6 +40,10 @@ function storePreferredLanguage(lang) {
 }
 
 
+/**
+ * This function loads the user's preferred language from local storage. 
+ * @returns - The preferred language code if it is supported, otherwise the default language code.
+ */
 function loadPreferredLanguage() {
     const storedLanguage = localStorage.getItem('preferredLanguage');
     if (supportedLanguages.includes(storedLanguage)) {
@@ -190,12 +195,44 @@ const navLinks = document.querySelectorAll('.nav_menu a');
 
 
 /**
+ * This helper function updates the text for all project menu buttons.
+ * @param {string[]} labels - Labels in the order: pokemon, pollo_loco, join, ongoing.
+ */
+function setProjectMenuTexts(labels) {
+    const projectIds = ['pokemon', 'pollo_loco', 'join', 'ongoing'];
+    projectIds.forEach((id, index) => {
+        const button = document.getElementById(id);
+        if (button) {
+            button.textContent = labels[index];
+        }
+    });
+}
+
+
+/**
+ * This function updates the text of the project menu buttons for mobile view.
+ */
+function updateMenuTextForMobile() {
+    setProjectMenuTexts(['1. Project', '2. Project', '3. Project', '4. Project']);
+}
+
+
+/**
+ * This function resets the text of the project menu buttons to their original state for desktop view.
+ */
+function resetMenuTextForDesktop() {
+    setProjectMenuTexts(['1. Pokedex', '2. Pollo Loco', '3. Join', '4. Ongoing']);
+}
+
+
+/**
  * This event listener waits for the DOM content to be fully loaded before initializing the intersection observer, 
  * starting the typing effect, and setting up the project menu and overviews. It ensures that all necessary elements 
  * are available in the DOM before any scripts attempt to interact with them.
  */
 document.addEventListener('DOMContentLoaded', () => {
     intersectionObserver();
+    handleViewportChange(medieQueryProjectMenuMobile);
     if (textElement) typeEffect();
     const hasProjectSection = document.querySelector('.project_overview, #pokemon, #project_pokedex');
     if (hasProjectSection) {
@@ -215,7 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initProjectMenu() {
     const projectButton = document.getElementById('pokemon');
+    const projectButtonMobile = document.getElementById('pokemon_mobile');
     if (projectButton) projectButton.classList.add('active');
+    if (projectButtonMobile) projectButtonMobile.classList.add('active');
 }
 
 
@@ -246,3 +285,18 @@ function toggleBurgerMenu(buttonElement) {
         burgerMenu.classList.toggle('is-active');
     }
 }
+
+
+/**
+ * This function handles changes in the viewport size.
+ * @param {*} e - The media query list event object.
+ */
+function handleViewportChange(e) {
+    if (e.matches) {
+        updateMenuTextForMobile();
+    } else {
+        resetMenuTextForDesktop();
+    }
+}
+
+medieQueryProjectMenuMobile.addEventListener('change', handleViewportChange);
