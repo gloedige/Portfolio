@@ -245,7 +245,6 @@ h2{
 .image_background_hover{
     transition: opacity 0.5s;
     transform: translate(-50%, -15%) rotate(-45deg);
-    /* width: 110%; */
     height: 80%;
 }
 
@@ -449,15 +448,6 @@ nav{
   }
 }
 
-/* .skills{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1440px;
-    margin: 104px auto 0 auto;
-} */
-
 .skills_container{
     display: flex;
     flex-direction: row;
@@ -590,6 +580,12 @@ nav{
     color: #F8F5EC;
     text-align: center;
     line-height: 120%;
+}
+
+.skill_link_container{
+    display:none;
+    justify-content: center;
+    margin: 40px auto 0 auto;
 }
 
 .project_menu button{

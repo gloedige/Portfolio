@@ -363,6 +363,9 @@
         top: 30px;
     }
 
+    .skill_link_container{
+        display: flex;
+    }
 }
 
 @media (max-width: 440px){
