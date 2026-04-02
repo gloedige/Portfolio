@@ -363,7 +363,8 @@ nav{
 
 }
 
-.why_me{
+.why_me,
+.skills{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -448,22 +449,23 @@ nav{
   }
 }
 
-.skills{
-    padding: 104px 285px 0 285px;
+/* .skills{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 1440px;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
+    margin: 104px auto 0 auto;
+} */
 
 .skills_container{
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 80px;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 23px;
 }
 
 .skills_item_container{
