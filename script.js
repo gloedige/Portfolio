@@ -136,7 +136,7 @@ function setTextToHTML(currentText, currentSpanText) {
     let spanElement = `<span class="text_blue">${currentSpanText}</span>`;
     if (textElement) {
         textElement.innerHTML = spanElement + currentText;
-        textElement.classList.add('typing-active');
+        textElement.classList.add('typing_active');
     }
 }
 
