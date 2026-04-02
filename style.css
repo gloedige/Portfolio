@@ -590,6 +590,7 @@ nav{
 
 .project_menu button{
     font-size: 30px;
+    font-family: 'Josefin', Arial, sans-serif;
     font-weight: 500;
     line-height: 120%;
     color: #89BCD9;
@@ -624,9 +625,9 @@ nav{
     flex-direction: row;
     justify-content: flex-start;
     width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0 0 0 104px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .project_menu .active{
@@ -644,15 +645,13 @@ nav{
     gap: 40px;
     width: 100vw;
     background-color: #2D383F;
-    height: 550px;
 }
 
 .project_overview{
     width: 100%;
-    max-width: 1440px;
-    margin: 31px auto 0;
-    padding: 0 118px 0 123px;
-    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 31px auto 0 auto;
+    padding: 0 22px;
     display: flex;
     flex-direction: row;
     gap: 56px;
@@ -660,6 +659,14 @@ nav{
 
 .project_overview article{
     flex: 1;
+}
+
+.single_project_mobile_headline{
+    display: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: #89BCD9;
+    margin: 0;
 }
 
 .single_project_headline{
@@ -754,6 +761,13 @@ nav{
     display: flex;
     flex-direction: row;
     gap: 40px;
+    margin-bottom: 28px;
+}
+
+.project_links_mobile{
+    display: none;
+    flex-direction: row;
+    gap: 16px;
     margin-bottom: 28px;
 }
 

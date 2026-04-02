@@ -127,7 +127,8 @@
     }
 
     .why_me_container, 
-    .skills_container{
+    .skills_container,
+    .project_overview{
         box-sizing: border-box;
     }
 
@@ -144,6 +145,38 @@
         gap: 30px;
     }
 
+    .project_menu button:hover{
+        color: #89BCD9;
+    }
+
+    .project_menu button{
+        font-size: 24px;
+        color: #F8F5EC;
+        padding: 10px
+    }
+    
+    .project_menu .active {
+        color: #89BCD9;
+        padding: 10px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    .single_project_mobile_headline{
+        display: flex;
+    }
+
+    .project_overview{
+        flex-direction: column-reverse;
+    }
+
+    .project_links{
+        display: none;
+    }
+
+    .project_links_mobile{
+        display: flex;
+    }
 }
 
 @media (max-width: 700px){
