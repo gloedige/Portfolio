@@ -127,8 +127,7 @@
     }
 
     .why_me_container, 
-    .skills_container,
-    .project_overview{
+    .skills_container{
         box-sizing: border-box;
     }
 
@@ -157,13 +156,22 @@
     
     .project_menu .active {
         color: #89BCD9;
-        padding: 10px;
+        padding: 10px 16px;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
     }
 
-    .single_project_mobile_headline{
+    .single_project_details p {
+        width: 100%;
+        text-align: left;
+    }
+
+    .single_project_details .single_project_mobile_headline{
         display: flex;
+        font-size: 32px;
+        font-weight: 400;
+        color: #89BCD9;
+        margin-bottom: 16px;
     }
 
     .project_overview{
@@ -177,6 +185,11 @@
     .project_links_mobile{
         display: flex;
     }
+
+    .techstack_container{
+        display: none;
+    }
+
 }
 
 @media (max-width: 700px){
@@ -263,12 +276,13 @@
         margin-bottom: 0;
     }
 
-    .why_me, .skills{
-        /* padding: 0 22px 0 24px; */
+    .why_me, .skills, .projects, .contact{
         margin-top: 0;
     }
 
-    .why_me h2{
+    .why_me h2,
+    .projects h2,
+    .contact h2{
         margin: 80px auto 32px auto;
     }
 
@@ -398,6 +412,18 @@
 
     .skill_link_container{
         display: flex;
+    }
+
+    .project_overview{
+        margin-top: 25px;
+    }
+
+    .project_menu button{
+        font-size: 18px;
+    }
+
+    .single_project_details .single_project_mobile_headline{
+        font-size: 24px;
     }
 }
 

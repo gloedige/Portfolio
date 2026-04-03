@@ -365,7 +365,8 @@ nav{
 }
 
 .why_me,
-.skills{
+.skills,
+.projects{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -611,17 +612,6 @@ nav{
     width: 100%;
 }
 
-.projects{
-    padding: 104px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1440px;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
 .projects menu{
     display: flex;
     flex-direction: row;
@@ -641,19 +631,16 @@ nav{
 }
 
 .project_overview_wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
     width: 100vw;
     background-color: #2D383F;
 }
 
 .project_overview{
     width: 100%;
-    max-width: 1200px;
+    max-width: 1244px;
     margin: 31px auto 0 auto;
     padding: 0 22px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     gap: 56px;
@@ -665,10 +652,6 @@ nav{
 
 .single_project_mobile_headline{
     display: none;
-    font-size: 24px;
-    font-weight: 400;
-    color: #89BCD9;
-    margin: 0;
 }
 
 .single_project_headline{
