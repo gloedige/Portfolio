@@ -164,6 +164,9 @@
     .single_project_details p {
         width: 100%;
         text-align: left;
+        display: flex;
+        flex-direction: row;
+        margin: 8px auto 0 auto;
     }
 
     .single_project_details .single_project_mobile_headline{
@@ -171,11 +174,18 @@
         font-size: 32px;
         font-weight: 400;
         color: #89BCD9;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
     }
 
     .project_overview{
         flex-direction: column-reverse;
+        gap: 0;
+    }
+
+    .project_overview_wrapper{
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
     }
 
     .project_links{
@@ -184,13 +194,52 @@
 
     .project_links_mobile{
         display: flex;
+        justify-content: center;
     }
 
     .techstack_container{
         display: none;
     }
 
+    .single_project_details p span,
+    .single_project_headline .project_duration_mobile{
+        display: flex;
+    }
+
+    .single_project_headline .project_duration {
+        display: none;
+    }
+
+    .single_project_details .preview{
+        margin: 24px auto;
+    }
+
+    .single_project_details .preview_wrapping_container{
+        padding: 0 38px;
+        box-sizing: border-box;
+    }
+
+    .single_project_details .preview_wrapping_container img{
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+    
+    .further_project{
+        max-width: 600px;
+        width: calc(100vw - 2 * 60px);
+        height: 100%;
+        margin: 24px auto;
+    }
+
+    .single_project_headline h3 {
+        color: #89BCD9;
+        font-size: 24px;
+    }
+    
 }
+
+
 
 @media (max-width: 700px){
     h1 {
@@ -424,6 +473,18 @@
 
     .single_project_details .single_project_mobile_headline{
         font-size: 24px;
+    }
+
+    .single_project_details p{
+        font-size: 14px;
+    }
+
+     .single_project_headline h3 {
+        font-size: 18px;
+    }
+
+    .single_project_info span {
+        font-size: 16px;
     }
 }
 

@@ -695,6 +695,10 @@ nav{
     margin-bottom: 12px;
 }
 
+.single_project_details p span{
+    display: none;
+}
+
 .techstack_container{
     display: flex;
     flex-direction: row;
@@ -707,6 +711,7 @@ nav{
     object-fit: cover;
     border-radius: 30px;
     margin-bottom: 34px;
+    aspect-ratio: 3/2;
 }
 
 .link_blue{
@@ -758,7 +763,7 @@ nav{
 
 .further_project{
     width: 450px;
-    height: 312px;
+    aspect-ratio: 3/2;
     background-color: #F8F5EC;
     border-radius: 30px;
     margin-bottom: 28px;
@@ -772,6 +777,10 @@ nav{
     font-size: 30px;
     font-weight: 500;
     color: #89BCD9;
+}
+
+.project_duration_mobile{
+    display: none;
 }
 
 .d-none{
