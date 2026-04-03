@@ -236,6 +236,60 @@
         color: #89BCD9;
         font-size: 24px;
     }
+
+    .reference_name{
+        font-size: 24px;
+    }
+
+    .reference_text p{
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .carousel {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        
+        > li {
+            scroll-snap-align: center;
+        }
+    }
+
+    .reference {
+        padding: 0;
+    }
+
+    .reference_container {
+        justify-content: flex-start;
+        padding: 0 24px;
+        box-sizing: border-box;
+        /* overflow-x: scroll;
+        overflow-y: hidden; */
+    }
+
+    .reference_background_mobile{
+        display: block;
+        width: 100%;
+    }
+
+     .reference_background_default,
+     .reference_background_hover{
+        display: none;
+    }
+
+    .text_bubble_container .reference_contact_details {
+        align-items: unset;
+    }
+
+    .text_bubble_container{
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .text_bubble_container p,
+    .text_bubble_container a{
+        padding: 0 21px 0 50px;
+    }
     
 }
 
