@@ -196,8 +196,16 @@ h2{
     cursor: pointer;
 }
 
-.arrow_swap{
+.arrow_swap_vertical{
     position: relative;
+    aspect-ratio: 1 / 2;
+    justify-content: center;
+    display: flex;
+}
+
+.arrow_swap_horizontal{
+    position: relative;
+    aspect-ratio: 3 / 1;
 }
 
 .button_default,
@@ -215,11 +223,13 @@ h2{
     right: 0;
 }
 
-.arrow_swap:hover .button_default{
+.arrow_swap_vertical:hover .button_default,
+.arrow_swap_horizontal:hover .button_default{
     opacity: 0;
 }
 
-.arrow_swap:hover .button_hover{
+.arrow_swap_vertical:hover .button_hover,
+.arrow_swap_horizontal:hover .button_hover{
     opacity: 1;
 }
 
@@ -354,7 +364,7 @@ nav{
     position: relative;
 }
 
-.button_left{
+.button_right_container{
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
@@ -884,14 +894,14 @@ nav{
 }
 
 .contact{
-    padding: 89px 265px 180px 265px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1440px;
+    max-width: calc(910px + 2 * 23px);
+    padding: 0 23px;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 90px auto 180px auto;
     position: relative;
 }
 
@@ -900,8 +910,8 @@ nav{
     justify-content: center;
     height: 90px;
     position: absolute;
-    right: 142px;
-    top: 101px;
+    right: -94px;
+    top: 12px;
 }
 
 .contact_text{
@@ -914,6 +924,22 @@ nav{
     font-size: 18px;
     margin: 0;
     line-height: 120%;
+}
+
+.contact_request{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact_request p{
+    font-size: 30px;
+    font-family: Josefin, Arial, sans-serif;
+    font-weight: 500;
+    color: #89BCD9;
+    margin: 0;
 }
 
 .contact_text,

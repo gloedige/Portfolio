@@ -70,6 +70,15 @@
         display: none;
         flex-direction: column;
     }
+
+    .contact{
+        margin: 90px auto 104px auto;
+    }
+
+    .contact_arrow_up{
+        position: static;
+        margin: 80px auto 0 auto;
+    }
 }
 
 @media (max-width: 1150px){
@@ -263,8 +272,6 @@
         justify-content: flex-start;
         padding: 0 24px;
         box-sizing: border-box;
-        /* overflow-x: scroll;
-        overflow-y: hidden; */
     }
 
     .reference_background_mobile{
@@ -404,7 +411,7 @@
         text-align: center;
     }
 
-    .button_left{
+    .button_right_container{
         display: none;
     }
 
