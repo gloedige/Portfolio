@@ -1052,13 +1052,14 @@ nav{
     background-color: transparent;
     border: 2px solid #89BCD9;
     border-radius: 30px;
-    padding: 13px 27px;
+    padding: 13px 58px 13px 27px;
     color:  #F8F5EC;
     font-size: 18px;
     font-family: 'Josefin';
     margin-bottom: 16px;
     box-sizing: border-box;
     width: 100%;
+    min-height: 60px;
 }
 
 .form_container .input_container textarea{
@@ -1071,14 +1072,9 @@ nav{
     outline: none;
 }
 
-.form_container .input_field input,
-.form_container .input_field textarea{
-    padding-right: 58px;
-}
-
 .input_valid_icon{
     position: absolute;
-    top: 25px;
+    top: 30px;
     right: 14px;
     transform: translateY(-50%);
     width: 24px;
@@ -1090,6 +1086,11 @@ nav{
 
 .input_field .is_valid + .input_valid_icon{
     opacity: 1;
+}
+
+.form_container .input_container input::placeholder,
+.form_container .input_container textarea::placeholder{
+    opacity: 0;
 }
 
 .missing_inputs {

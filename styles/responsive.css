@@ -547,6 +547,53 @@
     .single_project_info span {
         font-size: 16px;
     }
+
+    .contact_container{
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+
+    .contact_request{
+        display: flex;
+    }
+
+    .contact_text, .contact_info{
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact_text p,
+    .contact_info a{
+        font-size: 16px;
+    }
+
+    .contact_request p{
+        font-size: 20px;
+    }
+
+    .contact_field_name_email {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: unset;
+    }
+
+    .input_valid_icon{
+        display: none;
+    }
+
+    .input_container label{
+        display: none;
+    }
+
+    .form_container .input_container input{
+        margin-bottom: 24px;
+    }
+
+    .form_container .input_container input::placeholder,
+    .form_container .input_container textarea::placeholder{
+        opacity: 1;
+    }
+
 }
 
 @media (max-width: 440px){
