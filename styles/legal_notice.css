@@ -3,9 +3,9 @@ main{
     flex-direction: column;
     justify-content: space-between;
     gap: 24px;
-    padding: 65px 208px 100px 200px;
+    padding: 65px 20px 100px 27px;
     width: 100%;
-    max-width: 1440px;
+    max-width: calc(970px + 20px + 27px);
     box-sizing: border-box;
     margin: 0 auto;
 }

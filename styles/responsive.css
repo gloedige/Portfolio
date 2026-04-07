@@ -335,7 +335,8 @@
         transform: translate(-50%, 0%);
     }
 
-    .header_mobile.d-none{
+    .header_mobile.d-none,
+    .hero.d-none{
         display: flex;
         justify-content: space-between;
     }
