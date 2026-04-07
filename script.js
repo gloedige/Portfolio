@@ -13,7 +13,7 @@ const data_en = [
 ]
 
 const data_de = [
-    {icon: `${assetsBaseUrl}icons/location_icon.png`, text_1: 'Ich bin', text_2: 'in Braunschweig...'},
+    {icon: `${assetsBaseUrl}icons/location_icon.png`, text_1: 'Ich lebe', text_2: 'in Braunschweig...'},
     {icon: `${assetsBaseUrl}icons/remote_icon.svg`, text_1: 'Ich bin', text_2: 'offen für Remote- oder Vor-Ort-Arbeit...'},
     {icon: `${assetsBaseUrl}icons/relocate_icon.svg`, text_1: 'Ich bin', text_2: 'offen für einen Umzug...'}
 ]
