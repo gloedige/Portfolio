@@ -13,8 +13,6 @@
 
     .hero{
         height: auto;
-        padding: 16px clamp(39px, -223.8px + 29.2vw, 112px) 0 clamp(39px, -223.8px + 29.2vw, 112px);
-        box-sizing: border-box;
     }
 
     .hero_arrow_down{
@@ -125,28 +123,20 @@
         font-size: 22px;
     }
 
-    .nav_logo,
-    .nav_language{
-        padding-left: 36px;
-        padding-right: 36px;
-    }
-
     .why_me{
         margin-top: clamp(64px, 1.77px + 8.89vw, 104px);
     }
-
-    .why_me_container, 
-    .skills_container{
-        box-sizing: border-box;
-    }
-
+    
     .location_info .typing_active,
     .location_info .text_blue{
         font-size: 24px;
     }
-
+    
     .skills_container{
         gap: 40px;
+    }
+    .why_me_container{
+        gap: 24px;
     }
 
     .skills_item_container{
@@ -318,7 +308,6 @@
 
     .hero {
         flex-direction: column;
-        padding: 27px 42px 0 27px;
     }
 
     .hero_text_area{
@@ -328,6 +317,7 @@
 
     .portfolio_img_container{
         aspect-ratio: 1/1;
+        max-width: unset;
     }
 
     .social_media_container{
@@ -649,6 +639,18 @@
 }
 
 @media (max-width: 440px){
+    .hero{
+        padding: 40px 20px 0 20px;
+    }
+
+    .title p{
+        font-size: 20px;
+    }
+
+    .burger_menu_container {
+        gap: 24px;
+    }
+
     .why_me_container{
         align-items: flex-start;
     }
