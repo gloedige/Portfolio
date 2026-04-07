@@ -82,8 +82,10 @@
                 </div>
                 <div class="hero_arrow_down">
                     <a href="#why_me_section" class="arrow_swap_vertical">
-                        <img src="./assets/icons/arrow_down_hover.svg" class="button_hover" alt="Arrow Down Hover Icon">
-                        <img src="./assets/icons/arrow_down_default.svg" class="button_default" alt="Arrow Down Icon">
+                        <img src="./assets/icons/arrow_down_hover.svg" class="button_hover desktop" alt="Arrow Down Hover Icon">
+                        <img src="./assets/icons/arrow_down_default.svg" class="button_default desktop" alt="Arrow Down Icon">
+                        <img src="./assets/icons/arrow_down_mobile_onpress.svg" class="button_press mobile" alt="Arrow Down Press Icon">
+                        <img src="./assets/icons/arrow_down_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Down Mobile Default Icon">
                     </a>
                 </div>
             </div>
@@ -547,14 +549,18 @@
                             <label for="accept_policy" id="accept_policy_label">I've read the <a href="privacy_policy.html">privacy policy</a> and accept to the processing of my data as outlined.</label>
                             <span class="error_policy d-none" id="error_policy">Please accept the privacy policy.</span>
                         </div>
+                    </div>
+                    <div class="send_button_container">
                         <button type="submit" disabled id="send_button">Send</button>
                     </div>
                 </form>
             </div>
             <div class="contact_arrow_up">
                 <a href="#hero_section" class="arrow_swap_vertical">
-                    <img src="./assets/icons/arrow_up_hover.svg" class="button_hover" alt="Arrow Up Hover Icon">
-                    <img src="./assets/icons/arrow_up_default.svg" class="button_default" alt="Arrow Up Icon">
+                    <img src="./assets/icons/arrow_up_hover.svg" class="button_hover desktop" alt="Arrow Up Hover Icon">
+                    <img src="./assets/icons/arrow_up_default.svg" class="button_default desktop" alt="Arrow Up Icon">
+                    <img src="./assets/icons/arrow_up_mobile_onpress.svg" class="button_press mobile" alt="Arrow Up Press Icon">
+                    <img src="./assets/icons/arrow_up_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Up Mobile Default Icon">
                 </a>
             </div>
         </section>
@@ -565,29 +571,31 @@
                 <a href="./html/legal_notice.html">Legal notice</a>
                 <span>&copy; Gerd Lödige 2026</span>
             </div>
-            <div class="nav_logo">
-                <a href="#hero_section" class="logo_hero footer">
-                    <img src="./assets/icons/logo_icon_dark.svg" alt="Logo Icon">
-                    <p class="name">G. Lödige</p>
-                    <p>developer</p>
-                </a>
+            <div class = "footer_container_right">
+                <div class="nav_logo">
+                    <a href="#hero_section" class="logo_hero footer">
+                        <img src="./assets/icons/logo_icon_dark.svg" alt="Logo Icon">
+                        <p class="name">G. Lödige</p>
+                        <p>developer</p>
+                    </a>
+                </div>
+                <div class="social_media footer">
+                    <a href="#contact_section" target="_blank">
+                        <img src="./assets/icons/mail_icon_dark.svg" class="social_media_default" alt="Email Icon">
+                        <img src="./assets/icons/mail_icon_white.svg" class="social_media_hover" alt="Email Icon Hover">
+                    </a>
+                    <a href="https://www.linkedin.com/in/gerd-lödige-4a08802a9/" target="_blank">
+                        <img src="./assets/icons/linkedIn_icon_dark.svg" class="social_media_default" alt="LinkedIn Icon">
+                        <img src="./assets/icons/linkedIn_icon_white.svg" class="social_media_hover" alt="LinkedIn Icon Hover">
+                    </a>
+                    <a href="https://github.com/gloedige" target="_blank">
+                        <img src="./assets/icons/github_icon_dark.svg" class="social_media_default" alt="GitHub Icon">
+                        <img src="./assets/icons/github_icon_white.svg" class="social_media_hover" alt="GitHub Icon Hover">
+                    </a>
+                </div>
             </div>
-           <div class="social_media footer">
-                <a href="#contact_section" target="_blank">
-                    <img src="./assets/icons/mail_icon_dark.svg" class="social_media_default" alt="Email Icon">
-                    <img src="./assets/icons/mail_icon_white.svg" class="social_media_hover" alt="Email Icon Hover">
-                </a>
-                <a href="https://www.linkedin.com/in/gerd-lödige-4a08802a9/" target="_blank">
-                    <img src="./assets/icons/linkedIn_icon_dark.svg" class="social_media_default" alt="LinkedIn Icon">
-                    <img src="./assets/icons/linkedIn_icon_white.svg" class="social_media_hover" alt="LinkedIn Icon Hover">
-                </a>
-                <a href="https://github.com/gloedige" target="_blank">
-                    <img src="./assets/icons/github_icon_dark.svg" class="social_media_default" alt="GitHub Icon">
-                    <img src="./assets/icons/github_icon_white.svg" class="social_media_hover" alt="GitHub Icon Hover">
-                </a>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
     
 </body>
 </html>

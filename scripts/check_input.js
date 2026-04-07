@@ -117,13 +117,13 @@ function clearAllInputs() {
 function missingInputs(element) {
     switch (element) {
         case "name":
-            if (req_name == false) handleMissingInput(contact_name_label, input_name);
+            if (req_name == false) handleMissingInput(contact_name_label, input_name, "Your name is required");
             break;
         case "mail":
-            if (req_mail == false) handleMissingInput(contact_mail_label, input_mail);
+            if (req_mail == false) handleMissingInput(contact_mail_label, input_mail, "Your email is required");
             break;
         case "message":
-            if (req_message == false) handleMissingInput(contact_message_label, input_message);
+            if (req_message == false) handleMissingInput(contact_message_label, input_message, "Your message is required");
             break;
         case "checkbox":
             if (req_checkbox == false) {
@@ -136,11 +136,15 @@ function missingInputs(element) {
 
 
 /** Adds error classes to label and input. 
- * @param {HTMLElement} labelElement @param {HTMLElement} inputElement */
-function handleMissingInput(labelElement, inputElement) {
-    labelElement.classList.add("missing_input_title");
-    labelElement.children[0].classList.remove("d-none");
-    inputElement.classList.add("missing_inputs");
+ * @param {HTMLElement} labelElement @param {HTMLElement} inputElement @param {string} errorMessage */
+function handleMissingInput(labelElement, inputElement, errorMessage) {
+    if(window.innerWidth < 700){
+        inputElement.placeholder = errorMessage;
+    } else {
+        labelElement.classList.add("missing_input_title");
+        labelElement.children[0].classList.remove("d-none");
+    }
+    inputElement.classList.add("missing_inputs"); 
 }
 
 
@@ -188,6 +192,7 @@ function removeNameError() {
     contact_name_label.classList.remove("missing_input_title");
     contact_name_label.children[0].classList.add("d-none");
     input_name.classList.remove("missing_inputs");
+    input_name.placeholder = "Your Name";
 }
 
 /** Clears error state from the mail field. */
@@ -195,6 +200,7 @@ function removeMailError() {
     contact_mail_label.classList.remove("missing_input_title");
     contact_mail_label.children[0].classList.add("d-none");
     input_mail.classList.remove("missing_inputs");
+    input_mail.placeholder = "Your Email";
 }
 
 /** Clears error state from the message field. */
@@ -202,6 +208,7 @@ function removeMessageError() {
     contact_message_label.classList.remove("missing_input_title");
     contact_message_label.children[0].classList.add("d-none");
     input_message.classList.remove("missing_inputs");
+    input_message.placeholder = "Your Message";
 }
 
 

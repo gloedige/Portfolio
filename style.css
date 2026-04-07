@@ -209,12 +209,15 @@ h2{
 }
 
 .button_default,
-.button_hover{
+.button_hover,
+.button_press,
+.button_default_mobile{
     position: absolute;
     transition: opacity 0.3s;
 }
 
-.button_hover{
+.button_hover,
+.button_press{
     position: absolute;
     opacity: 0;
 }
@@ -224,11 +227,13 @@ h2{
 }
 
 .arrow_swap_vertical:hover .button_default,
-.arrow_swap_horizontal:hover .button_default{
+.arrow_swap_horizontal:hover .button_default,
+.arrow_swap_vertical:active .button_default_mobile{
     opacity: 0;
 }
 
 .arrow_swap_vertical:hover .button_hover,
+.arrow_swap_vertical:active .button_press,
 .arrow_swap_horizontal:hover .button_hover{
     opacity: 1;
 }
@@ -1094,8 +1099,12 @@ nav{
 }
 
 .missing_inputs {
-    color: #E44C36 !important;
     border-color: #E44C36 !important;
+}
+
+.form_container .input_container input.missing_inputs::placeholder,
+.form_container .input_container textarea.missing_inputs::placeholder{
+    color: #E44C36 !important;
 }
 
 .missing_input_title {
@@ -1128,7 +1137,6 @@ nav{
     flex-direction: row;
     gap: 8px;
     font-size: 14px;
-    height: 80px;
     position: relative;
 }
 
@@ -1138,7 +1146,13 @@ nav{
     font-size: 16px;
 }
 
-.accept_policy_container button{
+.send_button_container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.send_button_container button{
     background-color: transparent;
     border: 2px solid #89BCD9;
     border-radius: 30px;
@@ -1148,12 +1162,9 @@ nav{
     font-family: 'Josefin';
     box-sizing: border-box;
     cursor: pointer;
-    position: absolute;
-    right: 0;
-    bottom: 0;
 }
 
-.accept_policy_container button:disabled{
+.send_button_container button:disabled{
     border-color: #8F9290 !important;
     color: #8F9290 !important;
     cursor: auto !important;
@@ -1172,17 +1183,22 @@ nav{
     margin-top: 4px;
 }
 
+.arrow_swap_vertical .button_press.mobile,
+.arrow_swap_vertical .button_default_mobile.mobile{
+    display: none;
+}
+
 footer{
     display: flex;
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
-    gap: 16px;
-    padding: 81px 112px 61px 112px;
+    /* gap: 16px; */
     width: 100%;
-    max-width: 1440px;
     box-sizing: border-box;
-    margin: 0 auto;
+    padding: 0 20px;
+    margin: 80px auto 60px auto;
+    max-width: 1240px;
 }
 
 .social_media.footer{
@@ -1207,8 +1223,18 @@ footer{
     color: #F8F5EC;
 }
 
+.footer_container_right{
+    --width_nav_logo: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(50% + var(--width_nav_logo) / 2);
+    justify-content: space-between;
+}
+
 .logo_hero.footer{
     margin: 0;
+    width: 80px;
 }
 
 .logo_hero.footer p{
