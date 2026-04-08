@@ -182,13 +182,15 @@ const navLinks = document.querySelectorAll('.nav_menu a');
     const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove('active'));
             const id = entry.target.getAttribute('id');
             const activeLink = document.querySelector(`.nav_menu a[href="#${id}"]`);
-            if (activeLink) activeLink.classList.add('active');
+            if (activeLink){
+                navLinks.forEach(link => link.classList.remove('active'));
+                activeLink.classList.add('active');
+            } 
         }
     });
-    }, { threshold: 0.9 });
+    }, { threshold: 0.7 });
 
     sections.forEach(section => observer.observe(section));
 };
