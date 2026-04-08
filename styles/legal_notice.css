@@ -3,7 +3,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
     gap: 24px;
-    padding: 65px 20px 100px 27px;
+    padding: 65px 27px 100px 20px;
     width: 100%;
     max-width: calc(970px + 20px + 27px);
     box-sizing: border-box;
@@ -60,4 +60,33 @@ h1{
     line-height: 120%;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 700px){
+    main{
+        padding: 0 27px 100px 20px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
+    .menu_container_impressum{
+        aspect-ratio: 1/1;
+        position: absolute;
+        top: 120px;
+        width: 90vw;
+        z-index: 9;
+    }
+
+    .return_to_portfolio_arrow{
+        display: flex;
+        margin: 23px auto 18px -20px;
+        position: relative; 
+        z-index: 10;
+    }
+
+    .return_to_portfolio_arrow img{
+        height: 30px;
+    }
 }

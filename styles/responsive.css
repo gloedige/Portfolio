@@ -77,6 +77,11 @@
         position: static;
         margin: 80px auto 0 auto;
     }
+
+    .portfolio_img_container{
+        max-width: unset;
+        margin: 0;
+    }
 }
 
 @media (max-width: 1150px){
@@ -317,7 +322,6 @@
 
     .portfolio_img_container{
         aspect-ratio: 1/1;
-        max-width: unset;
     }
 
     .social_media_container{
@@ -610,7 +614,8 @@
     }
     .footer_container_left{
         flex-direction: row;
-        gap: 32px;
+        justify-content: space-evenly;
+        width: 100%;
     }
 
     footer {
