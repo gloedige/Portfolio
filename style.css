@@ -39,9 +39,10 @@ h2{
     font-size: 60px;
     font-family: 'Anta', Arial, sans-serif;
     font-weight: 400;
-    margin: 0 0 80px 0;
+    margin: 0 auto 80px auto;
+    padding: 0 22px;
     color: #89BCD9;
-    text-wrap-mode: nowrap;
+    text-wrap-mode: wrap;
 }
 
 .hero{
@@ -302,6 +303,11 @@ nav{
 }
 
 .nav_menu a{
+    min-width: 84px;
+    min-height: 60px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     color: #262E34;
     font-size: 26px;
     transition: background-color 0.5s, color 0.5s;
@@ -816,13 +822,13 @@ nav{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: calc(1200px + 2 * 24px);
-    padding: 0 24px;
-    box-sizing: border-box;
+    max-width: calc(1200px);
     margin: 80px auto 0 auto;
 }
 
 .reference_container{
+    padding: 0 24px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -834,7 +840,8 @@ nav{
     font-size: 32px;
     font-weight: 400;
     color: #89BCD9;
-    margin: 0 0 56px 0;
+    margin: 0 auto 56px auto;
+    padding: 0 22px;
 }
 
 .reference_name{
@@ -892,11 +899,14 @@ nav{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: calc(910px + 2 * 23px);
-    padding: 0 23px;
-    box-sizing: border-box;
+    max-width: calc(910px);
     margin: 90px auto 180px auto;
     position: relative;
+}
+
+.contact_wrapper{
+    padding: 0 23px;
+    box-sizing: border-box;
 }
 
 .contact_arrow_up{

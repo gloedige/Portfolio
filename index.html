@@ -469,95 +469,97 @@
         </section>
         <section id="contact_section" class="contact">
             <h2>Contact Me</h2>
-            <div class="contact_container">
-                <div class="contact_request">
-                    <p>Let us work together!</p>
+            <div class="contact_wrapper">
+                <div class="contact_container">
+                    <div class="contact_request">
+                        <p>Let us work together!</p>
+                    </div>
+                    <div class="contact_text">
+                        <p>I'm open to new opportunities and collaborations. My preferred role is to work as a Fullstack Developer. I am looking forward to contributing to innovative projects. Feel free to reach out to me via email or phone. I look forward to hearing from you!</p>
+                    </div>
+                    <div class="contact_info">
+                        <a href="mailto:info@gerd-loedige.de">
+                            <img src="./assets/icons/email_icon_default.svg" class="email_img_default" alt="Email Icon">
+                            <img src="./assets/icons/email_icon_hover.svg" class="email_img_hover" alt="Email Icon Hover">
+                            <img src="./assets/icons/email_icon_clicked.svg" class="email_img_clicked" alt="Email Icon Clicked">
+                            <span>Email: </span>
+                            info@gerd-loedige.de
+                        </a>
+                        <a href="tel:+491723465052">
+                            <img src="./assets/icons/phone_icon_default.svg" class="phone_img_default" alt="Phone Icon">
+                            <img src="./assets/icons/phone_icon_hover.svg" class="phone_img_hover" alt="Phone Icon Hover">
+                            <span>Phone: </span>
+                            +49 172 3465052
+                        </a>
+                    </div>
                 </div>
-                <div class="contact_text">
-                    <p>I'm open to new opportunities and collaborations. My preferred role is to work as a Fullstack Developer. I am looking forward to contributing to innovative projects. Feel free to reach out to me via email or phone. I look forward to hearing from you!</p>
-                </div>
-                <div class="contact_info">
-                    <a href="mailto:info@gerd-loedige.de">
-                        <img src="./assets/icons/email_icon_default.svg" class="email_img_default" alt="Email Icon">
-                        <img src="./assets/icons/email_icon_hover.svg" class="email_img_hover" alt="Email Icon Hover">
-                        <img src="./assets/icons/email_icon_clicked.svg" class="email_img_clicked" alt="Email Icon Clicked">
-                        <span>Email: </span>
-                        info@gerd-loedige.de
-                    </a>
-                    <a href="tel:+491723465052">
-                        <img src="./assets/icons/phone_icon_default.svg" class="phone_img_default" alt="Phone Icon">
-                        <img src="./assets/icons/phone_icon_hover.svg" class="phone_img_hover" alt="Phone Icon Hover">
-                        <span>Phone: </span>
-                        +49 172 3465052
-                    </a>
-                </div>
-            </div>
-            <div class="form_container">
-                <!-- <form action="submit_form.php" method="POST"> -->
-                <form onsubmit="sendMail(event)">
-                    <div class="contact_field_name_email">
-                        <div class="input_container">
-                            <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
-                            <div class="input_field">
-                                <input 
-                                    type="text" 
-                                    id="contact_name" 
-                                    name="name"
-                                    placeholder="Your Name"
-                                >
-                                <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                <div class="form_container">
+                    <!-- <form action="submit_form.php" method="POST"> -->
+                        <form onsubmit="sendMail(event)">
+                            <div class="contact_field_name_email">
+                                <div class="input_container">
+                                    <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
+                                    <div class="input_field">
+                                        <input 
+                                        type="text" 
+                                        id="contact_name" 
+                                        name="name"
+                                        placeholder="Your Name"
+                                        >
+                                        <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                    </div>
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
+                                    <div class="input_field">
+                                        <input 
+                                        type="email" 
+                                        id="contact_mail" 
+                                        name="mail" 
+                                        placeholder="Your Email"
+                                        >
+                                        <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="input_container">
-                            <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
-                            <div class="input_field">
-                                <input 
-                                    type="email" 
-                                    id="contact_mail" 
-                                    name="mail" 
-                                    placeholder="Your Email"
-                                >
-                                <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                            <div class="input_container full_width">
+                                <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
+                                <div class="input_field">
+                                    <textarea
+                                    id="contact_message" 
+                                    name="message" 
+                                    rows="8" 
+                                    placeholder="Your Message"
+                                    ></textarea>
+                                    <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                </div>
                             </div>
-                        </div>
+                            <div class="accept_policy_container">
+                                <div class="checkbox_container" onclick="toggleAcceptPolicy()" id="checkbox_container">
+                                    <input type="checkbox" id="accept_policy" name="accept_policy" value="accepted">
+                                    <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon" class="checkbox_hover inactive">
+                                    <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon" class="checkbox_default">
+                                    <img src="./assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon" class="checkbox_checked inactive">
+                                    <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon" class="checkbox_error inactive">
+                                </div>
+                                <div class="policy_text_container">
+                                    <label for="accept_policy" id="accept_policy_label">I've read the <a href="privacy_policy.html">privacy policy</a> and accept to the processing of my data as outlined.</label>
+                                    <span class="error_policy d-none" id="error_policy">Please accept the privacy policy.</span>
+                                </div>
+                            </div>
+                            <div class="send_button_container">
+                                <button type="submit" disabled id="send_button">Send</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="input_container full_width">
-                        <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
-                        <div class="input_field">
-                            <textarea
-                                id="contact_message" 
-                                name="message" 
-                                rows="8" 
-                                placeholder="Your Message"
-                            ></textarea>
-                            <img src="./assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
-                        </div>
+                    <div class="contact_arrow_up">
+                        <a href="#hero_section" class="arrow_swap_vertical">
+                            <img src="./assets/icons/arrow_up_hover.svg" class="button_hover desktop" alt="Arrow Up Hover Icon">
+                            <img src="./assets/icons/arrow_up_default.svg" class="button_default desktop" alt="Arrow Up Icon">
+                            <img src="./assets/icons/arrow_up_mobile_onpress.svg" class="button_press mobile" alt="Arrow Up Press Icon">
+                            <img src="./assets/icons/arrow_up_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Up Mobile Default Icon">
+                        </a>
                     </div>
-                    <div class="accept_policy_container">
-                        <div class="checkbox_container" onclick="toggleAcceptPolicy()" id="checkbox_container">
-                            <input type="checkbox" id="accept_policy" name="accept_policy" value="accepted">
-                            <img src="./assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon" class="checkbox_hover inactive">
-                            <img src="./assets/icons/checkbox_default.svg" alt="Checkbox Default Icon" class="checkbox_default">
-                            <img src="./assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon" class="checkbox_checked inactive">
-                            <img src="./assets/icons/checkbox_error.svg" alt="Checkbox Error Icon" class="checkbox_error inactive">
-                        </div>
-                        <div class="policy_text_container">
-                            <label for="accept_policy" id="accept_policy_label">I've read the <a href="privacy_policy.html">privacy policy</a> and accept to the processing of my data as outlined.</label>
-                            <span class="error_policy d-none" id="error_policy">Please accept the privacy policy.</span>
-                        </div>
-                    </div>
-                    <div class="send_button_container">
-                        <button type="submit" disabled id="send_button">Send</button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact_arrow_up">
-                <a href="#hero_section" class="arrow_swap_vertical">
-                    <img src="./assets/icons/arrow_up_hover.svg" class="button_hover desktop" alt="Arrow Up Hover Icon">
-                    <img src="./assets/icons/arrow_up_default.svg" class="button_default desktop" alt="Arrow Up Icon">
-                    <img src="./assets/icons/arrow_up_mobile_onpress.svg" class="button_press mobile" alt="Arrow Up Press Icon">
-                    <img src="./assets/icons/arrow_up_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Up Mobile Default Icon">
-                </a>
             </div>
         </section>
     </div>

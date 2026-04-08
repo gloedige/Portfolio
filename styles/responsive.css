@@ -258,11 +258,7 @@
             scroll-snap-align: center;
         }
     }
-
-    .reference {
-        padding: 0;
-    }
-
+    
     .reference_container {
         justify-content: flex-start;
         padding: 0 24px;
