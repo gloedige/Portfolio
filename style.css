@@ -736,7 +736,8 @@ nav{
     color: #2D383F;
     border-radius: 30px;
     text-decoration: none;
-    display: inline-block;
+    align-items: center;
+    display: inline-flex;
 }
 
 .link_blue:hover{
@@ -753,7 +754,8 @@ nav{
     border-radius: 30px;
     border: 2px solid #89BCD9;
     text-decoration: none;
-    display: inline-block;
+    align-items: center;
+    display: inline-flex;
 }
 
 .link_transparent:hover{
