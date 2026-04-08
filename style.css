@@ -1197,7 +1197,6 @@ footer{
     flex-direction: row;
     align-items: end;
     justify-content: space-between;
-    /* gap: 16px; */
     width: 100%;
     box-sizing: border-box;
     padding: 0 20px;
@@ -1228,7 +1227,7 @@ footer{
 }
 
 .footer_container_right{
-    --width_nav_logo: 300px;
+    --width_nav_logo: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;

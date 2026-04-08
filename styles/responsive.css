@@ -288,11 +288,6 @@
     .text_bubble_container a{
         padding: 0 21px 0 50px;
     }
-
-    .footer_container_right {
-        --width_nav_logo: 152px;
-        width: calc(50% + var(--width_nav_logo) / 2);
-    }
     
 }
 
