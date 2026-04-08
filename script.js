@@ -3,7 +3,7 @@ const browserLanguageSetting = navigator.language || navigator.userLanguage;
 const supportedLanguages = ['en', 'de'];
 const defaultLanguage = 'en';
 const currentLanguage = supportedLanguages.includes(browserLanguageSetting) ? browserLanguageSetting : defaultLanguage;
-let selectedLanguage = supportedLanguages[0];
+let selectedLanguage = currentLanguage;
 const medieQueryProjectMenuMobile = window.matchMedia('(max-width: 1150px)');
 
 const data_en = [
@@ -233,9 +233,12 @@ function resetMenuTextForDesktop() {
  * are available in the DOM before any scripts attempt to interact with them.
  */
 document.addEventListener('DOMContentLoaded', () => {
+    selectedLanguage = loadPreferredLanguage();
+
     intersectionObserver();
     handleViewportChange(medieQueryProjectMenuMobile);
     if (textElement) typeEffect();
+
     const hasProjectSection = document.querySelector('.project_overview, #pokemon, #project_pokedex');
     if (hasProjectSection) {
         initProjectMenu();
@@ -244,7 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleProject();
         }
     }
-    selectedLanguage = loadPreferredLanguage();
     highlightSelectedLanguage(selectedLanguage);
 });
 
