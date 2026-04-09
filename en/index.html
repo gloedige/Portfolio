@@ -494,12 +494,11 @@
                     </div>
                 </div>
                 <div class="form_container">
-                    <!-- <form action="submit_form.php" method="POST"> -->
-                        <form onsubmit="sendMail(event)">
-                            <div class="contact_field_name_email">
-                                <div class="input_container">
-                                    <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
-                                    <div class="input_field">
+                    <form action="send_mail.php" method="POST">
+                        <div class="contact_field_name_email">
+                            <div class="input_container">
+                                <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
+                                <div class="input_field">
                                         <input 
                                         type="text" 
                                         id="contact_name" 
@@ -515,7 +514,7 @@
                                         <input 
                                         type="email" 
                                         id="contact_mail" 
-                                        name="mail" 
+                                        name="email" 
                                         placeholder="Your Email"
                                         >
                                         <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">

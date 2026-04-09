@@ -354,3 +354,45 @@ function handleViewportChange(e) {
 }
 
 medieQueryProjectMenuMobile.addEventListener('change', handleViewportChange);
+
+
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    const originalButtonText = submitButton.innerText;
+    submitButton.innerText = 'Sending...';
+
+    
+    try {
+        const formData = new FormData(form);
+        const contactData = Object.fromEntries(formData.entries());
+
+        const response = await fetch('send_mail.php', {
+            method: 'POST',
+            body: JSON.stringify(contactData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            alert('Message sent successfully!');
+            form.reset();
+        } else {
+            alert('Error: ' + (result.error || 'Failed to send message.'));
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while sending the message. Please try again later.');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerText = originalButtonText;
+    }
+});

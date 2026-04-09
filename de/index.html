@@ -493,8 +493,7 @@
                     </div>
                 </div>
                 <div class="form_container">
-                    <!-- <form action="submit_form.php" method="POST"> -->
-                    <form onsubmit="sendMail(event)">
+                    <form action="send_mail.php" method="POST">
                         <div class="contact_field_name_email">
                             <div class="input_container">
                                 <label for="contact_name" id="contact_name_label">Ihr Name <span class="d-none">ist erforderlich</span></label>
@@ -514,7 +513,7 @@
                                     <input 
                                     type="email" 
                                     id="contact_mail" 
-                                    name="mail" 
+                                    name="email" 
                                     placeholder="Ihre E-Mail"
                                     >
                                     <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
