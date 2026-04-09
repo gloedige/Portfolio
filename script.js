@@ -109,10 +109,7 @@ function typeEffect() {
     if (isDeleting) {
         [currentText, currentSpanText] = deleteCharacters(currentText, fullText, currentSpanText, fullSpanText);
     } else {
-        if (locationIcon) {
-            locationIcon.innerHTML = `<img src="${iconSrc}" alt="Location Icon">`;
-            locationIcon.style.opacity = 1;
-        }
+        setIconOfTypeEffect(iconSrc);
         [currentText, currentSpanText] = writeCharacters(currentText, fullText, currentSpanText, fullSpanText);
     }    
     setTextToHTML(currentText, currentSpanText);
@@ -159,6 +156,19 @@ function writeCharacters(currentText, fullText, currentSpanText, fullSpanText) {
 
 
 /**
+ * This function updates the location icon based on the current piece of information being displayed in the typing effect.
+ * @param {string} iconSrc - The source URL of the icon to be displayed.
+ */
+function setIconOfTypeEffect(iconSrc) {
+    if (locationIcon) {
+        locationIcon.innerHTML = `<img src="${iconSrc}" alt="Location Icon">`;
+        locationIcon.style.opacity = 1;
+    }
+}
+
+
+
+/**
  * This function updates the HTML content of the text element with the current text and span text, including a cursor.
  * @param {string} currentText - The current text being displayed that is being typed or deleted.
  * @param {string} currentSpanText - The current span text being displayed that is being typed or deleted.
@@ -202,24 +212,35 @@ function setTiming(currentText, fullText, currentSpanText) {
  * When a section is in view, it updates the navigation links to highlight the active section.
  */
 function intersectionObserver() {
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav_menu a');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav_menu a');
 
     const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             const activeLink = document.querySelector(`.nav_menu a[href="#${id}"]`);
-            if (activeLink){
-                navLinks.forEach(link => link.classList.remove('active'));
-                activeLink.classList.add('active');
-            } 
+            handleActiveNavLink(activeLink, navLinks);
         }
     });
     }, { threshold: 0.7 });
 
     sections.forEach(section => observer.observe(section));
 };
+
+
+
+/**
+ * This function handles the active state of navigation links.
+ * @param {HTMLElement} activeLink - The currently active navigation link.
+ * @param {NodeListOf<HTMLElement>} navLinks - All navigation links.
+ */
+function handleActiveNavLink(activeLink, navLinks) {
+    if (activeLink){
+        navLinks.forEach(link => link.classList.remove('active'));
+        activeLink.classList.add('active');
+    }
+}
 
 
 /**
@@ -269,9 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hasProjectSection) {
         initProjectMenu();
         initProjectOverviews();
-        if (typeof toggleProject === 'function') {
-            toggleProject();
-        }
+        if (typeof toggleProject === 'function') toggleProject();
     }
 });
 

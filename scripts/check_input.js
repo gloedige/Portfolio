@@ -57,20 +57,7 @@ function loadContactSection() {
 function checkForRequired(requiredFields) {
     let isValid = true;
     for (const field of requiredFields) {
-        switch (field) {
-            case 'name':
-                if (!document.getElementById('contact_name').value.trim()) isValid = false;
-                break;
-            case 'mail':
-                if (!document.getElementById('contact_mail').value.trim()) isValid = false;
-                break;
-            case 'message':
-                if (!document.getElementById('contact_message').value.trim()) isValid = false;
-                break;
-            case 'checkbox':
-                if (!document.getElementById('accept_policy').checked) isValid = false;
-                break;
-        }
+        isValid = checkSingleField(field) && isValid;
     }
     return isValid;
 }
@@ -78,24 +65,36 @@ function checkForRequired(requiredFields) {
     
 /** Updates req_* flags based on current input values. */
 function setRequiredValues(element) {
-    switch (element) {
-        case "name":
-            if (input_name.value.trim() !== "") req_name = true 
-            else req_name = false;
-            break;
-        case "mail":
-            if (input_mail.value.trim() !== "") req_mail = true
-            else req_mail = false;
-            break;
-        case "message":
-            if (input_message.value.trim() !== "") req_message = true;
-            else req_message = false;
-            break;
-        case "checkbox":
-            if (policy_checkbox_checked) req_checkbox = true;
-            else req_checkbox = false;
-            break;
-    }
+    const checks = {
+        name: !!input_name?.value.trim(),
+        mail: !!input_mail?.value.trim(),
+        message: !!input_message?.value.trim(),
+        checkbox: !!input_checkbox?.checked
+    };
+    if (element === "name") req_name = checks.name;
+    if (element === "mail") req_mail = checks.mail;
+    if (element === "message") req_message = checks.message;
+    if (element === "checkbox") req_checkbox = checks.checkbox;
+}
+
+
+/**
+ * This function checks if the given field is filled/checked and updates the corresponding req_* flag.
+ * @param {string} field 
+ * @returns {boolean} true if the given field is filled/checked, false otherwise */
+function checkSingleField(field) {
+    switch (field) {
+            case 'name':
+                return (!!input_name?.value.trim());
+            case 'mail':
+                return (!!input_mail?.value.trim());
+            case 'message':
+                return (!!input_message?.value.trim());
+            case 'checkbox':
+                return (!!input_checkbox?.checked);
+            default:
+                return true;
+        }
 }
 
 
@@ -115,22 +114,15 @@ function clearAllInputs() {
 
 /** Shows error indicators for missing required fields. */
 function missingInputs(element) {
-    switch (element) {
-        case "name":
-            if (req_name == false) handleMissingInput(contact_name_label, input_name, "Your name is required");
-            break;
-        case "mail":
-            if (req_mail == false) handleMissingInput(contact_mail_label, input_mail, "Your email is required");
-            break;
-        case "message":
-            if (req_message == false) handleMissingInput(contact_message_label, input_message, "Your message is required");
-            break;
-        case "checkbox":
-            if (req_checkbox == false) {
-                enableCheckboxError();
-                error_policy.classList.remove("d-none");
-            }
-            break;
+    if (element === "name" && !req_name) {
+        handleMissingInput(contact_name_label, input_name, "Your name is required");
+    } else if (element === "mail" && !req_mail) {
+        handleMissingInput(contact_mail_label, input_mail, "Your email is required");
+    } else if (element === "message" && !req_message) {
+        handleMissingInput(contact_message_label, input_message, "Your message is required");
+    } else if (element === "checkbox" && !req_checkbox) {
+        enableCheckboxError();
+        error_policy.classList.remove("d-none");
     }
 }
 
