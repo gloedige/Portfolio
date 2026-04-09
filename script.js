@@ -1,9 +1,7 @@
 const assetsBaseUrl = new URL('./assets/', document.currentScript?.src || window.location.href).href;
-const browserLanguageSetting = navigator.language || navigator.userLanguage;
 const supportedLanguages = ['en', 'de'];
 const defaultLanguage = 'en';
-const currentLanguage = supportedLanguages.includes(browserLanguageSetting) ? browserLanguageSetting : defaultLanguage;
-let selectedLanguage = currentLanguage;
+let selectedLanguage;
 const medieQueryProjectMenuMobile = window.matchMedia('(max-width: 1150px)');
 
 const data_en = [
@@ -28,6 +26,34 @@ let currentSpanText = '';
 
 
 /**
+ * This function loads the main page based on the selected language.
+ * @param {string} selectedLanguage - The language code.
+ */
+function loadMainPageWithPreferredLanguage() {
+    const mainPageUrl = selectedLanguage === 'de' ? './de/index.html' : './en/index.html';
+    window.location.href = mainPageUrl;
+}
+
+
+/**
+ * This function determines the preferred language to use for the website.
+ */
+function getPreferredLanguage() {
+    const storedLang = loadPreferredLanguage();
+    const browserLang = navigator.language || navigator.userLanguage;
+    const browserLangShort = browserLang ? browserLang.split('-')[0] : '';
+    if (storedLang !== '' && supportedLanguages.includes(storedLang)) {
+        selectedLanguage = storedLang;
+    } else if (supportedLanguages.includes( browserLangShort)) {
+        selectedLanguage = browserLangShort;
+    } else {
+        selectedLanguage = defaultLanguage;
+    }
+    return selectedLanguage;
+}
+
+
+/**
  * This function stores the user's preferred language in local storage and reloads the page to apply the language change.
  * @param {string} lang - The language code.
  */
@@ -42,25 +68,24 @@ function storePreferredLanguage(lang) {
 
 /**
  * This function loads the user's preferred language from local storage. 
- * @returns - The preferred language code if it is supported, otherwise the default language code.
+ * @returns {string} - The preferred language code if it is supported, otherwise the default language code.
  */
 function loadPreferredLanguage() {
     const storedLanguage = localStorage.getItem('preferredLanguage');
     if (supportedLanguages.includes(storedLanguage)) {
         return storedLanguage;
     }
-    return defaultLanguage;
+    return '';
 }
 
 
 /**
  * This function highlights the selected language in the navigation menu.
- * @param {string} lang - The language code.
  */
-function highlightSelectedLanguage(lang) {
+function highlightSelectedLanguage() {
     const languageLinks = document.querySelectorAll('.nav_language a');
     languageLinks.forEach(link => {
-        if (link.textContent.toLowerCase() === lang) {
+        if (link.textContent.toLowerCase() === selectedLanguage) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -76,7 +101,8 @@ function highlightSelectedLanguage(lang) {
  * the current information being displayed.
 */
 function typeEffect() {
-    const data = selectedLanguage.startsWith('de') ? data_de : data_en;
+    const lang = selectedLanguage || defaultLanguage;
+    const data = lang.startsWith('de') ? data_de : data_en;
     const fullText = ' ' + data[index].text_2;
     const fullSpanText = data[index].text_1;
     const iconSrc = data[index].icon;
@@ -233,8 +259,8 @@ function resetMenuTextForDesktop() {
  * are available in the DOM before any scripts attempt to interact with them.
  */
 document.addEventListener('DOMContentLoaded', () => {
-    selectedLanguage = loadPreferredLanguage();
-
+    selectedLanguage = getPreferredLanguage();
+    highlightSelectedLanguage();
     intersectionObserver();
     handleViewportChange(medieQueryProjectMenuMobile);
     if (textElement) typeEffect();
@@ -247,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleProject();
         }
     }
-    highlightSelectedLanguage(selectedLanguage);
 });
 
 
