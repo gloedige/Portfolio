@@ -340,17 +340,21 @@
     .hero.d-none{
         display: flex;
         justify-content: space-between;
+        z-index: 102;
     }
     
     .logo_hero{
         flex: unset;
     }
 
-    .burger_menu.is-active{
+    .burger_menu.is-active,
+    .menu_container_impressum.is-active,
+    .overlay.is-active{
         opacity: 1;
     }
     
-    .burger_menu img{
+    .burger_menu img,
+    .menu_container_impressum img{
         transform: translate(-50%, 0%);
         height: 100%;
     }

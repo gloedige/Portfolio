@@ -329,8 +329,14 @@ function initProjectOverviews() {
 function toggleBurgerMenu(buttonElement) {
     buttonElement.querySelector('span').classList.toggle('is-closed');
     const burgerMenu = document.querySelector('.burger_menu');
+    const menuContainerImpressum = document.querySelector('.menu_container_impressum');
+    const menuContainerImpressumOverlay = document.querySelector('.overlay');
     if (burgerMenu) {
         burgerMenu.classList.toggle('is-active');
+    }
+    if (menuContainerImpressum) {
+        menuContainerImpressumOverlay.classList.toggle('is-active');
+        menuContainerImpressum.classList.toggle('is-active');
     }
 }
 

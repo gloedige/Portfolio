@@ -79,6 +79,23 @@ h1{
         top: 120px;
         width: 90vw;
         z-index: 9;
+        transition: opacity 0.5s ease;
+        margin: 0 auto;
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 8;
+        opacity: 0;
+        transition: opacity 0.5s ease;
     }
 
     .return_to_portfolio_arrow{
