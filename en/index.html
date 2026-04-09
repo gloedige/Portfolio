@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerd Lödige</title>
+    <link rel="icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/burger.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <script src="../script.js" defer></script>
+    <script src="../scripts/animate_project_overview.js" defer></script>
+    <script src="../scripts/check_input.js" defer></script>
+</head>
+<body>
+    <div class="hero_wrapper">
+        <section id="hero_section" class="hero">
+            <div class="header_mobile d-none">
+                <div class="logo_hero">
+                    <div class="logo_hero_icon">
+                        <img src="../assets/icons/logo_icon.svg" class="logo_hover" alt="Logo Icon">
+                        <img src="../assets/icons/logo_icon_small.svg" class="logo_default" alt="Logo Icon">
+                    </div>
+                    <p class="name">G. Lödige</p>
+                    <p>developer</p>
+                </div>
+                <button onclick="toggleBurgerMenu(this)" class="button">
+                    <span class="burger-2">
+                    <span class="bar bar--1"></span>
+                    <span class="bar bar--2"></span>
+                    <span class="bar bar--3"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="portfolio_img_container">
+                <div class="burger_menu" id="burger_menu">
+                    <img src="../assets/img/burger_menu_bubble.svg" alt="Burger Menu Background Image">
+                    <div class="burger_menu_container">
+                        <a href="#why_me_section">Why Me</a>
+                        <a href="#skills_section">Skills</a>
+                        <a href="#projects_section">Projects</a>
+                        <a href="#contact_section">Contact</a>
+                        <div class="nav_language">
+                            <a href="../de/index.html" onclick="storePreferredLanguage('de')">DE</a>
+                            <a href="../en/index.html" onclick="storePreferredLanguage('en')">EN</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="../assets/img/bubble_blue.png" class="image_background_hover" alt="Background Image">
+                <img src="../assets/img/bubble_light_blue.png" class="image_background_default" alt="Background Image">
+                <img src="../assets/img/Portfolio-Gerd-010-cut-v4.png" class="user_img" alt="Portrait of Gerd Lödige">
+            </div>
+            <div class="hero_text_area">
+                <div class="social_media_container">
+                    <div class="social_media"></div>
+                    <div class="logo_hero">
+                        <div class="logo_hero_icon">
+                            <img src="../assets/icons/logo_icon.svg" class="logo_hover" alt="Logo Icon">
+                            <img src="../assets/icons/logo_icon_small.svg" class="logo_default" alt="Logo Icon">
+                        </div>
+                            <p class="name">G. Lödige</p>
+                            <p>developer</p>
+                    </div>
+                    <div class="social_media">
+                        <a href="#contact_section">
+                            <img src="../assets/icons/mail_logo.svg" class="social_media_default" alt="Email Icon">
+                            <img src="../assets/icons/mail_icon_hover_blue.svg" class="social_media_hover" alt="Email Icon Hover">
+                        </a>
+                        <a href="https://www.linkedin.com/in/gerd-lödige-4a08802a9/" target="_blank">
+                            <img src="../assets/icons/linkedin_logo.svg" class="social_media_default" alt="LinkedIn Icon">
+                            <img src="../assets/icons/linkedIn_icon_hover_blue.svg" class="social_media_hover" alt="LinkedIn Icon Hover">
+                        </a>
+                        <a href="https://github.com/gloedige" target="_blank">
+                            <img src="../assets/icons/github_logo.svg" class="social_media_default" alt="GitHub Icon">
+                            <img src="../assets/icons/github_icon_hover_blue.svg" class="social_media_hover" alt="GitHub Icon Hover">
+                        </a>
+                    </div>
+                </div>
+                <div class="title">
+                    <h1>Gerd Lödige</h1>
+                    <p>SOFTWARE ENGINEER</p>
+                </div>
+                <div class="hero_arrow_down">
+                    <a href="#why_me_section" class="arrow_swap_vertical">
+                        <img src="../assets/icons/arrow_down_hover.svg" class="button_hover desktop" alt="Arrow Down Hover Icon">
+                        <img src="../assets/icons/arrow_down_default.svg" class="button_default desktop" alt="Arrow Down Icon">
+                        <img src="../assets/icons/arrow_down_mobile_onpress.svg" class="button_press mobile" alt="Arrow Down Press Icon">
+                        <img src="../assets/icons/arrow_down_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Down Mobile Default Icon">
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <div class="nav_wrapper">
+        <nav>
+            <div class="nav_logo">
+                <a href="#hero_section" class="logo_hero">
+                    <img src="../assets/icons/logo_icon_dark.svg" alt="Logo Icon">
+                    <p class="name">G. Lödige</p>
+                    <p>developer</p>
+                </a>
+            </div>
+            <div class="nav_menu">
+                <a href="#why_me_section">Why Me</a>
+                <a href="#skills_section">Skills</a>
+                <a href="#projects_section">Projects</a>
+                <a href="#contact_section">Contact</a>
+            </div>
+            <div class="nav_language">
+                <a href="../de/index.html" onclick="storePreferredLanguage('de')">DE</a>
+                <a href="../en/index.html" onclick="storePreferredLanguage('en')">EN</a>
+            </div>
+        </nav>
+    </div>
+    <div class="main_content_wrapper">
+        <section id="why_me_section" class="why_me">
+            <h2>Why me</h2>
+            <div class="why_me_container">
+                <div class="location_info">
+                    <div class="location_icon" id="location_icon"></div>
+                    <p id="typing_text"></p>
+                </div>
+                <span class="about_me_text">
+                    Programming is like detective work. I enjoy analyzing problems and am ready to solve any case. 
+                    My strengths include practical experience, a goal-oriented and disciplined personality, and strong 
+                    problem-solving skills.
+                </span>
+            </div>
+            <div class="button_right_container">
+                <a href="#contact_section" class="link_transparent">Let's Talk</a>
+            </div>
+        </section>
+        <section id="skills_section" class ="skills">
+            <h2>My Skills</h2>
+            <div class="skills_container">
+                <div class="skills_item_container">
+                    <div class="skill_item">
+                        <img src="../assets/icons/angular_icon.svg" alt="Angular Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/typescript_icon.svg" alt="TypeScript Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/javascript_icon.svg" alt="JavaScript Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/html_icon.svg" alt="HTML Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/css_icon.svg" alt="CSS Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/rest-api_icon.svg" alt="REST API Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/firebase_icon.svg" alt="Firebase Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/git_icon.svg" alt="Git Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/scrum_icon.svg" alt="Scrum Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/material_design_icon.svg" alt="Material Design Icon">
+                    </div>
+                </div>
+                <div class="skills_item_mobile_container">
+                    <div class="skill_item">
+                        <img src="../assets/icons/angular_icon_mobile.svg" alt="Angular Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/typescript_icon_mobile.svg" alt="TypeScript Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/javascript_icon_mobile.svg" alt="JavaScript Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/html_icon_mobile.svg" alt="HTML Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/css_icon_mobile.svg" alt="CSS Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/api_icon_mobile.svg" alt="REST API Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/firebase_icon_mobile.svg" alt="Firebase Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/git_icon_mobile.svg" alt="Git Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/scrum_icon_mobile.svg" alt="Scrum Icon">
+                    </div>
+                    <div class="skill_item">
+                        <img src="../assets/icons/material_icon_mobile.svg" alt="Material Design Icon">
+                    </div>
+
+                </div>
+                <div class="skills_info_container">
+                    <span class="skills_info_headline_mobile">What I am currently learning</span>
+                    <div class="skills_text_and_bubble_container">
+                        <p class="new_skill_text_mobile">Engineering roots, software future: Driven by curiosity about the technologies of tomorrow.</p>
+                        <div class = "bubble_container">
+                            <img src="../assets/img/bubble_skills_hover.svg" class="skills_background_hover" alt="Background Image">
+                            <img src="../assets/img/bubble_skills_default.svg" class="skills_background_default" alt="Background Image">
+                            <img src="../assets/img/learning_mobile_bubble.svg" class="skills_background_mobile" alt="Learning Background Image">
+                            <p class="skills_learning_text">I am currently learning</p>
+                            <div class="skills_learning_items">
+                                <div class="new_skill_item">
+                                    <img src="../assets/icons/django_icon.svg" alt="Django Icon">
+                                    <p>Django</p>
+                                </div>
+                                <div class="new_skill_item">
+                                    <img src="../assets/icons/redis_icon.svg" alt="Redis Icon">
+                                    <p>Redis</p>
+                                </div>
+                            </div>
+                            <div class="new_skill_text">
+                                <p>Engineering roots, software future: Driven by curiosity about the technologies of tomorrow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill_link_container">
+                <a href="#contact_section" class="link_blue">Let's Talk</a>
+            </div>
+
+        </section>
+    </div>
+    <div class="project_wrapper">
+        <section id="projects_section" class="projects">
+            <h2>My Projects</h2>
+            <menu>
+                <div class="project_menu">
+                    <button data-project="pokedex" id="pokemon">1. Pokedex</button>
+                </div>
+                <div class="project_menu">
+                    <button data-project="pollo_loco" id="pollo_loco">2. El Pollo Loco</button>
+                </div>
+                <div class="project_menu">
+                    <button data-project="join" id="join">3. Join</button>
+                </div>
+                <div class="project_menu">
+                    <button data-project="coming_soon" id="ongoing">4. Ongoing Project</button>
+                </div>
+            </menu>
+            <div class="project_overview_wrapper">
+                <div class="project_overview" id="project_pokedex">
+                    <div class="project_links_mobile">
+                        <a href="https://yourusername.github.io/pokedex" class="link_blue" target="_blank">Live Test</a>
+                        <a href="https://github.com/gloedige/Pokedex" class="link_transparent" target="_blank">GitHub</a>
+                    </div>
+                    <article>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>About the project</h3>
+                                <span class="project_duration">Duration: 1 week</span>
+                            </div>
+                            <span>Pokedex is an overview of all Pokémon and their evolutionary stages in the form of cards. Clicking on each card reveals an overview of all the characteristics of the respective Pokémon.</span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>How I have organized my work progress</h3>
+                            </div>
+                            <span>Used agile methodologies and task management tools like Git und Trello to track progress and ensure timely delivery of project milestones. </span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>What I have learned</h3>
+                            </div>
+                            <span>In addition to intensive study of Javascript-driven template creation, I have extensively learned how to handle APIs and also how to handle JSON objects.</span>
+                        </div>
+                    </article>
+                    <div class="single_project_details">
+                        <p class="single_project_mobile_headline" id="single_project_mobile_headline">Pokedex</p>
+                        <p>Technologies<span>: Firebase, JavaScript, CSS</span></p>
+                        <p class="project_duration_mobile">Duration: 1 week</p>
+                        <div class="techstack_container">
+                            <img src="../assets/icons/javascript_icon_small.svg" alt="JavaScript Icon">
+                            <img src="../assets/icons/firebase_icon_small.svg" alt="Firebase Icon">
+                            <img src="../assets/icons/css_icon_small.svg" alt="CSS Icon">
+                        </div>
+                        <div class="preview_wrapping_container">
+                            <img src="../assets/img/pokedex_img.png" class="preview" alt="Gameplay of the Pokedex Project">
+                        </div>
+                        <div class="project_links">
+                            <a href="https://yourusername.github.io/pokedex" class="link_blue" target="_blank">Live Test</a>
+                            <a href="https://github.com/gloedige/Pokedex" class="link_transparent" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_overview" id="project_pollo_loco">
+                    <div class="project_links_mobile">
+                        <a href="https://yourusername.github.io/el_pollo_loco" class="link_blue" target="_blank">Live Test</a>
+                        <a href="https://github.com/gloedige/El_Pollo_Loco" class="link_transparent" target="_blank">GitHub</a>
+                    </div>
+                    <article>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>About the project</h3>
+                                <span class="project_duration">Duration: 3 weeks</span>
+                            </div>
+                            <span>Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.</span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>How I have organized my work progress</h3>
+                            </div>
+                            <span>Used agile methodologies and task management tools like Git und Trello to track progress and ensure timely delivery of project milestones. </span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>What I have learned</h3>
+                            </div>
+                            <span>In addition to intensive study of object-oriented programming, I have learned to work with a canvas and a high number of intervals to generate smooth gameplay.</span>
+                        </div>
+                    </article>
+                    <div class="single_project_details">
+                        <p class="single_project_mobile_headline" id="single_project_mobile_headline">Pollo Loco</p>
+                        <p>Technologies<span>: HTML, JavaScript, CSS</span></p>
+                        <p class="project_duration_mobile">Duration: 3 weeks</p>
+                        <div class="techstack_container">
+                            <img src="../assets/icons/html_icon_small.svg" alt="HTML Icon">
+                            <img src="../assets/icons/javascript_icon_small.svg" alt="JavaScript Icon">
+                            <img src="../assets/icons/css_icon_small.svg" alt="CSS Icon">
+                        </div>
+                        <div class="preview_wrapping_container">
+                            <img src="../assets/img/el_pollo_loco_img.png" class="preview" alt="Gameplay of the El Pollo Loco Project">
+                        </div>
+                        <div class="project_links">
+                            <a href="https://yourusername.github.io/el_pollo_loco" class="link_blue" target="_blank">Live Test</a>
+                            <a href="https://github.com/gloedige/El_Pollo_Loco" class="link_transparent" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_overview" id="project_join">
+                    <div class="project_links_mobile">
+                        <a href="https://yourusername.github.io/join" class="link_blue" target="_blank">Live Test</a>
+                        <a href="https://github.com/gloedige/Join" class="link_transparent" target="_blank">GitHub</a>
+                    </div>
+                    <article>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>About the project</h3>
+                                <span class="project_duration">Duration: 5 weeks</span>
+                            </div>
+                            <span>Join is a Kanban tool for classic task management. After logging in, users can access a summary of all their tasks. New tasks can also be added. The board page displays all tasks categorized by type.</span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>How I have organized my work progress</h3>
+                            </div>
+                            <span>Agile methods and task management tools like Git and Trello were used in the project to track progress. Dividing the project into epics enabled structural clustering. Regular communication between project participants was achieved through daily stand-ups. </span>
+                        </div>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>My group work experience</h3>
+                            </div>
+                            <span>The skill I developed most intensively during this project was structured teamwork. Furthermore, I gained extensive experience working with Git and the challenges of working in branches through collaboration with other developers.</span>
+                        </div>
+                    </article>
+                    <div class="single_project_details">
+                        <p class="single_project_mobile_headline" id="single_project_mobile_headline">Join</p>
+                        <p>Technologies<span>: HTML, JavaScript, CSS</span></p>
+                        <p class="project_duration_mobile">Duration: 5 weeks</p>
+                        <div class="techstack_container">
+                            <img src="../assets/icons/html_icon_small.svg" alt="HTML Icon">
+                            <img src="../assets/icons/javascript_icon_small.svg" alt="JavaScript Icon">
+                            <img src="../assets/icons/css_icon_small.svg" alt="CSS Icon">
+                        </div>
+                        <div class="preview_wrapping_container">
+                            <img src="../assets/img/join_img.png" class="preview" alt="Sample of Join Project">
+                        </div>
+                        <div class="project_links">
+                            <a href="https://yourusername.github.io/join" class="link_blue" target="_blank">Live Test</a>
+                            <a href="https://github.com/gloedige/Join" class="link_transparent" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project_overview" id="project_coming_soon">
+                    <article>
+                        <div class="single_project_info">
+                            <div class="single_project_headline">
+                                <img src="../assets/icons/mini_bubble_blue.svg" alt="Mini Bubble Blue Icon">
+                                <h3>About the project</h3>
+                            </div>
+                            <span>The primary focus is developing the backend for a project management tool. The frontend already exists. My task is to implement the necessary functionalities and seamlessly integrate the frontend and backend. As a foundation for the project work, I develop a detailed plan beforehand. Furthermore, I have a strong emphasis on clean code.</span>
+                        </div>
+                    </article>
+                    <div class="single_project_details">
+                        <p class="single_project_mobile_headline" id="single_project_mobile_headline">Ongoing</p>
+                        <p>Technologies<span>: Python, Django, Django REST Framework</span></p>
+                        <div class="techstack_container">
+                            <img src="../assets/icons/python_icon.svg" alt="Python Icon">
+                            <img src="../assets/icons/django_icon.svg" alt="Django Icon">
+                            <img src="../assets/icons/DRF_icon.svg" alt="Django REST Framework Icon">
+                        </div>
+                        <div class="preview_wrapping_container">
+                            <div class="further_project">
+                                <span>Coming soon...</span>
+                            </div>    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <div class="main_content_wrapper">
+        <section class="reference">
+            <p class="reference_headline">Need a teamplayer? <span>Here is what my colleagues say about me</span></p>
+            <div class="reference_container carousel">
+                <div class="text_bubble_container">
+                    <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
+                    <div class="reference_contact_details">
+                        <p class="reference_name">Tuncay C.</p>
+                        <p class="reference_project">Project <span>Bestell App</span></p>
+                    </div>
+
+                    <div class="reference_text">
+                        <p>"Gerd impresses with his excellent technical expertise and proactive approach. He provides the team with sound support on complex issues and enriches the team through his coordinating role."</p>
+                    </div>
+                </div>
+                <div class="text_bubble_container">
+                    <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
+                    <div class="reference_contact_details">
+                        <p class="reference_name">Lukas Lehmann</p>
+                        <p class="reference_project">Project <span>Join</span></p>
+                    </div>
+
+                    <div class="reference_text">
+                        <p>"Gerd stands out in particular for his collaborative approach. I found his structured approach to working on our project particularly commendable."</p>
+                    </div>
+                    <a href='https://www.linkedin.com/in/lukas-lehmann-b7b5683bb/' target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="text_bubble_container">
+                    <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
+                    <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
+                    <div class="reference_contact_details">
+                        <p class="reference_name">Fabian Puchta</p>
+                        <p class="reference_project">Project <span>Join</span></p>
+                    </div>
+
+                    <div class="reference_text">
+                        <p>"Gerd is a reliable developer who uses his expertise and organised approach to find effective solutions. He is creative in his problem-solving and a true team player."</p>
+                    </div>
+                    <a href='https://www.linkedin.com/in/fabian-puchta-7ba7383b7/' target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+        <section id="contact_section" class="contact">
+            <h2>Contact Me</h2>
+            <div class="contact_wrapper">
+                <div class="contact_container">
+                    <div class="contact_request">
+                        <p>Let us work together!</p>
+                    </div>
+                    <div class="contact_text">
+                        <p>I'm open to new opportunities and collaborations. My preferred role is to work as a Fullstack Developer. I am looking forward to contributing to innovative projects. Feel free to reach out to me via email or phone. I look forward to hearing from you!</p>
+                    </div>
+                    <div class="contact_info">
+                        <a href="mailto:info@gerd-loedige.de">
+                            <img src="../assets/icons/email_icon_default.svg" class="email_img_default" alt="Email Icon">
+                            <img src="../assets/icons/email_icon_hover.svg" class="email_img_hover" alt="Email Icon Hover">
+                            <img src="../assets/icons/email_icon_clicked.svg" class="email_img_clicked" alt="Email Icon Clicked">
+                            <span>Email: </span>
+                            info@gerd-loedige.de
+                        </a>
+                        <a href="tel:+491723465052">
+                            <img src="../assets/icons/phone_icon_default.svg" class="phone_img_default" alt="Phone Icon">
+                            <img src="../assets/icons/phone_icon_hover.svg" class="phone_img_hover" alt="Phone Icon Hover">
+                            <span>Phone: </span>
+                            +49 172 3465052
+                        </a>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <!-- <form action="submit_form.php" method="POST"> -->
+                        <form onsubmit="sendMail(event)">
+                            <div class="contact_field_name_email">
+                                <div class="input_container">
+                                    <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
+                                    <div class="input_field">
+                                        <input 
+                                        type="text" 
+                                        id="contact_name" 
+                                        name="name"
+                                        placeholder="Your Name"
+                                        >
+                                        <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                    </div>
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
+                                    <div class="input_field">
+                                        <input 
+                                        type="email" 
+                                        id="contact_mail" 
+                                        name="mail" 
+                                        placeholder="Your Email"
+                                        >
+                                        <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_container full_width">
+                                <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
+                                <div class="input_field">
+                                    <textarea
+                                    id="contact_message" 
+                                    name="message" 
+                                    rows="8" 
+                                    placeholder="Your Message"
+                                    ></textarea>
+                                    <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                </div>
+                            </div>
+                            <div class="accept_policy_container">
+                                <div class="checkbox_container" onclick="toggleAcceptPolicy()" id="checkbox_container">
+                                    <input type="checkbox" id="accept_policy" name="accept_policy" value="accepted">
+                                    <img src="../assets/icons/checkbox_hover.svg" alt="Checkbox Hover Icon" class="checkbox_hover inactive">
+                                    <img src="../assets/icons/checkbox_default.svg" alt="Checkbox Default Icon" class="checkbox_default">
+                                    <img src="../assets/icons/checkbox_checked.svg" alt="Checkbox Checked Icon" class="checkbox_checked inactive">
+                                    <img src="../assets/icons/checkbox_error.svg" alt="Checkbox Error Icon" class="checkbox_error inactive">
+                                </div>
+                                <div class="policy_text_container">
+                                    <label for="accept_policy" id="accept_policy_label">I've read the <a href="privacy_policy.html">privacy policy</a> and accept to the processing of my data as outlined.</label>
+                                    <span class="error_policy d-none" id="error_policy">Please accept the privacy policy.</span>
+                                </div>
+                            </div>
+                            <div class="send_button_container">
+                                <button type="submit" disabled id="send_button">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact_arrow_up">
+                        <a href="#hero_section" class="arrow_swap_vertical">
+                            <img src="../assets/icons/arrow_up_hover.svg" class="button_hover desktop" alt="Arrow Up Hover Icon">
+                            <img src="../assets/icons/arrow_up_default.svg" class="button_default desktop" alt="Arrow Up Icon">
+                            <img src="../assets/icons/arrow_up_mobile_onpress.svg" class="button_press mobile" alt="Arrow Up Press Icon">
+                            <img src="../assets/icons/arrow_up_mobile_default.svg" class="button_default_mobile mobile" alt="Arrow Up Mobile Default Icon">
+                        </a>
+                    </div>
+            </div>
+        </section>
+    </div>
+    <div class="nav_wrapper">
+        <footer>
+            <div class="footer_container_left">
+                <a href="legal_notice.html">Legal notice</a>
+                <span>&copy; Gerd Lödige 2026</span>
+            </div>
+            <div class = "footer_container_right">
+                <div class="nav_logo">
+                    <a href="#hero_section" class="logo_hero footer">
+                        <img src="../assets/icons/logo_icon_dark.svg" alt="Logo Icon">
+                        <p class="name">G. Lödige</p>
+                        <p>developer</p>
+                    </a>
+                </div>
+                <div class="social_media footer">
+                    <a href="#contact_section">
+                        <img src="../assets/icons/mail_icon_dark.svg" class="social_media_default" alt="Email Icon">
+                        <img src="../assets/icons/mail_icon_white.svg" class="social_media_hover" alt="Email Icon Hover">
+                    </a>
+                    <a href="https://www.linkedin.com/in/gerd-lödige-4a08802a9/" target="_blank">
+                        <img src="../assets/icons/linkedIn_icon_dark.svg" class="social_media_default" alt="LinkedIn Icon">
+                        <img src="../assets/icons/linkedIn_icon_white.svg" class="social_media_hover" alt="LinkedIn Icon Hover">
+                    </a>
+                    <a href="https://github.com/gloedige" target="_blank">
+                        <img src="../assets/icons/github_icon_dark.svg" class="social_media_default" alt="GitHub Icon">
+                        <img src="../assets/icons/github_icon_white.svg" class="social_media_hover" alt="GitHub Icon Hover">
+                    </a>
+                </div>
+            </div>
+            </footer>
+        </div>
+    
+</body>
+</html>
