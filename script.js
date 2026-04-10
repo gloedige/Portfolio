@@ -212,45 +212,57 @@ function setTiming(currentText, fullText, currentSpanText) {
  * When a section is in view, it updates the navigation links to highlight the active section.
  */
 function updateActiveSection() {
-    const navLinks = document.querySelectorAll('.nav_menu a');
-    const sections = Array.from(document.querySelectorAll('section[id]'));
-
-    const setActiveByViewportCenter = () => {
-        const viewportCenter = window.innerHeight / 2;
-        let bestSection = null;
-        let bestDistance = Infinity;
-
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const sectionCenter = rect.top + rect.height / 2;
-            const distance = Math.abs(viewportCenter - sectionCenter);
-
-            if (distance < bestDistance) {
-                bestDistance = distance;
-                bestSection = section;
-            }
-        });
-
-        if (!bestSection) return;
-
-        const activeLink = document.querySelector(`.nav_menu a[href="#${bestSection.id}"]`);
-        handleActiveNavLink(activeLink, navLinks);
-    };
-
+    setActiveByViewportCenter();
     window.addEventListener('scroll', setActiveByViewportCenter, { passive: true });
     window.addEventListener('resize', setActiveByViewportCenter);
-    setActiveByViewportCenter(); // Initial check on page load
 };
-      
 
+
+/**
+ * This function calculates which section of the page is closest to the center of the viewport and updates 
+ * the active navigation link accordingly.
+ */
+function setActiveByViewportCenter() {
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const viewportCenter = window.innerHeight / 2;
+    const bestSection = getBestSectionByViewportCenter(sections, viewportCenter);
+    
+    if (!bestSection) return;
+    handleActiveNavLink(bestSection.id);
+};
+
+
+/**
+ * This function takes an array of sections and the center point of the viewport, and determines which section 
+ * is closest to that center point.
+ * @param {HTMLElement[]} sections 
+ * @param {number} viewportCenter 
+ * @returns {HTMLElement|null} The section closest to the center of the viewport.
+ */
+function getBestSectionByViewportCenter(sections, viewportCenter) {
+    let bestSection = null;
+    let bestDistance = Infinity;
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(viewportCenter - sectionCenter);
+        
+        if (distance < bestDistance) {
+            bestDistance = distance;
+            bestSection = section;
+        }
+    });
+    return bestSection;
+}
 
 
 /**
  * This function handles the active state of navigation links.
- * @param {HTMLElement} activeLink - The currently active navigation link.
- * @param {NodeListOf<HTMLElement>} navLinks - All navigation links.
- */
-function handleActiveNavLink(activeLink, navLinks) {
+ * @param {string} id - The ID of the currently active section.
+*/
+function handleActiveNavLink(id) {
+    const activeLink = document.querySelector(`.nav_menu a[href="#${id}"]`);
+    const navLinks = document.querySelectorAll('.nav_menu a');
     if (activeLink){
         navLinks.forEach(link => link.classList.remove('active'));
         activeLink.classList.add('active');
