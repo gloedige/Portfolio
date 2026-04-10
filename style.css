@@ -1193,6 +1193,11 @@ nav{
     border-radius: 30px;
 }
 
+.send_mail_overlay.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .overlay_content{
     color: #262E34;
     font-size: 24px;
