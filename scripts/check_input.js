@@ -288,9 +288,11 @@ function removeInputValidationListener(inputElement, labelElement, field) {
 function inputCheckboxEventListener() {
     input_checkbox.addEventListener("focus", () => removeIndicatorOnInput("checkbox"));
     input_checkbox.addEventListener("blur", () => {
-        policy_checkbox_checked = input_checkbox.checked;
             setRequiredValues("checkbox");
             missingInputs("checkbox");
+    });
+    input_checkbox.addEventListener("change", () => {
+            policy_checkbox_checked = input_checkbox.checked;
             manageSendButtonStatus();
             toggleAcceptPolicy();
     });
