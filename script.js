@@ -211,22 +211,37 @@ function setTiming(currentText, fullText, currentSpanText) {
  * This function uses the Intersection Observer API to observe when sections of the page come into view.
  * When a section is in view, it updates the navigation links to highlight the active section.
  */
-function intersectionObserver() {
-    const sections = document.querySelectorAll('section');
+function updateActiveSection() {
     const navLinks = document.querySelectorAll('.nav_menu a');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
 
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            const activeLink = document.querySelector(`.nav_menu a[href="#${id}"]`);
-            handleActiveNavLink(activeLink, navLinks);
-        }
-    });
-    }, { threshold: 0.7 });
+    const setActiveByViewportCenter = () => {
+        const viewportCenter = window.innerHeight / 2;
+        let bestSection = null;
+        let bestDistance = Infinity;
 
-    sections.forEach(section => observer.observe(section));
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const sectionCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(viewportCenter - sectionCenter);
+
+            if (distance < bestDistance) {
+                bestDistance = distance;
+                bestSection = section;
+            }
+        });
+
+        if (!bestSection) return;
+
+        const activeLink = document.querySelector(`.nav_menu a[href="#${bestSection.id}"]`);
+        handleActiveNavLink(activeLink, navLinks);
+    };
+
+    window.addEventListener('scroll', setActiveByViewportCenter, { passive: true });
+    window.addEventListener('resize', setActiveByViewportCenter);
+    setActiveByViewportCenter(); // Initial check on page load
 };
+      
 
 
 
@@ -282,7 +297,7 @@ function resetMenuTextForDesktop() {
 document.addEventListener('DOMContentLoaded', () => {
     selectedLanguage = getPreferredLanguage();
     highlightSelectedLanguage();
-    intersectionObserver();
+    updateActiveSection();
     handleViewportChange(medieQueryProjectMenuMobile);
     if (textElement) typeEffect();
 
