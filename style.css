@@ -1144,6 +1144,7 @@ nav{
     gap: 8px;
     font-size: 14px;
     position: relative;
+    height: 80px;
 }
 
 .accept_policy_container a{
@@ -1152,13 +1153,13 @@ nav{
     font-size: 16px;
 }
 
-.send_button_container{
+/* .send_button_container{
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
-}
+} */
 
-.send_button_container button{
+.accept_policy_container button{
     background-color: transparent;
     border: 2px solid #89BCD9;
     border-radius: 30px;
@@ -1168,9 +1169,13 @@ nav{
     font-family: 'Josefin';
     box-sizing: border-box;
     cursor: pointer;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
-.send_button_container button:disabled{
+.accept_policy_container button:disabled{
     border-color: #8F9290 !important;
     color: #8F9290 !important;
     cursor: auto !important;
