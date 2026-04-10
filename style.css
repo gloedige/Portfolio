@@ -1037,6 +1037,7 @@ nav{
 
 .form_container{
     width: 100%;
+    position: relative;
 }
 
 .form_container .input_container{
@@ -1173,6 +1174,31 @@ nav{
     border-color: #8F9290 !important;
     color: #8F9290 !important;
     cursor: auto !important;
+}
+
+.send_mail_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 50%);
+    background-color: #89BCD9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    border-radius: 30px;
+}
+
+.overlay_content{
+    color: #262E34;
+    font-size: 24px;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.2;
 }
 
 .error_policy{
