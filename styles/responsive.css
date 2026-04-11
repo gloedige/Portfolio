@@ -294,6 +294,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
+    .accept_policy_container{
+        height: 110px;
+    }
     
 }
 
@@ -643,6 +647,10 @@
     .social_media a:hover .social_media_default{
         opacity: 1;
     }
+
+    .accept_policy_container{
+        height: 130px;
+    }
 }
 
 @media (max-width: 440px){
@@ -664,5 +672,9 @@
 
     .location_info {
         min-width: unset;
+    }
+
+    .accept_policy_container{
+        height: 150px;
     }
 }
