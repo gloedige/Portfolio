@@ -8,6 +8,7 @@ main{
     max-width: calc(970px + 20px + 27px);
     box-sizing: border-box;
     margin: 0 auto;
+    line-height: 1.2;
 }
 
 h1{

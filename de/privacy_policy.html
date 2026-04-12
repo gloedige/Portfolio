@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung</title>
+    <link rel="icon" href="../assets/img/burger_menu_bubble.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/burger.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/legal_notice.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header>
+        <section class="hero d-none">
+            <div class="header_mobile d-none">
+                <div class="logo_hero">
+                    <div class="logo_hero_icon">
+                        <img src="../assets/icons/logo_icon.svg" class="logo_hover" alt="Logo Icon">
+                        <img src="../assets/icons/logo_icon_small.svg" class="logo_default" alt="Logo Icon">
+                    </div>
+                    <p class="name">G. Lödige</p>
+                    <p>developer</p>
+                </div>
+                <button onclick="toggleBurgerMenu(this)" class="button">
+                    <span class="burger-2">
+                        <span class="bar bar--1"></span>
+                        <span class="bar bar--2"></span>
+                        <span class="bar bar--3"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="overlay">
+                <div class="menu_container_impressum" id="burger_menu">
+                    <img src="../assets/img/burger_menu_bubble.svg" alt="Burger Menu Background Image">
+                    <div class="burger_menu_container">
+                        <a href="./index.html#why_me_section">Warum ich</a>
+                        <a href="./index.html#skills_section">Fähigkeiten</a>
+                        <a href="./index.html#projects_section">Projekte</a>
+                        <a href="./index.html#contact_section">Kontakt</a>
+                        <div class="nav_language">
+                            <a href="../de/privacy_policy.html" onclick="storePreferredLanguage('de')">DE</a>
+                            <a href="../en/privacy_policy.html" onclick="storePreferredLanguage('en')">EN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="./index.html" class="return_to_portfolio_arrow">
+                <img src="../assets/icons/arrow_back_mobile.svg" alt="Arrow Back Icon" class="arrow_back">
+            </a>
+        </section>
+        <div class="nav_wrapper">
+            <nav>
+                <div class="nav_logo">
+                    <a href="./index.html" class="logo_hero">
+                        <img src="../assets/icons/logo_icon_dark.svg" alt="Logo Icon">
+                        <p class="name">G. Lödige</p>
+                        <p>developer</p>
+                    </a>
+                </div>
+                <div class="nav_menu">
+                    <a href="./index.html#why_me_section">Warum Ich</a>
+                    <a href="./index.html#skills_section">Fähigkeiten</a>
+                    <a href="./index.html#projects_section">Projekte</a>
+                    <a href="./index.html#contact_section">Kontakt</a>
+                </div>
+                <div class="nav_language">
+                    <a href="privacy_policy.html" onclick="storePreferredLanguage('de')">DE</a>
+                    <a href="../en/privacy_policy.html" onclick="storePreferredLanguage('en')">EN</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Datenschutzerklärung</h1>
+        <section class="section_container">
+            <p class="section_head">Wer sind wir?</p>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Webseite ist:</p>
+            <ul>
+                <li>Gerd Lödige</li>
+                <li>Wassily-Kandinsky-Str. 25</li>
+                <li>38126 Braunschweig, Deutschland</li>
+                <li>gerd.loedige@posteo.de</li>
+                <li>gerd-loedige.de</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Welche Daten erheben wir?</p>
+            <p>Wenn du mein Portfolio besuchst oder das Kontaktformular nutzt, verarbeite ich folgende Daten:</p>
+            <ul>
+                <li>Kommunikationsdaten: Name und E-Mail-Adresse (sofern du mir eine Nachricht sendest).</li>
+                <li>Inhaltsdaten: Der Text deiner Nachricht.</li>
+                <li>Technische Nutzungsdaten: Deine IP-Adresse, Browsertyp und Zugriffszeiten (dies geschieht automatisch durch den Webserver/Hosting-Provider).</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Wie erheben wir deine Daten?</p>
+            <p>Die Datenerhebung erfolgt auf zwei Wegen:</p>
+            <ul>
+                <li>Direkt von dir: Durch die Eingabe deiner Daten in das Kontaktformular.</li>
+                <li>Automatisch: Durch meinen Hosting-Provider (IONOS), wenn du die Webseite aufrufst (Server-Logfiles).</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Warum erheben wir deine Daten?</p>
+            <p>Ich verarbeite deine Daten ausschließlich für folgende Zwecke:</p>
+            <ul>
+                <li>Beantwortung von Anfragen: Um auf deine Kontaktanfrage zu reagieren (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO – vorvertragliche Maßnahmen).</li>
+                <li>Bereitstellung der Webseite: Um die technische Sicherheit und Stabilität meines Portfolios zu gewährleisten (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse).</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Weitergabe an Dritte</p>
+            <p>Deine Daten werden nicht an Dritte verkauft. Ich nutze jedoch Dienstleister für den Betrieb der Seite:</p>
+            <ul>
+                <li>Hosting-Provider: Mein Portfolio und die Subdomains join.gerd-loedige.de, pokedex.gerd-loedige.de und pollo-loco.gerd-loedige.de werden bei IONOS gehostet. Mit dem Provider besteht ein Vertrag zur Auftragsverarbeitung (AVV).</li>
+                <li>E-Mail-Provider: Deine Anfragen werden an mein Postfach bei Posteo weitergeleitet.</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Datentransfer</p>
+            <p>Deine Daten werden grundsätzlich auf Servern innerhalb der EU (Deutschland) verarbeitet. Solltest du Links zu meinen Projekten auf GitHub folgen, gelten dort die Datenschutzbestimmungen von GitHub (USA), sobald du deren Plattform besuchst.</p>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Speicherdauer</p>
+            <ul>
+                <li>Kontaktanfragen: Ich lösche deine Daten, sobald deine Anfrage abschließend bearbeitet wurde und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+                <li>Server-Logfiles: Diese werden nach einer kurzen Zeitspanne (meist 7 bis 30 Tage) durch den Hoster anonymisiert oder gelöscht.</li>
+            </ul>
+        </section>
+        <section class="section_container">
+            <p class="section_head">Deine Rechte</p>
+            <p>Du hast gegenüber mir folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
+            <ul>
+                <li>Auskunft: Du darfst wissen, welche Daten ich über dich gespeichert habe.</li>
+                <li>Berichtigung: Du kannst fehlerhafte Daten korrigieren lassen.</li>
+                <li>Löschung: Du kannst die Löschung deiner Daten verlangen.</li>
+                <li>Widerspruch: Du kannst der Verarbeitung deiner Daten jederzeit widersprechen.</li>
+                <li>Beschwerderecht: Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (z.B. dem Landesbeauftragten für Datenschutz in deinem Bundesland).</li>
+            </ul>
+            <p>Um diese Rechte auszuüben, sende einfach eine E-Mail an: <a href="mailto:gerd.loedige@posteo.de">gerd.loedige@posteo.de</a></p>
+        </section>
+    </main>
+    <div class="nav_wrapper">
+        <footer>
+            <div class="footer_container_left">
+                <a href="legal_notice.html">Impressum</a>
+                <span>&copy; Gerd Lödige 2026</span>
+            </div>
+            <div class="nav_logo">
+                <a href="./index.html" class="logo_hero footer">
+                    <img src="../assets/icons/logo_icon_dark.svg" alt="Logo Icon">
+                    <p class="name">G. Lödige</p>
+                    <p>developer</p>
+                </a>
+            </div>
+           <div class="social_media footer">
+                <a href="#contact_section" target="_blank">
+                    <img src="../assets/icons/mail_icon_dark.svg" class="social_media_default" alt="Email Icon">
+                    <img src="../assets/icons/mail_icon_white.svg" class="social_media_hover" alt="Email Icon Hover">
+                </a>
+                <a href="https://www.linkedin.com/in/gerd-lödige-4a08802a9/" target="_blank">
+                    <img src="../assets/icons/linkedIn_icon_dark.svg" class="social_media_default" alt="LinkedIn Icon">
+                    <img src="../assets/icons/linkedIn_icon_white.svg" class="social_media_hover" alt="LinkedIn Icon Hover">
+                </a>
+                <a href="https://github.com/gloedige" target="_blank">
+                    <img src="../assets/icons/github_icon_dark.svg" class="social_media_default" alt="GitHub Icon">
+                    <img src="../assets/icons/github_icon_white.svg" class="social_media_hover" alt="GitHub Icon Hover">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
