@@ -651,6 +651,10 @@
     .accept_policy_container{
         height: 130px;
     }
+
+    .send_mail_overlay{
+        width: 80%;
+    }
 }
 
 @media (max-width: 440px){
@@ -676,5 +680,9 @@
 
     .accept_policy_container{
         height: 150px;
+    }
+
+    .send_mail_overlay{
+        width: 90%;
     }
 }

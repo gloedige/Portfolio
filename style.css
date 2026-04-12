@@ -1153,12 +1153,6 @@ nav{
     font-size: 16px;
 }
 
-/* .send_button_container{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-} */
-
 .accept_policy_container button{
     background-color: transparent;
     border: 2px solid #89BCD9;
@@ -1183,11 +1177,11 @@ nav{
 
 .send_mail_overlay{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
+    top: 50%;
+    left: 50%;
+    width: 70%;
     height: 50%;
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
     background-color: #89BCD9;
     display: flex;
     justify-content: center;
