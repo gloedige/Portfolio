@@ -8,12 +8,7 @@
     }
 
     h1{
-        font-size: clamp(3rem, -2.43rem + 17.39vh, 4.5rem);
         margin-top: 16px;
-    }
-
-    .title p{
-        font-size: clamp(1.5rem, 0.86rem + 3.01vh, 2.0rem);
     }
 
     .hero_arrow_down{
@@ -22,18 +17,24 @@
     }
 }
 
+@media(max-height: 530px){
+    .hero_arrow_down{
+        display: none;
+    }
+}
+
 @media ( max-width: 1330px) {
     h1{
         font-size: clamp(3rem, -2.23rem + 9.3vw, 5.5rem);
     }
-
+    .title p{
+        font-size: clamp(1.5rem, 0.86rem + 1.72vw, 2.5rem);
+    }
+    
     h2{
         font-size: clamp(2rem, 0.86rem + 3.01vw, 3.75rem);
     }
 
-    .title p{
-        font-size: clamp(1.5rem, 0.86rem + 1.72vw, 2.5rem);
-    }
 
     .hero_arrow_down{
         margin-bottom: 24px;
@@ -97,11 +98,6 @@
         position: static;
         margin: 80px auto 0 auto;
     }
-
-    .portfolio_img_container{
-        /* max-width: unset;
-        margin: 0; */
-    }
 }
 
 @media (max-width: 1150px){
@@ -118,38 +114,22 @@
         font-family: 'Josefin', Arial, sans-serif;
     }
 
-    .hero_arrow_down{
-        /* margin-top: clamp(24px, -393.6px + 46.4vw, 140px); */
-    }
-
     .hero_text_area{
-        margin-top: clamp(16px, -171.2px + 20.8vw, 68px);
         padding-left: 0;
     }
-
-    
 
     .image_background_default, 
     .image_background_hover {
         height: 80%;
-        transform: translate(-50%, -16%) rotate(0deg);
     }
 
     .portfolio_img_container{
-        aspect-ratio: 3/4;
-        max-width: unset;
-        width: 40%;
-        flex: 1;
         margin: 22px 15px 0 15px;
     }
 
     .portfolio_img_container img{
         max-width: 100%;
         height: auto;
-        /* max-height: 90%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
     }
 
     .portfolio_img_container:hover .image_background_default{
@@ -335,18 +315,8 @@
     
 }
 
-@media (max-width: 1150px) and (orientation: landscape){
-    .hero_text_area{
-        margin: 0;
-    }
 
-    .title p{
-        font-size: 18px;
-    }
-}
-
-
-@media (max-width: 1150px) and (orientation: portrait){
+@media(max-aspect-ratio: 1/1){
         .hero {
             flex-direction: column;
         }
@@ -354,26 +324,37 @@
         .hero_text_area{
             margin: 8px 0 0 0;
             padding: 0;
+            align-items: center;
         }
 
         .hero_arrow_down{
             margin: 24px 0;
         }
-    
-        .portfolio_img_container{
-            height: 60%;
-            width: unset;
-            margin: 0 auto;
-        }
 
         .portfolio_img_container .user_img{
             clip-path: polygon(0 0%, 100% 0%, 100% 85%, 95% 90%, 90% 91%, 85% 94%, 80% 94%, 75% 96%, 70% 97.3%, 65% 98.3%, 60% 99%, 55% 99.5%, 50% 100%, 45% 100%, 40% 100%, 35% 99.7%, 30% 99.2%, 25% 98.5%, 20% 97.3%, 15% 96%, 10% 95%, 5% 95%, 0% 50%);
         }
+        .social_media_container{
+            min-width: 50%;
+        }
+
+        .portfolio_img_container .image_background_default,
+        .portfolio_img_container .image_background_hover{
+              transform: translate(-50%, 0%) rotate(0deg);
+        }
 }
 
+@media(max-aspect-ratio: 6/5){
+    .hero_arrow_down{
+        flex: unset;
+    }
 
+    .hero_text_area{
+        margin: 0;
+        justify-content: space-around;
+    }
 
-
+}
 
 @media (max-width: 700px){
     h1 {
@@ -395,8 +376,6 @@
     }
 
     .portfolio_img_container img{
-        /* max-width: 100%;
-        height: auto; */
         max-height: 90%;
         top: 50%;
         left: 50%;
@@ -406,11 +385,6 @@
     .portfolio_img_container{
         aspect-ratio: 1/1;
         width: 100%;
-    }
-
-    .portfolio_img_container .user_img{
-        /* max-height: 95%;
-        transform: translate(-50%, -52.5%); */
     }
 
     .portfolio_img_container .user_img{
@@ -428,10 +402,9 @@
         transform: translate(-50%, 0%);
     }
 
-    .image_background_default, 
-    .image_background_hover{
-        height: 95%;
-        transform: translate(-50%, 0%);
+    .portfolio_img_container .image_background_default,
+    .portfolio_img_container .image_background_hover{
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 
     .header_mobile.d-none,
