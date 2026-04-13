@@ -1,3 +1,27 @@
+@media (max-height: 730px){
+    .hero{
+        padding-top: 16px;
+    }
+
+    .hero_text_area{
+        margin: 0;
+    }
+
+    h1{
+        font-size: clamp(3rem, -2.43rem + 17.39vh, 4.5rem);
+        margin-top: 16px;
+    }
+
+    .title p{
+        font-size: clamp(1.5rem, 0.86rem + 3.01vh, 2.0rem);
+    }
+
+    .hero_arrow_down{
+        margin-top: 24px;
+        align-items: flex-start;
+    }
+}
+
 @media ( max-width: 1330px) {
     h1{
         font-size: clamp(3rem, -2.23rem + 9.3vw, 5.5rem);
@@ -311,6 +335,16 @@
     
 }
 
+@media (max-width: 1150px) and (orientation: landscape){
+    .hero_text_area{
+        margin: 0;
+    }
+
+    .title p{
+        font-size: 18px;
+    }
+}
+
 
 @media (max-width: 1150px) and (orientation: portrait){
         .hero {
@@ -337,24 +371,7 @@
         }
 }
 
-@media (max-height: 730px){
-    .hero_text_area{
-        margin: 0;
-    }
 
-    h1{
-        font-size: clamp(3rem, -2.43rem + 17.39vh, 5.5rem);
-    }
-
-    .title p{
-        font-size: clamp(1.5rem, 0.86rem + 3.01vh, 2.5rem);
-    }
-
-    .hero_arrow_down{
-        margin-top: 24px;
-        align-items: flex-start;
-    }
-}
 
 
 
@@ -428,6 +445,10 @@
         flex: unset;
     }
 
+    .burger_menu{
+        aspect-ratio: 1/1;
+    }
+
     .burger_menu.is-active,
     .menu_container_impressum.is-active,
     .overlay.is-active{
@@ -436,13 +457,10 @@
     
     .burger_menu img,
     .menu_container_impressum img{
-        transform: translate(-50%, 0%);
         height: 100%;
     }
 
     .burger_menu_container{
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         gap: 36px;
         position: absolute;
