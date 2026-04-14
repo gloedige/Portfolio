@@ -15,7 +15,7 @@
     .hero_arrow_down{
         margin: 24px 0;
     }
-    .portfolio_img_container{
+    .portfolio_img_container .user_img_container {
         aspect-ratio: 1/1;
         max-width: 1180px;
         margin: 0 auto;
@@ -34,14 +34,10 @@
     .portfolio_img_container .image_background_default,
     .portfolio_img_container .image_background_hover{
         top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
         width: 93%;
+        max-height: 100%;
     }
-
-
-
-
 
     .hero_arrow_down{
         flex: unset;
