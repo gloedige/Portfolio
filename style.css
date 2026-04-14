@@ -249,23 +249,29 @@ h2{
     flex: 1;
 }
 
-.portfolio_img_container img,
+/* .portfolio_img_container img,
 .menu_container_impressum img{
+} */
+
+.portfolio_img_container .user_img,
+.portfolio_img_container .burger_menu img{
     position: absolute;
     bottom: 0;
     left: 50%;
+    object-fit: cover;
+    transform: translate(-50%, 0);
     max-height: 100%;
     max-width: 100%;
 }
 
-.user_img{
-    object-fit: cover;
-    transform: translate(-50%, 0);
-}
 
-
-.image_background_default,
-.image_background_hover{
+.portfolio_img_container .image_background_default,
+.portfolio_img_container .image_background_hover{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    max-height: calc(100% - 20px);
+    max-width: 100%;
     transition: opacity 0.5s;
     transform: translate(-50%, 0%) rotate(-45deg);
 }
@@ -1276,7 +1282,7 @@ footer{
     font-size: 14px;
 }
 
-.burger_menu{
+.portfolio_img_container .burger_menu{
     z-index: 100;
     position: relative;
     bottom: 0;

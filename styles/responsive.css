@@ -1,3 +1,59 @@
+@media(max-aspect-ratio: 1/1){
+}
+
+@media((min-width: 1240px) and (min-height: 1240px)) or (max-aspect-ratio: 1/1){
+    .hero {
+        flex-direction: column;
+    }
+    
+    .hero_text_area{
+        margin: 8px 0 0 0;
+        padding: 0;
+        align-items: center;
+    }
+    
+    .hero_arrow_down{
+        margin: 24px 0;
+    }
+    .portfolio_img_container{
+        aspect-ratio: 1/1;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+    
+    .portfolio_img_container .user_img{
+        clip-path: polygon(0 0%, 100% 0%, 100% 85%, 95% 90%, 90% 91%, 85% 94%, 80% 94%, 75% 96%, 70% 97.3%, 65% 98.3%, 60% 99%, 55% 99.5%, 50% 100%, 45% 100%, 40% 100%, 35% 99.7%, 30% 99.2%, 25% 98.5%, 20% 97.3%, 15% 96%, 10% 95%, 5% 95%, 0% 50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .social_media_container{
+        min-width: 50%;
+    }
+    
+    .portfolio_img_container .image_background_default,
+    .portfolio_img_container .image_background_hover{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 93%;
+    }
+
+
+
+
+
+    .hero_arrow_down{
+        flex: unset;
+    }
+
+    .hero_text_area{
+        margin: 0;
+        justify-content: space-around;
+    }
+
+}
+
 @media (max-height: 730px){
     .hero{
         padding-top: 16px;
@@ -129,7 +185,7 @@
 
     .portfolio_img_container img{
         max-width: 100%;
-        height: auto;
+        /* height: auto; */
     }
 
     .portfolio_img_container:hover .image_background_default{
@@ -313,47 +369,6 @@
         height: 110px;
     }
     
-}
-
-
-@media(max-aspect-ratio: 1/1){
-        .hero {
-            flex-direction: column;
-        }
-    
-        .hero_text_area{
-            margin: 8px 0 0 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .hero_arrow_down{
-            margin: 24px 0;
-        }
-
-        .portfolio_img_container .user_img{
-            clip-path: polygon(0 0%, 100% 0%, 100% 85%, 95% 90%, 90% 91%, 85% 94%, 80% 94%, 75% 96%, 70% 97.3%, 65% 98.3%, 60% 99%, 55% 99.5%, 50% 100%, 45% 100%, 40% 100%, 35% 99.7%, 30% 99.2%, 25% 98.5%, 20% 97.3%, 15% 96%, 10% 95%, 5% 95%, 0% 50%);
-        }
-        .social_media_container{
-            min-width: 50%;
-        }
-
-        .portfolio_img_container .image_background_default,
-        .portfolio_img_container .image_background_hover{
-              transform: translate(-50%, 0%) rotate(0deg);
-        }
-}
-
-@media(max-aspect-ratio: 6/5){
-    .hero_arrow_down{
-        flex: unset;
-    }
-
-    .hero_text_area{
-        margin: 0;
-        justify-content: space-around;
-    }
-
 }
 
 @media (max-width: 700px){
