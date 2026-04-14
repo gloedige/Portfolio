@@ -257,7 +257,7 @@ h2{
     max-height: 100%;
 }
 
-.portfolio_img_container .user_img,
+.portfolio_img_container .user_img_container .user_img,
 .portfolio_img_container .burger_menu img{
     position: absolute;
     bottom: 0;
@@ -268,7 +268,7 @@ h2{
     max-width: 100%;
 }
 
-.portfolio_img_container .user_img{
+.portfolio_img_container .user_img_container .user_img{
     padding: 0 20px;
     box-sizing: border-box;
 }
