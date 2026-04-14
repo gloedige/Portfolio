@@ -1,7 +1,5 @@
-@media(max-aspect-ratio: 1/1){
-}
-
-@media((min-width: 1240px) and (min-height: 1240px)) or (max-aspect-ratio: 1/1){
+/* @media((min-width: 1240px) and (min-height: 1240px)){ or (max-aspect-ratio: 1/1)  */
+@media((min-height: 1240px)){ /* or (max-aspect-ratio: 1/1)*/
     .hero {
         flex-direction: column;
     }
@@ -16,9 +14,10 @@
         margin: 24px 0;
     }
     .portfolio_img_container .user_img_container {
-        aspect-ratio: 1/1;
+        /* aspect-ratio: 1/1; */
         max-width: 1180px;
         margin: 0 auto;
+        width: 100%;
     }
     
     .portfolio_img_container .user_img{

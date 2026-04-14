@@ -244,7 +244,6 @@ h2{
 }
 
 .portfolio_img_container{
-    position: relative;
     flex: 1;
     display: grid;
     grid-template-columns: 1fr;
@@ -252,6 +251,7 @@ h2{
 }
 
 .portfolio_img_container .user_img_container{
+    position: relative;
     grid-row: 1;
     grid-column: 1;
     max-height: 100%;
