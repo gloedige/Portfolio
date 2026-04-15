@@ -500,7 +500,7 @@
                     <form action="send_mail.php" method="POST">
                         <div class="contact_field_name_email">
                             <div class="input_container hidden_input">
-                                <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
+                                <label for="contact_name" id="contact_name_label">Your Name</label>
                                 <div class="input_field">
                                     <input 
                                     type="text" 
@@ -512,7 +512,7 @@
                                 </div>
                             </div>
                             <div class="input_container hidden_input">
-                                <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
+                                <label for="contact_mail" id="contact_mail_label">Your Email</label>
                                 <div class="input_field">
                                     <input 
                                     type="email" 
@@ -525,7 +525,7 @@
                             </div>
                             </div>
                             <div class="input_container hidden_input full_width">
-                                <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
+                                <label for="contact_message" id="contact_message_label">Your Message</label>
                                 <div class="input_field">
                                     <textarea
                                     id="contact_message" 
@@ -548,7 +548,7 @@
                                     <label for="accept_policy" id="accept_policy_label">I've read the <a href="privacy_policy.html">privacy policy</a> and accept to the processing of my data as outlined.</label>
                                     <span class="error_policy d-none" id="error_policy">Please accept the privacy policy.</span>
                                 </div>
-                                <button class="send_button" type="submit" disabled id="send_button">Send</button>
+                                <button class="send_button" type="submit" disabled id="send_button" formnovalidate>Send</button>
                             </div>
                     </form>
                     <div class="send_mail_overlay" id="send_mail_overlay">
