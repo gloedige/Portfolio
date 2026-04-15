@@ -48,10 +48,6 @@
         flex-direction: column;
     }
 
-    .portfolio_img_container {
-        aspect-ratio: 1/1;
-    }
-
     .user_img_container .image_background_default,
     .user_img_container .image_background_hover{
         width: 93%;
@@ -64,6 +60,9 @@
         box-sizing: unset;
     }
 
+    .hero_text_area{
+        margin: 8px 0 0 0;
+    }
 
 }
 
