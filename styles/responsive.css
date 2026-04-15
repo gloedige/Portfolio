@@ -384,6 +384,10 @@
 }
 
 @media (max-width: 700px){
+    section[id] {
+        scroll-margin-top: -80px;
+    }
+
     h1 {
         margin: 0 auto 16px auto;
     }
@@ -497,6 +501,7 @@
     .projects h2,
     .contact h2{
         margin: 80px auto 32px auto;
+       
     }
 
     .why_me_container{
