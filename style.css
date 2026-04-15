@@ -653,6 +653,7 @@ nav{
     align-items: center;
     gap: 40px;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .projects menu{
