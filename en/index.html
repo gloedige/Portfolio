@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../styles/burger.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/animation.css">
     <script src="../script.js" defer></script>
     <script src="../scripts/submit_mail.js" defer></script>
     <script src="../scripts/animate_project_overview.js" defer></script>
     <script src="../scripts/check_input.js" defer></script>
+    <script src="../scripts/intersection_observer.js" defer></script>
 </head>
 <body>
     <div class="hero_wrapper">
@@ -92,7 +94,6 @@
                     </a>
                 </div>
             </div>
-
         </section>
     </div>
     <div class="nav_wrapper">
@@ -131,73 +132,73 @@
                 </span>
             </div>
             <div class="button_right_container">
-                <a href="#contact_section" class="link_transparent">Let's Talk</a>
+                <a href="#contact_section" class="link_transparent hidden_link">Let's Talk</a>
             </div>
         </section>
         <section id="skills_section" class ="skills">
             <h2>My Skills</h2>
             <div class="skills_container">
                 <div class="skills_item_container">
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/angular_icon.svg" alt="Angular Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/typescript_icon.svg" alt="TypeScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/javascript_icon.svg" alt="JavaScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/html_icon.svg" alt="HTML Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/css_icon.svg" alt="CSS Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/rest-api_icon.svg" alt="REST API Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/firebase_icon.svg" alt="Firebase Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/git_icon.svg" alt="Git Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/scrum_icon.svg" alt="Scrum Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/material_design_icon.svg" alt="Material Design Icon">
                     </div>
                 </div>
                 <div class="skills_item_mobile_container">
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/angular_icon_mobile.svg" alt="Angular Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/typescript_icon_mobile.svg" alt="TypeScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/javascript_icon_mobile.svg" alt="JavaScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/html_icon_mobile.svg" alt="HTML Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/css_icon_mobile.svg" alt="CSS Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/api_icon_mobile.svg" alt="REST API Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/firebase_icon_mobile.svg" alt="Firebase Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/git_icon_mobile.svg" alt="Git Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/scrum_icon_mobile.svg" alt="Scrum Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/material_icon_mobile.svg" alt="Material Design Icon">
                     </div>
 
@@ -231,23 +232,22 @@
             <div class="skill_link_container">
                 <a href="#contact_section" class="link_blue">Let's Talk</a>
             </div>
-
         </section>
     </div>
     <div class="project_wrapper">
         <section id="projects_section" class="projects">
             <h2>My Projects</h2>
             <menu>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="pokedex" id="pokemon">1. Pokedex</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="pollo_loco" id="pollo_loco">2. El Pollo Loco</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="join" id="join">3. Join</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="coming_soon" id="ongoing">4. Ongoing Project</button>
                 </div>
             </menu>
@@ -427,7 +427,7 @@
         <section class="reference">
             <p class="reference_headline">Need a teamplayer? <span>Here is what my colleagues say about me</span></p>
             <div class="reference_container carousel">
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
@@ -440,7 +440,7 @@
                         <p>"Gerd impresses with his excellent technical expertise and proactive approach. He provides the team with sound support on complex issues and enriches the team through his coordinating role."</p>
                     </div>
                 </div>
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
@@ -454,7 +454,7 @@
                     </div>
                     <a href='https://www.linkedin.com/in/lukas-lehmann-b7b5683bb/' target="_blank">LinkedIn Profile</a>
                 </div>
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Background Image">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Background Image">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Background Image">
@@ -499,32 +499,32 @@
                 <div class="form_container">
                     <form action="send_mail.php" method="POST">
                         <div class="contact_field_name_email">
-                            <div class="input_container">
+                            <div class="input_container hidden_input">
                                 <label for="contact_name" id="contact_name_label">Your Name <span class="d-none">is required</span></label>
                                 <div class="input_field">
-                                        <input 
-                                        type="text" 
-                                        id="contact_name" 
-                                        name="name"
-                                        placeholder="Your Name"
-                                        >
-                                        <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
-                                    </div>
-                                </div>
-                                <div class="input_container">
-                                    <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
-                                    <div class="input_field">
-                                        <input 
-                                        type="email" 
-                                        id="contact_mail" 
-                                        name="email" 
-                                        placeholder="Your Email"
-                                        >
-                                        <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
-                                    </div>
+                                    <input 
+                                    type="text" 
+                                    id="contact_name" 
+                                    name="name"
+                                    placeholder="Your Name"
+                                    >
+                                    <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                                 </div>
                             </div>
-                            <div class="input_container full_width">
+                            <div class="input_container hidden_input">
+                                <label for="contact_mail" id="contact_mail_label">Your Email <span class="d-none">is required</span></label>
+                                <div class="input_field">
+                                    <input 
+                                    type="email" 
+                                    id="contact_mail" 
+                                    name="email" 
+                                    placeholder="Your Email"
+                                    >
+                                    <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="input_container hidden_input full_width">
                                 <label for="contact_message" id="contact_message_label">Your Message <span class="d-none">is required</span></label>
                                 <div class="input_field">
                                     <textarea

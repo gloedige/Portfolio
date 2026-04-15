@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../styles/burger.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/animation.css">
     <script src="../script.js" defer></script>
     <script src="../scripts/submit_mail.js" defer></script>
     <script src="../scripts/animate_project_overview.js" defer></script>
     <script src="../scripts/check_input.js" defer></script>
+    <script src="../scripts/intersection_observer.js" defer></script>
 </head>
 <body>
     <div class="hero_wrapper">
@@ -23,7 +25,7 @@
                         <img src="../assets/icons/logo_icon_small.svg" class="logo_default" alt="Logo Icon">
                     </div>
                     <p class="name">G. Lödige</p>
-                    <p>developer</p>
+                    <p>Entwickler</p>
                 </div>
                 <button onclick="toggleBurgerMenu(this)" class="button">
                     <span class="burger-2">
@@ -92,7 +94,6 @@
                     </a>
                 </div>
             </div>
-
         </section>
     </div>
     <div class="nav_wrapper">
@@ -131,73 +132,73 @@
                 </span>
             </div>
             <div class="button_right_container">
-                <a href="#contact_section" class="link_transparent">Lass uns reden</a>
+                <a href="#contact_section" class="link_transparent hidden_link">Lass uns reden</a>
             </div>
         </section>
         <section id="skills_section" class ="skills">
             <h2>Fähigkeiten</h2>
             <div class="skills_container">
                 <div class="skills_item_container">
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/angular_icon.svg" alt="Angular Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/typescript_icon.svg" alt="TypeScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/javascript_icon.svg" alt="JavaScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/html_icon.svg" alt="HTML Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/css_icon.svg" alt="CSS Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/rest-api_icon.svg" alt="REST API Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/firebase_icon.svg" alt="Firebase Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/git_icon.svg" alt="Git Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/scrum_icon.svg" alt="Scrum Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/material_design_icon.svg" alt="Material Design Icon">
                     </div>
                 </div>
                  <div class="skills_item_mobile_container">
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/angular_icon_mobile.svg" alt="Angular Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/typescript_icon_mobile.svg" alt="TypeScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/javascript_icon_mobile.svg" alt="JavaScript Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/html_icon_mobile.svg" alt="HTML Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/css_icon_mobile.svg" alt="CSS Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/api_icon_mobile.svg" alt="REST API Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/firebase_icon_mobile.svg" alt="Firebase Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/git_icon_mobile.svg" alt="Git Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/scrum_icon_mobile.svg" alt="Scrum Icon">
                     </div>
-                    <div class="skill_item">
+                    <div class="skill_item hidden_skill">
                         <img src="../assets/icons/material_icon_mobile.svg" alt="Material Design Icon">
                     </div>
 
@@ -237,16 +238,16 @@
         <section id="projects_section" class="projects">
             <h2>Meine Projekte</h2>
             <menu>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="pokedex" id="pokemon">1. Pokedex</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="pollo_loco" id="pollo_loco">2. El Pollo Loco</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="join" id="join">3. Join</button>
                 </div>
-                <div class="project_menu">
+                <div class="project_menu hidden_button">
                     <button data-project="coming_soon" id="ongoing">4. Laufendes Projekt</button>
                 </div>
             </menu>
@@ -426,7 +427,7 @@
         <section class="reference">
             <p class="reference_headline">Teamplayer gesucht? <span>Das sagen meine Kollegen über mich</span></p>
             <div class="reference_container carousel">
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Hintergrundbild">
@@ -439,7 +440,7 @@
                         <p>"Gerd überzeugt durch exzellente Fachexpertise und eine proaktive Arbeitsweise. Er unterstützt das Team bei komplexen Fragen fundiert und bereichert das Team durch seine koordinierende Rolle."</p>
                     </div>
                 </div>
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Hintergrundbild">
@@ -453,7 +454,7 @@
                     </div>
                     <a href='https://www.linkedin.com/in/lukas-lehmann-b7b5683bb/' target="_blank">LinkedIn Profile</a>
                 </div>
-                <div class="text_bubble_container">
+                <div class="text_bubble_container hidden_reference">
                     <img src="../assets/img/bubble_reference_hover.svg" class="reference_background_hover" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_default.svg" class="reference_background_default" alt="Hintergrundbild">
                     <img src="../assets/img/bubble_reference_mobile.svg" class="reference_background_mobile" alt="Hintergrundbild">
@@ -498,7 +499,7 @@
                 <div class="form_container">
                     <form action="send_mail.php" method="POST">
                         <div class="contact_field_name_email">
-                            <div class="input_container">
+                            <div class="input_container hidden_input">
                                 <label for="contact_name" id="contact_name_label">Ihr Name <span class="d-none">ist erforderlich</span></label>
                                 <div class="input_field">
                                     <input 
@@ -510,7 +511,7 @@
                                     <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                                 </div>
                             </div>
-                            <div class="input_container">
+                            <div class="input_container hidden_input">
                                 <label for="contact_mail" id="contact_mail_label">Ihre E-Mail <span class="d-none">ist erforderlich</span></label>
                                 <div class="input_field">
                                     <input 
@@ -523,7 +524,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="input_container full_width">
+                        <div class="input_container hidden_input full_width">
                             <label for="contact_message" id="contact_message_label">Ihre Nachricht <span class="d-none">ist erforderlich</span></label>
                             <div class="input_field">
                                 <textarea

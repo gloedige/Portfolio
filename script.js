@@ -208,8 +208,9 @@ function setTiming(currentText, fullText, currentSpanText) {
 
 
 /**
- * This function uses the Intersection Observer API to observe when sections of the page come into view.
- * When a section is in view, it updates the navigation links to highlight the active section.
+ * This function updates the active section in the navigation menu based on the center of the viewport. It sets up event 
+ * listeners for scroll and resize events to continuously check which section is closest to the center of the viewport and 
+ * update the active navigation link accordingly.
  */
 function updateActiveSection() {
     setActiveByViewportCenter();
@@ -302,9 +303,9 @@ function resetMenuTextForDesktop() {
 
 
 /**
- * This event listener waits for the DOM content to be fully loaded before initializing the intersection observer, 
- * starting the typing effect, and setting up the project menu and overviews. It ensures that all necessary elements 
- * are available in the DOM before any scripts attempt to interact with them.
+ * This event listener initializes the page by determining the preferred language, highlighting the selected 
+ * language in the navigation menu, and setting up the initial active section. It also initializes the project 
+ * menu and overviews if they are present on the page, and starts the typing effect for the location information.
  */
 document.addEventListener('DOMContentLoaded', () => {
     selectedLanguage = getPreferredLanguage();

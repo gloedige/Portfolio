@@ -1,0 +1,117 @@
+.hidden_skill,
+.hidden_reference {
+    will-change: transform, opacity;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-30px);
+    transition: all 1s;
+}
+
+.hidden_link{
+    will-change: transform, opacity;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(200px);
+    transition: all 1s;
+}
+
+.hidden_button {
+    will-change: transform, opacity;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(60px);
+    transition: all 0.5s;
+}
+
+.visible_skill,
+.visible_reference {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.visible_button {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.skill_item:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.skill_item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.skill_item:nth-child(3) {
+    transition-delay: 0.6s;
+}
+.skill_item:nth-child(4) {
+    transition-delay: 0.8s;
+}
+.skill_item:nth-child(5) {
+    transition-delay: 0.2s;
+}
+.skill_item:nth-child(6) {
+    transition-delay: 0.4s;
+}
+.skill_item:nth-child(7) {
+    transition-delay: 0.6s;
+}
+.skill_item:nth-child(8) {
+    transition-delay: 0.8s;
+}
+.skill_item:nth-child(9) {
+    transition-delay: 0.2s;
+}
+.skill_item:nth-child(10) {
+    transition-delay: 0.4s;
+}
+
+.text_bubble_container:nth-child(3) {
+    transition-delay: 0.2s;
+}
+.text_bubble_container:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.text_bubble_container:nth-child(1) {
+    transition-delay: 0.6s;
+}
+
+.project_menu:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.project_menu:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.project_menu:nth-child(3) {
+    transition-delay: 0.6s;
+}
+.project_menu:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.input_container{
+    perspective: 1000px;
+}
+
+.hidden_input{
+    opacity: 0;
+    transform: translateY(20px) rotateX(-45deg);
+    transition: all 1s;
+}
+
+.hidden_input.visible_input{
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.input_container:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.input_container:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.input_container:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
