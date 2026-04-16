@@ -1305,7 +1305,6 @@ footer{
 }
 
 .portfolio_img_container .burger_menu{
-    z-index: 100;
     position: relative;
     bottom: 0;
     opacity: 0;
