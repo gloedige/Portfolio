@@ -250,52 +250,62 @@ h2{
     grid-template-rows: 1fr;
 }
 
-.portfolio_img_container .user_img_container{
-    position: relative;
+.portfolio_img_container .profile-group{
+    align-self: end;
     grid-row: 1;
     grid-column: 1;
+    position: relative;
+    width: auto;
+    max-width: 1180px;
+    height: 100%;
     max-height: 100%;
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-.portfolio_img_container .user_img_container .user_img,
-.portfolio_img_container .burger_menu img{
+.bg-wrapper {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    object-fit: cover;
-    transform: translate(-50%, 0);
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.portfolio_img_container .user_img_container .user_img{
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-
-.portfolio_img_container .image_background_default,
-.portfolio_img_container .image_background_hover{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 0px;
+    left: 50%; 
+    transform: translate(-50%, 10%);
     width: 100%;
-    transition: opacity 0.5s;
-    transform: translate(-50%, 0%) rotate(-45deg);
-    max-height: 90%;
-    max-width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    transition: opacity 0.4s ease-in-out;
+    transform: rotate(-45deg);
 }
 
-.image_background_hover{
+.bg-img.hover {
     opacity: 0;
 }
 
-.portfolio_img_container:hover .image_background_default{
-    opacity: 0;
-}
-.portfolio_img_container:hover .image_background_hover{
+.profile-group:hover .bg-img.hover {
     opacity: 1;
+}
+
+.profile-group:hover .bg-img.default {
+    opacity: 0;
+}
+
+.user-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: auto;
+    z-index: 2;
+    display: block;
 }
 
 nav{
