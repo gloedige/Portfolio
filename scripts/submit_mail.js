@@ -1,11 +1,15 @@
 const form = document.querySelector('form');
+const formOverlay = document.getElementById('send_mail_overlay');
+const overlayDeliverMailSuccessText = 'Thank you very much for your message!'
+const overlayResponseErrorText = 'Failed to send message.';
+const overlayFetchErrorText = 'An error occurred while sending the message.';
 
 
 /**
  * This event listener handles the form submission for the contact form. It prevents the default form submission behavior, 
  * disables the submit button to prevent multiple submissions, and then attempts to send the form data to the server using 
  * the handleFetchMail function. If the request is successful, it processes the response with handleResponse. If there is 
- * an error during the fetch operation, it catches the error and handles it with handleResponseError. 
+ * an error during the fetch operation, it catches the error and handles it with handleFetchError. 
  * Finally, it re-enables the submit button regardless of the outcome.
  */
 form.addEventListener('submit', async (event) => {
@@ -15,7 +19,7 @@ form.addEventListener('submit', async (event) => {
         const response = await handleFetchMail(form);
         await handleResponse(response);
     } catch (error) {
-        handleResponseError(error);
+        handleFetchError(error);
     } finally {
         enableSubmitButton();
     }
@@ -78,9 +82,9 @@ async function handleResponse(response) {
     const result = await response.json();
     if (response.ok && result.success) {
         clearAllInputs();
-        showSuccessOverlay();
+        showSubmitMessageInOverlay(overlayDeliverMailSuccessText);
     } else {
-        alert('Error: ' + (result.error || 'Failed to send message.'));
+        showSubmitMessageInOverlay('Error: ' + (result.error || overlayResponseErrorText));
     }
 }
 
@@ -88,13 +92,13 @@ async function handleResponse(response) {
 /**
  * This function clears all input fields in the form after a successful submission.
  */
-function showSuccessOverlay() {
-    const overlay = document.getElementById('send_mail_overlay');
-    if (overlay) {
-        overlay.classList.add('active');
+function showSubmitMessageInOverlay(message) {
+    if (formOverlay) {
+        formOverlay.querySelector('p').textContent = message;
+        formOverlay.classList.add('active');
         setTimeout(() => {
-            overlay.classList.remove('active');
-        }, 2000); // Adjust the duration as needed
+            formOverlay.classList.remove('active');
+        }, 2000);
     }
 }
 
@@ -103,7 +107,7 @@ function showSuccessOverlay() {
  * This function handles errors that occur during the form submission process.
  * @param {Error} error - The error object containing information about the error.
  */
-function handleResponseError(error) {
+function handleFetchError(error) {
     console.error('Error:', error);
-    alert('An error occurred while sending the message.');
+    showSubmitMessageInOverlay(overlayFetchErrorText);
 }
