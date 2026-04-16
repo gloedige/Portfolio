@@ -312,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightSelectedLanguage();
     updateActiveSection();
     handleViewportChange(medieQueryProjectMenuMobile);
+    closeBurgerMenuByClick();
     if (textElement) typeEffect();
 
     const hasProjectSection = document.querySelector('.project_overview, #pokemon, #project_pokedex');

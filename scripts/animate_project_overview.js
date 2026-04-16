@@ -124,3 +124,18 @@ function showNextOverview(nextProjectOverview) {
         isProjectTransitionRunning = false;
     });
 }
+
+
+/**
+ * This function sets up event listeners for the links in the burger menu. When a link is clicked, it calls 
+ * the toggleBurgerMenu function to close the burger menu.
+ */
+function closeBurgerMenuByClick(){
+    const burgerButton = document.getElementById('burgerBtn');
+    const burgerMenu = document.getElementById('burger_menu');
+    burgerMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (event) => {
+            toggleBurgerMenu(burgerButton);
+        });
+    });
+}

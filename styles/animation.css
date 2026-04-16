@@ -11,7 +11,7 @@
     will-change: transform, opacity;
     opacity: 0;
     filter: blur(5px);
-    transform: translateX(200px);
+    transform: translateX(-100px);
     transition: all 1s;
 }
 
