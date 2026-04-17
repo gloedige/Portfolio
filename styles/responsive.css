@@ -1,9 +1,3 @@
-@media (min-width: 1240px) and (min-height: 1050px){
-    .portfolio_img_container .profile-group {
-        max-height: 80%;
-    }
-}
-
 @media((min-height: 1240px)){  
     .hero {
         flex-direction: column;
@@ -32,34 +26,38 @@
         transform: rotate(0deg);
     }
 
+    .portfolio_img_container .profile-group{
+        max-width: 1180px;
+    }
+    
     .profile-group:hover .bg-img.hover {
         opacity: 0;
     }
-
+    
     .profile-group:hover .bg-img.default {
         opacity: 1;
     }
-
+    
     .social_media_container{
         min-width: 50%;
     }
-
+    
     .hero_arrow_down{
         flex: unset;
     }
-
+    
     .hero_text_area{
         margin: 0;
         justify-content: space-around;
     }
-
+    
 }
 
 @media (max-aspect-ratio: 12/10) {
     .hero {
         flex-direction: column;
     }
-
+    
     .user-img{
         -webkit-mask-image: url('../assets/img/bubble_mask_extended.svg');
         mask-image: url('../assets/img/bubble_mask_extended.svg');
@@ -67,9 +65,13 @@
         mask-repeat: no-repeat;
         mask-position: bottom;
     }
-
+    
     .bg-img{
         transform: rotate(0deg);
+    }
+    
+    .portfolio_img_container .profile-group{
+        max-width: 1180px;
     }
 
     .profile-group:hover .bg-img.hover {
