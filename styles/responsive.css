@@ -600,6 +600,11 @@
         display: none;
     }
 
+    .skills_text_and_bubble_container{
+        width: 95%;
+    }
+
+
     .skills_text_and_bubble_container 
     .new_skill_text_mobile{
         display: block;
