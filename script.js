@@ -290,7 +290,14 @@ function setProjectMenuTexts(labels) {
  * This function updates the text of the project menu buttons for mobile view.
  */
 function updateMenuTextForMobile() {
-    setProjectMenuTexts(['1. Project', '2. Project', '3. Project', '4. Project']);
+    if (selectedLanguage === 'de') {
+        setProjectMenuTexts(['1. Projekt', '2. Projekt', '3. Projekt', '4. Projekt']);
+        return;
+    }
+    if (selectedLanguage === 'en') {
+        setProjectMenuTexts(['1. Project', '2. Project', '3. Project', '4. Project']);
+        return;
+    }
 }
 
 
@@ -298,7 +305,14 @@ function updateMenuTextForMobile() {
  * This function resets the text of the project menu buttons to their original state for desktop view.
  */
 function resetMenuTextForDesktop() {
-    setProjectMenuTexts(['1. Pokedex', '2. Pollo Loco', '3. Join', '4. Ongoing']);
+    if (selectedLanguage === 'de') {
+        setProjectMenuTexts(['1. Pokedex', '2. Pollo Loco', '3. Join', '4. In Planung']);
+        return;
+    }
+    if (selectedLanguage === 'en') {
+        setProjectMenuTexts(['1. Pokedex', '2. Pollo Loco', '3. Join', '4. Ongoing']);
+        return;
+    }
 }
 
 
