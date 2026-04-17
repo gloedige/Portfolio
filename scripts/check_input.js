@@ -1,17 +1,26 @@
-let req_name = false;
-let req_mail = false;
-let req_message = false;
-let req_checkbox = false;
-let input_name = null;
-let input_mail = null;
-let input_message = null;
+let valid_name = false;
+let valid_mail = false;
+let valid_message = false;
+let valid_checkbox = false;
+let name_input = null;
+let email_input = null;
+let message_input = null;
 let input_checkbox = null;
-let contact_name_label = null;
-let contact_mail_label = null;
-let contact_message_label = null;
+let name_input_label = null;
+let email_input_label = null;
+let message_input_label = null;
 let error_policy = null;
-let policy_checkbox_checked = false;
 let send_button = null;
+
+const nameValidationErrorText = "Please enter at least 3 letters (a-z)";
+const emailValidationErrorText = "Please enter a valid email address";
+const messageValidationErrorText = "Please enter at least 4 characters";
+const nameEmptyErrorText = "Your name is required";
+const emailEmptyErrorText = "Your email is required";
+const messageEmptyErrorText = "Your message is required";
+const nameStandardLabelAndPlaceholderText = "Your Name";
+const emailStandardLabelAndPlaceholderText = "Your Email";
+const messageStandardLabelAndPlaceholderText = "Your Message";
 
 loadContactSection();
 inputEventListener();
@@ -22,14 +31,29 @@ inputEventListener();
  */
 function sendMail(event) {
     if (event) event.preventDefault();
-    window.location.href = `mailto:${input_mail.value}?subject=Contact from ${input_name.value}&body=${input_message.value}`;
+    window.location.href = `mailto:${email_input.value}?subject=Contact from ${name_input.value}&body=${message_input.value}`;
     clearAllInputs();
+}
+
+
+/** Caches all contact form DOM elements into module variables. */
+function loadContactSection() {
+    name_input = document.getElementById("contact_name");
+    email_input = document.getElementById("contact_mail");
+    message_input = document.getElementById("contact_message");
+    input_checkbox = document.getElementById("accept_policy");
+    name_input_label = document.getElementById("contact_name_label");
+    email_input_label = document.getElementById("contact_mail_label");
+    message_input_label = document.getElementById("contact_message_label");
+    contact_checkbox = document.getElementById("checkbox_container");
+    error_policy = document.getElementById("error_policy");
+    send_button = document.getElementById("send_button");
 }
 
 
 /** Enables or disables send button based on all required fields being filled. */
 function manageSendButtonStatus() {
-    if (checkForRequired(['name', 'mail', 'message', 'checkbox'])) {
+    if (checkForRequired()) {
         send_button.disabled = false;
     } else {
         send_button.disabled = true;
@@ -37,64 +61,15 @@ function manageSendButtonStatus() {
 }
 
 
-/** Caches all contact form DOM elements into module variables. */
-function loadContactSection() {
-    input_name = document.getElementById("contact_name");
-    input_mail = document.getElementById("contact_mail");
-    input_message = document.getElementById("contact_message");
-    input_checkbox = document.getElementById("accept_policy");
-    contact_name_label = document.getElementById("contact_name_label");
-    contact_mail_label = document.getElementById("contact_mail_label");
-    contact_message_label = document.getElementById("contact_message_label");
-    contact_checkbox = document.getElementById("checkbox_container");
-    error_policy = document.getElementById("error_policy");
-    send_button = document.getElementById("send_button");
-}
-
-
 /** Checks if all required fields are filled. 
- * @param {Array<string>} requiredFields @returns {boolean} true if all fields are filled */
-function checkForRequired(requiredFields) {
+ * @returns {boolean} true if all fields are filled */
+function checkForRequired() {
     let isValid = true;
+    const requiredFields = [valid_name, valid_mail, valid_message, valid_checkbox];
     for (const field of requiredFields) {
-        isValid = checkSingleField(field) && isValid;
+        isValid = field && isValid;
     }
     return isValid;
-}
-
-    
-/** Updates req_* flags based on current input values. */
-function setRequiredValues(element) {
-    const checks = {
-        name: !input_name?.value.trim(),
-        mail: !input_mail?.value.trim(),
-        message: !input_message?.value.trim(),
-        checkbox: !input_checkbox?.checked
-    };
-    if (element === "name") req_name = checks.name;
-    if (element === "mail") req_mail = checks.mail;
-    if (element === "message") req_message = checks.message;
-    if (element === "checkbox") req_checkbox = checks.checkbox;
-}
-
-
-/**
- * This function checks if the given field is filled/checked and updates the corresponding req_* flag.
- * @param {string} field 
- * @returns {boolean} true if the given field is filled/checked, false otherwise */
-function checkSingleField(field) {
-    switch (field) {
-            case 'name':
-                return (!!input_name?.value.trim());
-            case 'mail':
-                return (!!input_mail?.value.trim());
-            case 'message':
-                return (!!input_message?.value.trim());
-            case 'checkbox':
-                return (!!input_checkbox?.checked);
-            default:
-                return true;
-        }
 }
 
 
@@ -102,28 +77,13 @@ function checkSingleField(field) {
  * Clears all form inputs.
  */
 function clearAllInputs() {
-    req_name = false
-    req_mail = false
-    req_message = false
-    input_name.value = ""
-    input_mail.value = ""
-    input_message.value = ""
+    valid_name = false
+    valid_mail = false
+    valid_message = false
+    name_input.value = ""
+    email_input.value = ""
+    message_input.value = ""
     clearCheckboxAndValidation();
-}
-
-
-/** Shows error indicators for missing required fields. */
-function missingInputs(element) {
-    if (element === "name" && req_name) {
-        handleMissingInput(contact_name_label, input_name, "Your name is required");
-    } else if (element === "mail" && req_mail) {
-        handleMissingInput(contact_mail_label, input_mail, "Your email is required");
-    } else if (element === "message" && req_message) {
-        handleMissingInput(contact_message_label, input_message, "Your message is required");
-    } else if (element === "checkbox" && req_checkbox) {
-        enableCheckboxError();
-        error_policy.classList.remove("d-none");
-    }
 }
 
 
@@ -131,6 +91,7 @@ function missingInputs(element) {
  * @param {HTMLElement} labelElement @param {HTMLElement} inputElement @param {string} errorMessage */
 function handleMissingInput(labelElement, inputElement, errorMessage) {
     if(window.innerWidth < 700){
+        inputElement.value = "";
         inputElement.placeholder = errorMessage;
     } else {
         labelElement.classList.add("font_color_red");
@@ -165,15 +126,15 @@ function removeIndicatorOnInput(field) {
     switch (field) {
         case "name":
             removeNameError();
-            resetValidationError("contact_name", "Your Name");
+            resetValidationError("contact_name", nameStandardLabelAndPlaceholderText);
             break;
         case "mail":
             removeMailError();
-            resetValidationError("contact_mail", "Your Email");
+            resetValidationError("contact_mail", emailStandardLabelAndPlaceholderText);
             break;
         case "message":
             removeMessageError();
-            resetValidationError("contact_message", "Your Message");
+            resetValidationError("contact_message", messageStandardLabelAndPlaceholderText);
             break;
         case "checkbox":
             removeCheckboxError();
@@ -184,23 +145,23 @@ function removeIndicatorOnInput(field) {
 
 /** Clears error state from the name field. */
 function removeNameError() {
-    contact_name_label.classList.remove("font_color_red");
-    input_name.classList.remove("missing_inputs");
-    input_name.placeholder = "Your Name";
+    name_input_label.classList.remove("font_color_red");
+    name_input.classList.remove("missing_inputs");
+    name_input.placeholder = nameStandardLabelAndPlaceholderText;
 }
 
 /** Clears error state from the mail field. */
 function removeMailError() {
-    contact_mail_label.classList.remove("font_color_red");
-    input_mail.classList.remove("missing_inputs");
-    input_mail.placeholder = "Your Email";
+    email_input_label.classList.remove("font_color_red");
+    email_input.classList.remove("missing_inputs");
+    email_input.placeholder = emailStandardLabelAndPlaceholderText;
 }
 
 /** Clears error state from the message field. */
 function removeMessageError() {
-    contact_message_label.classList.remove("font_color_red");
-    input_message.classList.remove("missing_inputs");
-    input_message.placeholder = "Your Message";
+    message_input_label.classList.remove("font_color_red");
+    message_input.classList.remove("missing_inputs");
+    message_input.placeholder = messageStandardLabelAndPlaceholderText;
 }
 
 
@@ -229,19 +190,17 @@ function inputEventListener() {
     inputMailEventListener();
     inputMessageEventListener();
     inputCheckboxEventListener();
-    removeInputValidationListener(input_name, contact_name_label, req_name);
-    removeInputValidationListener(input_mail, contact_mail_label, req_mail);
-    removeInputValidationListener(input_message, contact_message_label, req_message);
+    removeInputValidationListener(name_input, name_input_label, valid_name);
+    removeInputValidationListener(email_input, email_input_label, valid_mail);
+    removeInputValidationListener(message_input, message_input_label, valid_message);
 }
 
 
 /** Adds focus/blur listeners to the name input. */
 function inputNameEventListener() {
-    input_name.addEventListener("focus", () => removeIndicatorOnInput("name"));
-    input_name.addEventListener("blur", () => {
-        setRequiredValues("name");
-        missingInputs("name");
-        validateNameInput(input_name);
+    name_input.addEventListener("focus", () => removeIndicatorOnInput("name"));
+    name_input.addEventListener("blur", () => {
+        validateNameInput(name_input);
         manageSendButtonStatus();
     });
 }
@@ -249,11 +208,9 @@ function inputNameEventListener() {
 
 /** Adds focus/blur listeners to the mail input. */
 function inputMailEventListener() {
-    input_mail.addEventListener("focus", () => removeIndicatorOnInput("mail"));
-    input_mail.addEventListener("blur", () => {
-        setRequiredValues("mail");
-        missingInputs("mail");
-        validateEmailInput(input_mail);
+    email_input.addEventListener("focus", () => removeIndicatorOnInput("mail"));
+    email_input.addEventListener("blur", () => {
+        validateEmailInput(email_input);
         manageSendButtonStatus();
     });
 }
@@ -261,12 +218,26 @@ function inputMailEventListener() {
 
 /** Adds focus/blur listeners to the message input. */
 function inputMessageEventListener() {
-    input_message.addEventListener("focus", () => removeIndicatorOnInput("message"));
-    input_message.addEventListener("blur", () => {
-        setRequiredValues("message");
-        missingInputs("message");
-        validateMessageInput(input_message);
+    message_input.addEventListener("focus", () => removeIndicatorOnInput("message"));
+    message_input.addEventListener("blur", () => {
+        validateMessageInput(message_input);
         manageSendButtonStatus();
+    });
+}
+
+
+/** Adds focus/blur listeners to the policy checkbox. */
+function inputCheckboxEventListener() {
+    input_checkbox.addEventListener("focus", () => removeIndicatorOnInput("checkbox"));
+    input_checkbox.addEventListener("change", () => {
+        validateCheckboxInput();
+        manageSendButtonStatus();
+        toggleAcceptPolicy();
+    });
+    input_checkbox.addEventListener("blur", () => {
+        validateCheckboxInput();
+        manageSendButtonStatus();
+        toggleAcceptPolicy();
     });
 }
 
@@ -284,31 +255,20 @@ function removeInputValidationListener(inputElement, labelElement, field) {
 }
 
 
-/** Adds focus/blur listeners to the policy checkbox. */
-function inputCheckboxEventListener() {
-    input_checkbox.addEventListener("focus", () => removeIndicatorOnInput("checkbox"));
-    input_checkbox.addEventListener("blur", () => {
-            setRequiredValues("checkbox");
-            missingInputs("checkbox");
-    });
-    input_checkbox.addEventListener("change", () => {
-            policy_checkbox_checked = input_checkbox.checked;
-            manageSendButtonStatus();
-            toggleAcceptPolicy();
-    });
-}
-
-
 /** Toggles "is_valid" class based on whether value length > 3. 
  * @param {HTMLInputElement|HTMLTextAreaElement} inputElement */
 function validateNameInput(inputElement) {
-    const value = inputElement.value.trim();
-    if (req_name === true) {
+    if (checkIsEmptyInputValues("name")) {
+        valid_name = false;
         inputElement.classList.remove("is_valid");
-    } else if (!isOnlyLetters(value) || value.length <= 3){
-        displayValidationError(inputElement.id, "Please enter at least 4 letters (a-z)");
+        handleMissingInput(name_input_label, name_input, nameEmptyErrorText);
+    } else if (!isOnlyLetters(inputElement) || !checkRequiredInputLengths(3, inputElement)){
+        valid_name = false;
+        inputElement.classList.remove("is_valid");
+        handleMissingInput(name_input_label, name_input, nameValidationErrorText);
     } else {
         inputElement.classList.add("is_valid");
+        valid_name = true;
     }
 }
 
@@ -316,13 +276,17 @@ function validateNameInput(inputElement) {
 /** Toggles "is_valid" class based on whether value length > 3. 
  * @param {HTMLInputElement|HTMLTextAreaElement} inputElement */
 function validateMessageInput(inputElement) {
-    const value = inputElement.value.trim();
-    if (req_message === true) {
+    if (checkIsEmptyInputValues("message")) {
+        valid_message = false;
         inputElement.classList.remove("is_valid");
-    } else if (value.length <= 3){
-        displayValidationError(inputElement.id, "Please enter at least 4 characters");
+        handleMissingInput(message_input_label, message_input, messageEmptyErrorText);
+    } else if (!checkRequiredInputLengths(4, inputElement)) {
+        valid_message = false;
+        inputElement.classList.remove("is_valid");
+        handleMissingInput(message_input_label, message_input, messageValidationErrorText);
     } else {
         inputElement.classList.add("is_valid");
+        valid_message = true;
     }
 }
 
@@ -330,39 +294,75 @@ function validateMessageInput(inputElement) {
 /** Toggles "is_valid" class based on email regex test. 
  * @param {HTMLInputElement} emailInput */
 function validateEmailInput(emailInput) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (req_mail === true) {
+    if (checkIsEmptyInputValues("mail")) {
+        valid_mail = false;
         emailInput.classList.remove("is_valid");
-    } else if (!re.test(String(emailInput.value).toLowerCase())) {
-        displayValidationError(emailInput.id, "Please enter a valid email address");
+        handleMissingInput(email_input_label, email_input, emailEmptyErrorText);
+    } else if (!checkEmailForm()) {
+        valid_mail = false;
+        emailInput.classList.remove("is_valid");
+        handleMissingInput(email_input_label, email_input, emailValidationErrorText);
     } else {
         emailInput.classList.add("is_valid");
+        valid_mail = true;
     }
+}
+
+
+function validateCheckboxInput() {
+    if (!checkIsEmptyInputValues("checkbox")) {
+        valid_checkbox = true;
+    } else {
+        valid_checkbox = false;
+        enableCheckboxError();
+        error_policy.classList.remove("d-none");
+    }
+}
+
+
+/** Updates valid_* flags based on current input values. */
+function checkIsEmptyInputValues(element) {
+    const checks = {
+        name: !name_input?.value.trim(),
+        mail: !email_input?.value.trim(),
+        message: !message_input?.value.trim(),
+        checkbox: !input_checkbox?.checked
+    };
+    if (element === "name") return checks.name;
+    if (element === "mail") return checks.mail;
+    if (element === "message") return checks.message;
+    if (element === "checkbox") return checks.checkbox;
+}
+
+
+/**
+ * This function checks if the email input value matches a basic email regex pattern.
+ * @returns - {boolean} true if the email is valid, false otherwise.
+ */
+function checkEmailForm(){
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email_input.value).toLowerCase());
+}
+
+
+/**
+ * This function checks if the input value meets the minimum length requirement after trimming whitespace.
+ * @param {number} minLengths - The minimum length required for the input value.
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputElement - The input element to check.
+ * @returns {boolean} - True if the input value meets the minimum length, false otherwise.
+ */
+function checkRequiredInputLengths(minLengths, inputElement) {
+    return inputElement.value.trim().length >= minLengths;
 }
 
 
 /**
  * This function checks if a string contains only letters (a-z, A-Z).
- * @param {string} str - The string to check.
- * @returns {boolean} - True if the string contains only letters, false otherwise.
+ * @param {HTMLInputElement|HTMLTextAreaElement} element - The input element to check.
+ * @returns {boolean} - True if the input value contains only letters, false otherwise.
  */
-function isOnlyLetters(str) {
-    return /^[a-zA-Z]+( [a-zA-Z]+)*$/.test(str);
-}
-
-
-/**
- * This function displays a validation error message for the given input field by updating the 
- * corresponding label text.
- * @param {string} inputId - The ID of the input field for which to display the error message.
- * @param {string} message - The error message to display.
- */
-function displayValidationError(inputId, message) {
-    const labelElement = document.getElementById(inputId + "_label");
-    const inputElement = document.getElementById(inputId);
-    labelElement.classList.add("font_color_red");
-    inputElement.classList.add("missing_inputs");
-    labelElement.textContent = message;
+function isOnlyLetters(element) {
+    return /^[a-zA-Z]+( [a-zA-Z]+)*$/.test(element.value.trim());
 }
 
 
@@ -399,8 +399,8 @@ function clearCheckboxAndValidation(){
     input_checkbox.checked = false;
     send_button.disabled = true;
     toggleAcceptPolicy();
-    req_checkbox = false;
-    input_name.classList.remove("is_valid");
-    input_mail.classList.remove("is_valid");
-    input_message.classList.remove("is_valid");
+    valid_checkbox = false;
+    name_input.classList.remove("is_valid");
+    email_input.classList.remove("is_valid");
+    message_input.classList.remove("is_valid");
 }
