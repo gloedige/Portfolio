@@ -1145,6 +1145,14 @@ nav{
     color:#E44C36 !important;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #F8F5EC;
+    -webkit-box-shadow: 0 0 0px 1000px #262E34 inset !important;
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
 .full_width{
     width: 100%;
 }

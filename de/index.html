@@ -499,7 +499,7 @@
                     </div>
                 </div>
                 <div class="form_container">
-                    <form action="send_mail.php" method="POST">
+                    <form action="send_mail.php" method="POST" autocomplete="off">
                         <div class="contact_field_name_email">
                             <div class="input_container hidden_input">
                                 <label for="contact_name" id="contact_name_label">Ihr Name <span class="d-none">ist erforderlich</span></label>
@@ -509,6 +509,7 @@
                                     id="contact_name" 
                                     name="name"
                                     placeholder="Ihr Name"
+                                    autocomplete="off"
                                     >
                                     <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                                 </div>
@@ -521,6 +522,7 @@
                                     id="contact_mail" 
                                     name="email" 
                                     placeholder="Ihre E-Mail"
+                                    autocomplete="off"
                                     >
                                     <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                                 </div>
@@ -534,6 +536,7 @@
                                 name="message" 
                                 rows="8" 
                                 placeholder="Ihre Nachricht"
+                                autocomplete="off"
                                 ></textarea>
                                 <img src="../assets/icons/done_icon.svg" alt="Input Valid Icon" class="input_valid_icon">
                             </div>
